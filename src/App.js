@@ -12,6 +12,7 @@ class LegacyWelcomeClass extends Component {
   componentDidMount() {
     toggleIcon();
   }
+
   showContentMenus = (routes) => {
     let result = null;
     if (routes.length > 0) {
@@ -31,9 +32,7 @@ class LegacyWelcomeClass extends Component {
     return (
       <div className="App">
         <Router>
-          <div className="App">
-            {this.showContentMenus(routes)}
-          </div>
+          {this.showContentMenus(routes)}
         </Router>
       </div>
     );
