@@ -1,23 +1,29 @@
 import React from 'react'
-import HomePage from './pages/home/home';
+import FabricPage from './pages/fabric/fabric';
+import ConfigPage from './pages/config/config';
+import ExtraPage from './pages/extra/extra';
 import NotFoundPage from './pages/not-found/not-found';
-import DesignPage from './pages/design/design';
-import ExtendPage from './pages/extend/extendPage';
+
 const routes = [
     {
         path: '/',
         exact: true,
-        main: () => <HomePage></HomePage>
+        main: () => <FabricPage></FabricPage>
     },
     {
-        path: '/design',
+        path: '/fabric',
         exact: true,
-        main: ({ history }) => <DesignPage history={history}></DesignPage>
+        main: () => <FabricPage></FabricPage>
     },
     {
-        path: '/extend',
+        path: '/config',
         exact: true,
-        main: ({ history }) => <ExtendPage history={history}></ExtendPage>
+        main: ({ history }) => <ConfigPage history={history}></ConfigPage>
+    },
+    {
+        path: '/extra',
+        exact: true,
+        main: ({ history }) => <ExtraPage history={history}></ExtraPage>
     },
     {
         path: '',

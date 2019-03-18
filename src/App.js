@@ -1,6 +1,5 @@
 import React, { Component, Suspense } from 'react';
 import routes from './routers';
-import './App.css';
 import './icon/style.css'
 import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 import { withTranslation } from 'react-i18next';
@@ -30,11 +29,9 @@ class LegacyWelcomeClass extends Component {
       i18n.changeLanguage(lng);
     };
     return (
-      <div className="App">
-        <Router>
-          {this.showContentMenus(routes)}
-        </Router>
-      </div>
+      <Router>
+        {this.showContentMenus(routes)}
+      </Router>
     );
   }
 }

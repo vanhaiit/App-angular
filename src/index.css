@@ -33,7 +33,7 @@ font-weight: bold;
 #scrollbar_custom::-webkit-scrollbar-thumb {
     border-radius: 200px;
     -webkit-box-shadow: inset 0 0 6px rgba(10, 10, 10, 0.3);
-    background-color: #d4ddf3;
+    background-color: #ffffff;
     width: 5px;
     height: 5px;
     left: 50px;
@@ -43,21 +43,32 @@ font-weight: bold;
     border-radius: 10px;
     background-color: #F5F5F5;
 }
+
 #scrollbar_custom::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(left, #8391A6, #536175);
   width: 10px;
 }
+
 #scrollbar_custom{
   overflow: auto;
-  max-height: 900px;
+  max-height: 750px;
   overflow-x: hidden;
   padding-top: 5px;
+  overflow-y: hidden
 }
+
+#scrollbar_custom:hover{
+  overflow-y: auto;
+  transition: transform 5s;
+}
+
 .dunnio_navbar{
   height: 50px;
   background: #ebecef;
+  width: 100%;
   /* box-shadow: 0px 5px 10px 0px rgb(226, 223, 226) */
 }
+
 .dunnio_navbar-collapse{
   margin: 0 auto;
 }
@@ -67,6 +78,7 @@ font-weight: bold;
   list-style: none;
   display: inline-flex;
   color: black;
+  padding: 0;
 }
 .dunnio_nav-item{
   color: black;
@@ -291,8 +303,13 @@ li {
   margin: 30px  0 30px !important;
   padding-bottom: 15px !important;
 }
+
 .text-uppercase{
   text-transform: uppercase
+}
+
+.text_center{
+  text-align: center
 }
 .option_trigger{
   text-align: center;
@@ -351,3 +368,119 @@ li {
   border-left:1px solid #eee ; 
 }
 
+
+
+
+#available_window{
+  position:absolute;
+  left:360px;
+  right:220px;
+  bottom:0;
+  top:0;
+  z-index: 0;
+}
+#available_window.fabric_step{
+  left:395px;
+  right:220px
+}
+#available_window .viewport{
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  -webkit-transition:top .3s linear;
+  transition:top .3s linear
+}
+
+#available_window.man_pants .viewport.folded{
+  top:5%!important
+}
+#available_window .viewport img{
+  position:absolute;
+  left:0;
+  right:0;
+  top:0
+}
+#available_window img{
+  width:100%
+}
+#available_window .viewport img.shirt{
+  margin-top:32%
+}
+#available_window .viewport img.waistcoat{
+  margin-top:32.5%
+}
+#available_window.without_model .viewport img.waistcoat{
+  margin-top:0
+}
+#available_window .viewport img.man_pant{
+  margin-top:103%
+}
+#available_window.man_shirt .viewport img.man_pant{
+  margin-top:102.5%
+}
+#available_window .viewport img.man_jacket{
+  margin-top:32.5%
+}
+#available_window .viewport img.man_coat{
+  margin-top:32%
+}
+#available_window .viewport img.man_quilted_waistcoat{
+  margin-top:34.5%
+}
+#available_window .viewport img.man_sash{
+  margin-top:29%
+}
+#available_window.man_suit.without_model .viewport img.pants_folded{
+  margin-top:110%
+}
+#available_window.man_chaque.without_model .viewport img.pants_folded{
+  margin-top:145%
+}
+#available_window.man_levita.without_model .viewport img.pants_folded{
+  margin-top:125%
+}
+#available_window.man_frac.without_model .viewport img.pants_folded{
+  margin-top:150%
+}
+#available_window.man_smoking.without_model .viewport img.pants_folded{
+  margin-top:110%
+}
+#available_window.without_model .viewport img.man_coat,#available_window.without_model .viewport img.man_jacket{
+  margin-top:0
+}
+#available_window.without_model .viewport img.man_quilted_waistcoat{
+  margin-top:2%
+}
+#available_window .loading{
+  display:none;
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:20px;
+  z-index:99999;
+  opacity:.6;
+  width:100%
+}
+
+#available_window .loading.active{
+  display:block
+}
+#available_window .loading img{
+  width:70px;
+  position:absolute;
+  z-index:9999;
+  left:55%;
+  margin-left:-35px;
+  top:350px
+}
+#available_window .initials{
+  display:none;
+  z-index:999999;
+  top:20px;
+  left:65px;
+  width:60%;
+  max-width:600px;
+  position:absolute;
+  border:2px solid #EEE
+}

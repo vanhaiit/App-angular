@@ -1,1 +1,1 @@
-export const API_URL = 'http://5ba3187b8da2f20014654b79.mockapi.io/api/v1/'
+export const API_URL = 'http://beta.dunnio.com.vn/api/v0/wh'
