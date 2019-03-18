@@ -28,9 +28,9 @@ class ConfigPage extends Component {
                             <span className="btn_sidebar-hide"><i className="fa fa-arrow-left icon_back" aria-hidden="true"></i></span>
                         </div>
                         <div className="row" id="scrollbar_custom" >
-                            <div id="sidebar_menu-left" className="col-md-12">
+                            <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
                                 <div id="transfer_scrollbar">
-                                    <div className="accordian sidebarNav">
+                                    <div className="accordian sidebarNav  scrollbox-content">
                                         <ul className="sidebarNav">
                                             {this.showPropertiesClothes(data)}
                                         </ul>
@@ -42,7 +42,7 @@ class ConfigPage extends Component {
                                     <p style={{ width: "90%" }}>TÙY CHỌN</p>
                                     <i className="fa fa-angle-left icon_back" aria-hidden="true" ></i>
                                 </div>
-                                <div className="row">
+                                <div className="row ">
                                     {this.showPropertiesResult()}
                                 </div>
 

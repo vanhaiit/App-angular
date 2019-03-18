@@ -23,7 +23,7 @@ class ExtraPage extends Component {
                             <span className="btn_sidebar-hide"><i className="fa fa-arrow-left icon_back" aria-hidden="true" ></i></span>
                         </div>
                         <div className="row" id="scrollbar_custom" >
-                            <div id="sidebar_menu-left" className="col-md-12">
+                            <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
                                 <div className="accordian sidebarNav">
                                     <ul className="list-unstyled mt-2 mb-2 ">
                                         <li id="list_unstyled-item" className="list_unstyled-item">

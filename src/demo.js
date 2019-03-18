@@ -2,14 +2,23 @@
 import $ from 'jquery';
 
 export function toggleIcon() {
-    //click show selct parts
+    /**click show menu li in mobile */
     $('.btn_sidebar-show').on('click', function () {
         document.getElementById("sidebarLeft").style.width = "100%";
+        if ($(window).width() <= 992) {
+            $('[id="dunnio_show-result"]').hide();
+        }
+
     });
+    /**click hide menu li in mobile */
     $('.btn_sidebar-hide').on('click', function () {
         document.getElementById("sidebarLeft").style.width = "0%";
+        if ($(window).width() <= 992) {
+            $('[id="dunnio_show-result"]').show();
+        }
     });
 
+    /**resize of mobile and pc */
     if ($(window).width() <= 992) {
 
         $('[id="btn_search"]').css({ "margin": "10px" })
@@ -47,6 +56,7 @@ export function toggleIcon() {
         alert('ok')
     });
 
+    /**show hide  option in li mobile and pc */
     $('.sidebar_title_accordian').on('click', function () {
         var li_number = $(this)[0].id.split('_')[1];
         var accordian_list = $(`[id="sidebar_accordian_list_${li_number}"]`)
@@ -54,16 +64,18 @@ export function toggleIcon() {
             $('ul.open').slideToggle().removeClass('open');
             $('.accordian h3 span').removeClass('closed');
             $('.accordian h3').removeClass('closed');
+
         } else {
             $('ul.open').slideToggle().removeClass('open');
             accordian_list.find('ul').slideToggle().addClass('open');
             $('.accordian h3, .accordian h3 span').removeClass('closed');
-            accordian_list.find('h3, h3 span').addClass('closed')
+            accordian_list.find('h3, h3 span').addClass('closed');
+
         }
     });
 
+    /**show option in li mobile and pc */
     var check_sub_menu = true;
-
     $('.list_unstyled-item').on('click', function () {
         if (check_sub_menu) {
             if ($(window).width() <= 992) {
@@ -90,12 +102,13 @@ export function toggleIcon() {
             if ($(window).width() >= 992) {
                 $('[id="sidebar_menu-left"]').show(200);
             }
+
             check_sub_menu = false;
 
         }
     });
 
-
+    /**hide option in li mobile and pc */
     $('.back-sub-menu').on('click', function () {
         if (!check_sub_menu) {
             if ($(window).width() <= 992) {
@@ -130,6 +143,10 @@ export function toggleIcon() {
 
     });
     // Active class adds open class
-    $('.accordian li.active ul').slideDown().addClass('open');
-    $('[id="start_list-design"]').click();
+
+    if ($('.sidebar_title_accordian')[0]) {
+        $('.sidebar_title_accordian')[0].click()
+    }
+
+    // jQuery
 }

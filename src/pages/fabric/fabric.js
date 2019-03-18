@@ -2,26 +2,15 @@ import React, { Component } from 'react';
 import HeaderComponent from '../../components/headerComponent';
 import ImageRenderComponent from '../../components/imageRenderComponent';
 import ActionFabricInfoComponent from '../../components/actionFabricInfoComponent';
+import { actFetchFabricRequest } from '../../actions/fabric';
+import { connect } from 'react-redux';
 class FabricPage extends Component {
 
+    componentDidMount() {
+        this.props.fetchAllFabrics();
+    }
     render() {
-        var parts = [
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },
-            { id: 'MN64564', price: '2 000 000đ' },]
-
+        var { fabrics } = this.props;
         return (
             <div>
 
@@ -42,8 +31,8 @@ class FabricPage extends Component {
                             <input id="btn_search" type="text" className="form-control" name="search" placeholder="Tìm kiếm vải...." />
                         </div>
                         <br></br>
-                        <div className="row" id="scrollbar_custom">
-                            {this.showPartsList(parts)}
+                        <div className="row " id="scrollbar_custom">
+                            {this.showFabricList(fabrics)}
                         </div>
                     </div>
                     {/**END::Hiển hị menu bên phải */}
@@ -64,25 +53,44 @@ class FabricPage extends Component {
         );
     }
 
-    showPartsList = parts => {
+    showFabricList = fabrics => {
         let result = null;
-        if (parts.length > 0) {
-            result = parts.map((part, index) => {
-                return (
-                    <div id="item-show_part" className="col-md-4 col-4" key={index} onClick={() => this.selectPart(part)}>
-                        <img src="https://www.upsieutoc.com/images/2019/03/18/482_huge_c300.jpg" className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
-                        <a>{part.id}</a>
-                        <label style={{ color: 'red' }}>{part.price}</label>
-                    </div>
-                )
+        if (fabrics.length > 0) {
+            result = fabrics.map((fabric, index) => {
+                if (fabric.price) {
+                    return (
+                        <div id="item-show_part" className="col-md-4 col-4 scrollbox-content" key={index} >
+                            <img src={fabric.images.length > 0 ? fabric.images[0] : 'http://www.grondals.com/wp-content/themes/Anchor/images/bolg_noimage.jpg'} onClick={() => this.selectFabric(fabric)} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                            <a href="#" className="thumb_preview"><i className="fa fa-search"></i></a>
+                            <a>{fabric.name}</a><br></br>
+                            <label style={{ color: 'red' }}>{fabric.price}</label>
+                        </div>
+                    )
+                }
             })
         }
         return result;
     }
 
-    selectPart = part => {
-        alert(part.id)
+    selectFabric = fabric => {
+        alert(fabric.name)
     }
 }
 
-export default FabricPage;
+
+const mapStateToProps = state => {
+    return {
+        fabrics: state.fabrics
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchAllFabrics: () => {
+            dispatch(actFetchFabricRequest())
+        }
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FabricPage);
