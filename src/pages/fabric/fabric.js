@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import HeaderComponent from '../../components/headerComponent';
 import ImageRenderComponent from '../../components/imageRenderComponent';
 import ActionFabricInfoComponent from '../../components/actionFabricInfoComponent';
-
 class FabricPage extends Component {
 
     render() {
@@ -71,7 +70,7 @@ class FabricPage extends Component {
             result = parts.map((part, index) => {
                 return (
                     <div id="item-show_part" className="col-md-4 col-4" key={index} onClick={() => this.selectPart(part)}>
-                        <img src="https://d2w9m16hs9jc37.cloudfront.net/dimg/fabric/suit/482_huge_c300.jpg" className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                        <img src="https://www.upsieutoc.com/images/2019/03/18/482_huge_c300.jpg" className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
                         <a>{part.id}</a>
                         <label style={{ color: 'red' }}>{part.price}</label>
                     </div>

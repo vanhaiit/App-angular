@@ -4,7 +4,7 @@ import $ from 'jquery';
 export function toggleIcon() {
     //click show selct parts
     $('.btn_sidebar-show').on('click', function () {
-        document.getElementById("sidebarLeft").style.width = "95%";
+        document.getElementById("sidebarLeft").style.width = "100%";
     });
     $('.btn_sidebar-hide').on('click', function () {
         document.getElementById("sidebarLeft").style.width = "0%";
@@ -26,7 +26,7 @@ export function toggleIcon() {
         $('[class="list-unstyled mt-3 mb-4"]').hide();
         $('[class="card-title pricing-card-title mt-10 text_bold"]').hide();
 
-        $('[ id="viewport"]').css({ 'left': '-345px' })
+        $('[ id="viewport"]').css({ 'left': '-355px' })
 
         $('[id="img_detail-part"]').hide();
         $('[id="scrollbar_custom"]').addClass('curtain_menu-mobile');
