@@ -106,7 +106,7 @@ class ConfigPage extends Component {
         if (this.state.properties.length > 0) {
             result = this.state.properties.map((item, index) => {
                 return (
-                    <div className={`col-md-6 col-6 option_trigger ${index === 0 ? 'active_trigger' : ''}`} key={index} >
+                    <div className={`col-md-6 col-6 option_trigger ${index === 0 ? 'active_trigger' : ''}`} key={index} onClick={() => this.optionStyleTrigger(item)} >
                         <i className={`icon-${item.img_icon} large-icon`} ></i>
                         <div className="text-uppercase">{item.value}</div>
                     </div>
@@ -122,6 +122,11 @@ class ConfigPage extends Component {
         this.setState({
             properties: properties_value
         })
+    }
+
+    optionStyleTrigger = style => {
+        console.log(style);
+
     }
 
 

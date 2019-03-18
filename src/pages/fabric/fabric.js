@@ -58,8 +58,10 @@ class FabricPage extends Component {
         if (fabrics.length > 0) {
             result = fabrics.map((fabric, index) => {
                 if (fabric.price) {
+                    var active = '';
+                    index == 0 ? active = "active_img" : active = '';
                     return (
-                        <div id="item-show_part" className="col-md-4 col-4 scrollbox-content" key={index} >
+                        <div id="item-show_part" className={`col-md-4 col-4 scrollbox-content ${active}`} key={index} >
                             <img src={fabric.images.length > 0 ? fabric.images[0] : 'http://www.grondals.com/wp-content/themes/Anchor/images/bolg_noimage.jpg'} onClick={() => this.selectFabric(fabric)} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
                             <a href="#" className="thumb_preview"><i className="fa fa-search"></i></a>
                             <a>{fabric.name}</a><br></br>

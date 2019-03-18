@@ -35,7 +35,7 @@ export function toggleIcon() {
         $('[class="list-unstyled mt-3 mb-4"]').hide();
         $('[class="card-title pricing-card-title mt-10 text_bold"]').hide();
 
-        $('[ id="viewport"]').css({ 'left': '-355px' })
+        $('[ id="viewport"]').css({ 'left': '-350px' })
 
         $('[id="img_detail-part"]').hide();
         $('[id="scrollbar_custom"]').addClass('curtain_menu-mobile');

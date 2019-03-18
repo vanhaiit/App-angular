@@ -384,6 +384,19 @@ li {
   border-left:1px solid #eee ; 
 }
 
+.active_img:before{
+  content: "";
+    display: block;
+    background: url("https://img.icons8.com/dotty/80/000000/checked.png") no-repeat;
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 0;
+    position: absolute;
+    left: 15px;
+}
+
 
 
 
