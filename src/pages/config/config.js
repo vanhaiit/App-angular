@@ -126,7 +126,7 @@ class ConfigPage extends Component {
 
     optionStyleTrigger = style => {
         console.log(style);
-
+        alert(style.id)
     }
 
 
