@@ -254,7 +254,7 @@ const initPropeties = {
                 opacity: 1,
                 className: 'waistcoat',
                 zIndex: 100,
-                element: ["neck_single_breasted+buttons_5", "lapel_medium", "style_lapel_no"]
+                element: ["neck_single_breasted+buttons_5", "style_lapel_no"],
             },
             {
                 key: "vat_ao_gile",
