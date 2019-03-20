@@ -39,7 +39,7 @@ class ImageRenderComponent extends Component {
     }
 
     setProperties = (style) => {
-        console.log(style);
+        //  console.log(style);
 
         if (!style) return false;
         var indexType; var propetiesUpdate = [];
@@ -89,14 +89,24 @@ class ImageRenderComponent extends Component {
         });
 
         if (style.short_key === "G") {
+            var numberElements = style.index.ao_gile;
+            if (numberElements) {
+                numberElements.length == 2 ? numberElements = true : numberElements = false;
+            } else {
+                numberElements = true;
+            }
+            console.log(numberElements);
             initPropeties.gile.value.map(p => {
                 style.group.map(g => {
-                    if (p.key === g) {
-                        if (style.image[g].front) p.element[indexType] = style.image[g].front[0];
-                        p['index'] = style.index[g]
-                    }
+                    if (numberElements == undefined || numberElements == true)
+                        if (p.key === g) {
+                            if (style.image[g].front) p.element[indexType] = style.image[g].front[0];
+                            p['index'] = style.index[g];
+                        }
                 });
-                propetiesUpdate.push(p)
+                propetiesUpdate.push(p);
+
+
             });
         }
 
@@ -111,7 +121,7 @@ class ImageRenderComponent extends Component {
                 propetiesUpdate.push(p)
             });
         }
-
+        // console.log(propetiesUpdate);
         this.setState({
             initPropeties: propetiesUpdate,
             short_key: style.short_key

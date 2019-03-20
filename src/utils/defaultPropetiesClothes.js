@@ -333,7 +333,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["necklines_classic", "number_1", "button_close_standard"]
             },
@@ -344,7 +344,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["fit_fit", "button_close_standard", "inside"]
             },
@@ -355,7 +355,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["sleeves_long+cuffs_classic"]
             },
@@ -366,7 +366,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["empty"]
             },
@@ -377,7 +377,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["empty"]
             },
@@ -388,7 +388,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["fit_fit", "inside"]
             },
@@ -399,7 +399,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["necklines_1_button"]
             },
@@ -410,7 +410,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["sleeves_long", "cuffs_style_cut"]
             },
@@ -421,7 +421,7 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'shirt',
                 opacity: 1,
-                className: 'shirt',
+                className: 'man_pant',
                 zIndex: 31,
                 element: ["empty"]
             }
