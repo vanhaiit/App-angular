@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import fabrics from './fabric'
+import fabrics from './fabric';
 const appReducers = combineReducers({
     fabrics
 });

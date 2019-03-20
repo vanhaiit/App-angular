@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import HeaderComponent from '../../components/headerComponent';
 import ImageRenderComponent from '../../components/imageRenderComponent';
 import ActionFabricInfoComponent from '../../components/actionFabricInfoComponent';
-import data from '../../utils/propertiesClothes'
+import data from '../../utils/propertiesClothes';
+import { connect } from 'react-redux';
+
+
 class ConfigPage extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            properties: []
+            properties: [],
+            key: null,
+            style: null,
+            active: null
         }
     }
 
@@ -43,7 +49,7 @@ class ConfigPage extends Component {
                                     <i className="fa fa-angle-left icon_back" aria-hidden="true" ></i>
                                 </div>
                                 <div className="row ">
-                                    {this.showPropertiesResult()}
+                                    {this.showPropertiesContent()}
                                 </div>
 
                             </div>
@@ -52,7 +58,8 @@ class ConfigPage extends Component {
                     {/**END::Phần menu bên trái */}
 
                     {/**BIGIN::Hiển hị kế quả khi lựa chọn */}
-                    <ImageRenderComponent />
+                    <ImageRenderComponent style={this.state.style} category={this.state.category}
+                        passRefUpward={ref => (this.imageRender = ref)} />
                     {/**END::Hiển hị kế quả khi lựa chọn */}
 
                     {/**BIGIN::Hiên thị giá tiền và chi tiết thiết kế đã chọ  */}
@@ -101,12 +108,12 @@ class ConfigPage extends Component {
         return sub_result;
     }
 
-    showPropertiesResult = () => {
+    showPropertiesContent = () => {
         var result = null;
         if (this.state.properties.length > 0) {
             result = this.state.properties.map((item, index) => {
                 return (
-                    <div className={`col-md-6 col-6 option_trigger ${index === 0 ? 'active_trigger' : ''}`} key={index} onClick={() => this.optionStyleTrigger(item)} >
+                    <div className={`col-md-6 col-6 option_trigger ${item.id == this.state.active ? 'active_trigger' : ''}`} key={index} onClick={() => this.optionStyleTrigger(item)} >
                         <i className={`icon-${item.img_icon} large-icon`} ></i>
                         <div className="text-uppercase">{item.value}</div>
                     </div>
@@ -120,16 +127,22 @@ class ConfigPage extends Component {
         var result = data.find(x => x.short_key === key).properties;
         var properties_value = result.find(x => x.props_name === name).values;
         this.setState({
-            properties: properties_value
-        })
+            properties: properties_value,
+            category: key,
+            style: properties_value[0]
+        });
     }
 
-    optionStyleTrigger = style => {
-        console.log(style);
-        alert(style.id)
+    optionStyleTrigger = properties => {
+        this.imageRender.setProperties(properties)
+        this.setState({
+            style: properties,
+            active: properties.id
+        });
+
     }
-
-
 }
 
-export default ConfigPage;
+
+
+export default connect(null, null)(ConfigPage);
