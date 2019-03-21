@@ -309,7 +309,7 @@ const initPropeties = {
                 opacity: 1,
                 className: 'waistcoat',
                 zIndex: 100,
-                element: ["back_lining"]
+                element: ["body_back"]
             }
         ]
     },

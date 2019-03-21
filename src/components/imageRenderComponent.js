@@ -5,7 +5,9 @@ class ImageRenderComponent extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            prefix: true
+        }
     }
 
     componentDidMount() {
@@ -25,7 +27,7 @@ class ImageRenderComponent extends Component {
                 if (element.index) { if (element.index[index] !== undefined) subUrl += e + "+"; } else { subUrl += e + "+"; }
             });
             subUrl = subUrl.slice(0, subUrl.length - 1);
-            if (element.prefix === "front/") {
+            if (element.prefix === "front/" && this.state.prefix) {
                 switch (element.key) {
                     case "caravat":
                         return <img key={index} name={`image_${index}`} id={`image_${index}_id`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
@@ -33,7 +35,7 @@ class ImageRenderComponent extends Component {
                         return <img key={index} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
                 }
             }
-
+            if (element.prefix === "back/" && !this.state.prefix) return <img key={index} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
         })
         return result;
     }
@@ -50,7 +52,10 @@ class ImageRenderComponent extends Component {
                 indexType = 2;
                 break;
             case "waistcoat_lapel":
-                if (style.id === "waistcoat_lapel_notch" || style.id === "waistcoat_lapel_peak" || style.id === "waistcoat_lapel_round") indexType = 2;
+                if (style.id === "waistcoat_lapel_notch"
+                    || style.id === "waistcoat_lapel_peak"
+                    || style.id === "waistcoat_lapel_round")
+                    indexType = 2;
                 else indexType = 1;
                 break;
             case "waistcoat_lapel_width":
@@ -68,11 +73,10 @@ class ImageRenderComponent extends Component {
                 style.group.map(g => {
                     if (p.key === g) {
                         if (p.key === 'tui_ao_vest' && style.props_name === "jacket_fit") indexType = 1;
-                        p.element[indexType] = style.image[g].front[0];
+                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
                         p['index'] = style.index[g]
                     }
                 });
-
                 propetiesUpdate.push(p)
             });
         }
@@ -80,7 +84,7 @@ class ImageRenderComponent extends Component {
         initPropeties.pants.value.map(p => {
             style.group.map(g => {
                 if (p.key === g) {
-                    if (style.image[g].front) p.element[indexType] = style.image[g].front[0];
+                    p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
                     p['index'] = style.index[g]
                 }
             });
@@ -100,10 +104,18 @@ class ImageRenderComponent extends Component {
                                     p.element.splice(indexType, 0, style.image[g].front[0])
                                 }
                             }
+                            if (style.image[g].back) {
+                                if (p.element.length === 3) {
+                                    p.element[indexType] = style.image[g].back[0]
+                                } else {
+                                    p.element.splice(1, 0, "lapel_medium")
+                                    p.element.splice(indexType, 0, style.image[g].back[0])
+                                }
+                            }
                             p['index'] = style.index[g];
                         } else {
                             if (p.element.length === 3) p.element.splice(1, 1)
-                            if (style.image[g].front) p.element[indexType] = style.image[g].front[0];
+                            p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
                             p['index'] = style.index[g];
                         }
                     }
@@ -116,13 +128,14 @@ class ImageRenderComponent extends Component {
             initPropeties.shirt.value.map(p => {
                 style.group.map(g => {
                     if (p.key === g) {
-                        if (style.image[g].front) p.element[indexType] = style.image[g].front[0];
+                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
                         p['index'] = style.index[g]
                     }
                 });
                 propetiesUpdate.push(p)
             });
         }
+        console.log(propetiesUpdate);
         this.setState({
             initPropeties: propetiesUpdate,
             short_key: style.short_key
@@ -147,19 +160,56 @@ class ImageRenderComponent extends Component {
         }
     }
 
+    revetseImageRender = () => {
+        var prefix = !this.state.prefix
+        this.setState({
+            prefix
+        })
+
+    }
+
+    showImageRenderReverse = () => {
+        if (this.state.prefix) {
+            return (
+                <div>
+                    <img src="http://cdn.csell.vn/duynguyen/3d/new_man/shirt/STD/699_fabric/front/shirt_to_jacket.png" className="shirt" style={{ zIndex: 20 }} />
+                    <img src="http://cdn.csell.vn/duynguyen/3d/new_man/models/STD/front/carlos.png" style={{ zIndex: 10 }} />
+                    <img src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/zapatos/black/front/zapatos.png" style={{ zIndex: 26 }} />
+                </div>
+            )
+        }
+        return (
+            <div>
+                <img src="http://cdn.csell.vn/duynguyen/3d/new_man/shirt/STD/699_fabric/back/shirt_to_pants.png" className="shirt" style={{ zIndex: 20 }} />
+                <img src="http://cdn.csell.vn/duynguyen/3d/new_man/models/STD/back/carlos.png" style={{ zIndex: 10 }} />
+                <img src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/zapatos/black/back/zapatos.png" style={{ zIndex: 26 }} />
+            </div>
+        )
+
+    }
+
     render() {
         return (
             <div className="col-md-5" id="dunnio_show-result" style={{ height: '700px' }}>
                 <span className="btn_sidebar-show" ><i className="fa fa-bars icon_back" ></i></span>
                 <div id="available_window" className="image_render man_suit fabric_step">
-                    <div className="layers viewport " id="viewport" style={{ width: '271px', left: '-284px', top: '0' }}>
+                    <div className="layers viewport " id="viewport" style={{ width: '250px', left: '-238px', top: '0' }}>
                         {this.showImageRender(this.state.initPropeties)}
                         {this.showSubImageRender(this.state.short_key)}
-                        <img src="http://cdn.csell.vn/duynguyen/3d/new_man/shirt/STD/699_fabric/front/shirt_to_jacket.png" className="shirt" style={{ zIndex: 20 }} />
-                        <img src="http://cdn.csell.vn/duynguyen/3d/new_man/models/STD/front/carlos.png" style={{ zIndex: 10 }} />
-                        <img src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/zapatos/black/front/zapatos.png" style={{ zIndex: 26 }} />
+                        {this.showImageRenderReverse()}
                     </div>
                 </div>
+                <div className="btn_togger_back_front">
+                    <span className="btngroup">
+                        <button className="btngroup--btn" onClick={() => this.revetseImageRender()}><i className="fas fa-sync-alt"></i></button>
+                        <span style={{ color: "#afafaf" }}>reverse</span>
+                        <button className="btngroup--btn"><i style={{ paddingLeft: "4px" }} className="fas fa-arrows-alt-v"></i></button>
+                        <span style={{ color: "#afafaf" }}>move</span>
+                        <button className="btngroup--btn"><i className="fas fa-tshirt"></i></button>
+                        <span style={{ color: "#afafaf" }}>jacket</span>
+                    </span>
+                </div>
+
             </div>
         );
     }

@@ -143,18 +143,13 @@ export function toggleIcon() {
 
     });
     // Active class adds open class
-
     // if ($('.sidebar_title_accordian')[0]) {
     //     $('.sidebar_title_accordian')[0].click()
     // }
-
-
     // jQuery
 
-    // document.querySelectorAll('img').forEach(function (img) {
-    //     img.onerror = function () {
-    //         this.style.display = 'none'; console.log(img);
-    //     };
-    // })
+    document.querySelectorAll('img').forEach(function (img) {
+        img.onerror = function () { this.src = 'https://i.imgur.com/YJkVeIT.png'; };
+    })
 
 }

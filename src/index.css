@@ -513,3 +513,34 @@ li {
   position:absolute;
   border:2px solid #EEE
 }
+
+span.btngroup {
+  width: 100%;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  bottom: 0;
+
+}
+button.btngroup--btn {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 100px;
+  background-color: #75242400;
+  cursor: pointer;
+  border: 1px solid #eee;
+  display: flex;
+  margin-bottom: 5px;
+  color: #afafaf;
+}
+button.btngroup--btn:focus{
+  background-color: #dfdfdf;
+  outline: none;
+}
+.btn_togger_back_front {
+  right: 10%;
+  bottom: 10%;
+  position: absolute;
+}
