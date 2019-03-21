@@ -135,21 +135,8 @@ export function toggleIcon() {
 
             $('[id="scrollbar_custom"]').attr('id', 'transfer_scrollbar');
             $('[id="transfer"]').attr('id', 'scrollbar_custom');
-
             check_sub_menu = true;
-
-
         }
 
     });
-    // Active class adds open class
-    // if ($('.sidebar_title_accordian')[0]) {
-    //     $('.sidebar_title_accordian')[0].click()
-    // }
-    // jQuery
-
-    document.querySelectorAll('img').forEach(function (img) {
-        img.onerror = function () { this.src = 'https://i.imgur.com/YJkVeIT.png'; };
-    })
-
 }

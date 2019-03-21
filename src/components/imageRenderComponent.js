@@ -20,6 +20,7 @@ class ImageRenderComponent extends Component {
     }
 
     showImageRender = images => {
+
         var result = images.map((element, index) => {
             var subUrl = "";
             if (element.element.length === 0) return false
@@ -27,21 +28,26 @@ class ImageRenderComponent extends Component {
                 if (element.index) { if (element.index[index] !== undefined) subUrl += e + "+"; } else { subUrl += e + "+"; }
             });
             subUrl = subUrl.slice(0, subUrl.length - 1);
+            console.log(subUrl);
+            if (subUrl === "empty+cut_slim" || subUrl === "empty" || subUrl === "cut_slim+cut_slim" || subUrl === "empty+third") return false;
             if (element.prefix === "front/" && this.state.prefix) {
                 switch (element.key) {
                     case "caravat":
                         return <img key={index} name={`image_${index}`} id={`image_${index}_id`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
                     default:
-                        return <img key={index} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                        return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
                 }
             }
-            if (element.prefix === "back/" && !this.state.prefix) return <img key={index} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+            if (element.prefix === "back/" && !this.state.prefix) return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
         })
+
         return result;
     }
 
     setProperties = (style) => {
         if (!style) return false;
+        console.log(style);
+
         var indexType; var propetiesUpdate = [];
         /**check index update element */
         switch (style.props_name) {
@@ -62,6 +68,15 @@ class ImageRenderComponent extends Component {
                 indexType = 1;
                 break;
             case "waistcoat_bottom":
+                indexType = 1;
+                break;
+            case "shirt_cuffs":
+                indexType = 1;
+                break;
+            case "shirt_neck_no_interfacing":
+                indexType = 1;
+                break;
+            case "shirt_neck_buttons":
                 indexType = 1;
                 break;
             default:
@@ -128,6 +143,9 @@ class ImageRenderComponent extends Component {
             initPropeties.shirt.value.map(p => {
                 style.group.map(g => {
                     if (p.key === g) {
+                        if (g === "co_ao_somi" && style.props_name === "shirt_neck_no_interfacing") indexType = 2;
+                        if (g === "nep_ao_somi") indexType = 1;
+                        if (g === "nep_ao_somi" && style.props_name === "shirt_fit") indexType = 0;
                         p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
                         p['index'] = style.index[g]
                     }
@@ -189,6 +207,7 @@ class ImageRenderComponent extends Component {
     }
 
     render() {
+
         return (
             <div className="col-md-5" id="dunnio_show-result" style={{ height: '700px' }}>
                 <span className="btn_sidebar-show" ><i className="fa fa-bars icon_back" ></i></span>
