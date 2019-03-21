@@ -46,7 +46,6 @@ class ImageRenderComponent extends Component {
 
     setProperties = (style) => {
         if (!style) return false;
-        console.log(style);
         style.short_key === "M" ? this.setState({ isTrenchcoat: true }) : this.setState({ isTrenchcoat: false })
         var indexType; var propetiesUpdate = [];
         /**check index update element */
