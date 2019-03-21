@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
 
-
 class ActionFabricInfoComponent extends Component {
-
 
     render() {
         var { fabric } = this.props;
         if (!fabric) {
             fabric = { images: ["http://www.grondals.com/wp-content/themes/Anchor/images/bolg_noimage.jpg"] }
         }
-
         return (
             <div className="col-md-3 " id="dunnio_show_detail-result">
                 <div className="card-body">
@@ -31,7 +28,6 @@ class ActionFabricInfoComponent extends Component {
                     </ul>
                 </div>
             </div>
-
         );
     }
 }

@@ -6,7 +6,8 @@ class ImageRenderComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            prefix: true
+            prefix: true,
+            isTrenchcoat: false
         }
     }
 
@@ -28,8 +29,7 @@ class ImageRenderComponent extends Component {
                 if (element.index) { if (element.index[index] !== undefined) subUrl += e + "+"; } else { subUrl += e + "+"; }
             });
             subUrl = subUrl.slice(0, subUrl.length - 1);
-            console.log(subUrl);
-            if (subUrl === "empty+cut_slim" || subUrl === "empty" || subUrl === "cut_slim+cut_slim" || subUrl === "empty+third") return false;
+            if (subUrl === "empty+cut_slim" || subUrl === "empty" || subUrl === "cut_slim+cut_slim" || subUrl === "empty+third" || subUrl === "cut_regular+cut_slim") return false;
             if (element.prefix === "front/" && this.state.prefix) {
                 switch (element.key) {
                     case "caravat":
@@ -47,7 +47,7 @@ class ImageRenderComponent extends Component {
     setProperties = (style) => {
         if (!style) return false;
         console.log(style);
-
+        style.short_key === "M" ? this.setState({ isTrenchcoat: true }) : this.setState({ isTrenchcoat: false })
         var indexType; var propetiesUpdate = [];
         /**check index update element */
         switch (style.props_name) {
@@ -83,6 +83,7 @@ class ImageRenderComponent extends Component {
                 indexType = 0;
                 break;
         }
+
         if (style.short_key === "V") {
             initPropeties.jacket.value.map(p => {
                 style.group.map(g => {
@@ -96,15 +97,17 @@ class ImageRenderComponent extends Component {
             });
         }
 
-        initPropeties.pants.value.map(p => {
-            style.group.map(g => {
-                if (p.key === g) {
-                    p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-                    p['index'] = style.index[g]
-                }
+        if (style.short_key === "V" || style.short_key === "G" || style.short_key === "S" || style.short_key === "Q") {
+            initPropeties.pants.value.map(p => {
+                style.group.map(g => {
+                    if (p.key === g) {
+                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
+                        p['index'] = style.index[g]
+                    }
+                });
+                propetiesUpdate.push(p)
             });
-            propetiesUpdate.push(p)
-        });
+        }
 
         if (style.short_key === "G") {
             initPropeties.gile.value.map(p => {
@@ -153,7 +156,19 @@ class ImageRenderComponent extends Component {
                 propetiesUpdate.push(p)
             });
         }
-        console.log(propetiesUpdate);
+
+        if (style.short_key === "M") {
+            initPropeties.coat.value.map(p => {
+                style.group.map(g => {
+                    if (p.key === g) {
+                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
+                        p['index'] = style.index[g]
+                    }
+                });
+                propetiesUpdate.push(p)
+            });
+        }
+
         this.setState({
             initPropeties: propetiesUpdate,
             short_key: style.short_key
@@ -175,6 +190,8 @@ class ImageRenderComponent extends Component {
                 )
             case "S":
                 return true;
+            case "M":
+                return true;
         }
     }
 
@@ -187,6 +204,7 @@ class ImageRenderComponent extends Component {
     }
 
     showImageRenderReverse = () => {
+        if (this.state.isTrenchcoat) return true;
         if (this.state.prefix) {
             return (
                 <div>
@@ -205,7 +223,6 @@ class ImageRenderComponent extends Component {
         )
 
     }
-
     render() {
 
         return (
@@ -233,5 +250,6 @@ class ImageRenderComponent extends Component {
         );
     }
 }
+
 
 export default ImageRenderComponent;
