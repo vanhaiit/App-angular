@@ -5,7 +5,6 @@ import ActionFabricInfoComponent from '../../components/actionFabricInfoComponen
 import data from '../../utils/propertiesClothes';
 import { connect } from 'react-redux';
 
-
 class ConfigPage extends Component {
     constructor(props) {
         super(props);
@@ -113,7 +112,7 @@ class ConfigPage extends Component {
         if (this.state.properties.length > 0) {
             result = this.state.properties.map((item, index) => {
                 return (
-                    <div className={`col-md-6 col-6 option_trigger ${item.id == this.state.active ? 'active_trigger' : ''}`} key={index} onClick={() => this.optionStyleTrigger(item)} >
+                    <div className={`col-md-6 col-6 option_trigger ${item.id === this.state.active ? 'active_trigger' : ''}`} key={index} onClick={() => this.optionStyleTrigger(item)} >
                         <i className={`icon-${item.img_icon} large-icon`} ></i>
                         <div className="text-uppercase">{item.value}</div>
                     </div>

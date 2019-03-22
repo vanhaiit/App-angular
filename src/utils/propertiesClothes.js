@@ -1628,7 +1628,7 @@ const data = [
                         "id": "pants_fastening_center_no_button",
                         "image": {
                             "cap_quan": {
-                                "front": ["fastening_center+hidden_button"],
+                                "front": ["fastening_moved+hidden_button"],
                             },
                         },
                         "img_icon": "q-9",
@@ -1644,7 +1644,7 @@ const data = [
                         "id": "pants_fastening_moved_no_button",
                         "image": {
                             "cap_quan": {
-                                "front": ["fastening_moved+hidden_button"],
+                                "front": ["fastening_center+hidden_button"],
                             },
                         },
                         "img_icon": "q-7",

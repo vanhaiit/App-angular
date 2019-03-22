@@ -97,8 +97,8 @@ class ImageRenderComponent extends Component {
                         p['index'] = style.index[g];
                     }
                 });
-                if (this.isNotExists && p.key === "ao_gile" && p.index.length == 3) p.index.splice(1, 1);
-                if (!this.isNotExists && p.key === "ao_gile" && p.index.length == 2) p.index.splice(1, 0, 1);
+                if (this.isNotExists && p.key === "ao_gile" && p.index.length === 3) p.index.splice(1, 1);
+                if (!this.isNotExists && p.key === "ao_gile" && p.index.length === 2) p.index.splice(1, 0, 1);
 
                 propetiesUpdate.push(p);
             });
@@ -110,7 +110,7 @@ class ImageRenderComponent extends Component {
                     if (p.key === g) {
                         style.index[g].forEach((ix, index) => {
                             if (!style.special) {
-                                p.element[ix] = style.image[g].front[ix];
+                                p.element[ix] = style.image[g].front[index] ? style.image[g].front[ix] : p.element[ix];
                             } else {
                                 if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
                                 if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
