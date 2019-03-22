@@ -10,7 +10,6 @@ class ImageRenderComponent extends Component {
         }
     }
 
-
     componentDidMount() { if (this.props.passRefUpward) this.props.passRefUpward(this); }
 
     componentWillMount() { var images = initPropeties.jacket.value.concat(initPropeties.pants.value); this.setState({ initPropeties: images }) }
@@ -37,104 +36,92 @@ class ImageRenderComponent extends Component {
 
         console.log(style);
         if (!style) return false;
-        var indexType; var propetiesUpdate = [];
-        /**check index update element */
-        switch (style.props_name) {
-            case "jacket_wide_lapel":
-                indexType = 1;
-                break;
-            case "jacket_lapel_type":
-                indexType = 2;
-                break;
-            case "waistcoat_lapel":
-                indexType = 2;
-                break;
-            case "waistcoat_lapel_width":
-                indexType = 1;
-                break;
-            case "waistcoat_bottom":
-                indexType = 1;
-                break;
-            case "shirt_cuffs":
-                indexType = 1;
-                break;
-            case "shirt_neck_no_interfacing":
-                indexType = 1;
-                break;
-            case "shirt_neck_buttons":
-                indexType = 1;
-                break;
-            default:
-                indexType = 0;
-                break;
+        var propetiesUpdate = [];
+
+        if (style.short_key === "V" || style.short_key === "M") {
+            initPropeties.jacket.value.map(p => {
+                style.group.map(g => {
+                    if (p.key === g) {
+                        style.index[g].forEach((ix, index) => {
+                            if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                            if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                        });
+                        p['index'] = style.index[g]
+                    }
+                });
+                propetiesUpdate.push(p)
+            });
         }
 
-        // if (style.short_key === "V") {
-        //     initPropeties.jacket.value.map(p => {
-        //         style.group.map(g => {
-        //             if (p.key === g) {
-        //                 if (p.key === 'tui_ao_vest' && style.props_name === "jacket_fit") indexType = 1;
-        //                 p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-        //                 p['index'] = style.index[g]
-        //             }
-        //         });
-        //         propetiesUpdate.push(p)
-        //     });
-        // }
+        initPropeties.pants.value.map(p => {
+            style.group.map(g => {
+                if (p.key === g) {
+                    style.index[g].forEach((ix, index) => {
+                        if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                        if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                    });
+                    p['index'] = style.index[g]
+                }
+            });
+            propetiesUpdate.push(p)
+        });
 
+        if (style.short_key === "S") {
+            initPropeties.shirt.value.map(p => {
+                style.group.map(g => {
+                    if (p.key === g) {
+                        style.index[g].forEach((ix, index) => {
+                            if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                            if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                        });
+                        p['index'] = style.index[g];
+                    }
+                });
 
-        // initPropeties.pants.value.map(p => {
-        //     style.group.map(g => {
-        //         if (p.key === g) {
-        //             p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-        //             p['index'] = style.index[g]
-        //         }
-        //     });
-        //     propetiesUpdate.push(p)
-        // });
+                propetiesUpdate.push(p)
+            });
+        }
 
-        // if (style.short_key === "G") {
-        //     if (style.id === "waistcoat_lapel_peak" || style.id === "waistcoat_lapel_round" || style.id === "waistcoat_lapel_notch") this.isNotExists = false;
-        //     if (style.id === "waistcoat_no_lapel" || style.id === "waistcoat_piece") this.isNotExists = true;
-        //     initPropeties.gile.value.map(p => {
-        //         if (style.group.length === 0 && p.key === "ao_gile") p['index'] = [0, 1, 2];
-        //         style.group.map(g => {
-        //             if (p.key === g) {
-        //                 p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-        //                 p['index'] = style.index[g];
-        //             }
-        //         });
-        //         if (this.isNotExists && p.key === "ao_gile" && p.index.length == 3) p.index.splice(1, 1);
-        //         if (!this.isNotExists && p.key === "ao_gile" && p.index.length == 2) p.index.splice(1, 0, 1);
+        if (style.short_key === "G") {
+            if (style.id === "waistcoat_lapel_peak" || style.id === "waistcoat_lapel_round" || style.id === "waistcoat_lapel_notch") this.isNotExists = false;
+            if (style.id === "waistcoat_no_lapel" || style.id === "waistcoat_piece") this.isNotExists = true;
+            initPropeties.gile.value.map(p => {
+                if (style.group.length === 0 && p.key === "ao_gile") p['index'] = [0, 1, 2];
+                style.group.map(g => {
+                    if (p.key === g) {
+                        style.index[g].forEach((ix, index) => {
+                            if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                            if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                            if (style.special && p.key === "ao_gile") if (style.special === "style_lapel_no") p.element[2] = "style_lapel_no";
+                        });
+                        p['index'] = style.index[g];
+                    }
+                });
+                if (this.isNotExists && p.key === "ao_gile" && p.index.length == 3) p.index.splice(1, 1);
+                if (!this.isNotExists && p.key === "ao_gile" && p.index.length == 2) p.index.splice(1, 0, 1);
 
-        //         propetiesUpdate.push(p);
-        //     });
-        // }
-
-        // if (style.short_key === "S") {
-        //     initPropeties.shirt.value.map(p => {
-        //         style.group.map(g => {
-        //             if (p.key === g) {
-        //                 if (g === "co_ao_somi" && style.props_name === "shirt_neck_no_interfacing") indexType = 2;
-        //                 if (g === "nep_ao_somi") indexType = 1;
-        //                 if (g === "nep_ao_somi" && style.props_name === "shirt_fit") indexType = 0;
-        //                 p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-        //                 p['index'] = style.index[g];
-        //             }
-        //         });
-
-        //         propetiesUpdate.push(p)
-        //     });
-        // }
+                propetiesUpdate.push(p);
+            });
+        }
 
         if (style.short_key === "M") {
             initPropeties.coat.value.map(p => {
                 style.group.map(g => {
                     if (p.key === g) {
-                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-                        p['index'] = style.index[g]
+                        style.index[g].forEach((ix, index) => {
+                            if (!style.special) {
+                                p.element[ix] = style.image[g].front[ix];
+                            } else {
+                                if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                                if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                                if (ix > index) p.element[ix] = style.image[g].front[ix];
+                            }
+
+                        });
+                        style.special ? p['index'] = style.index[g] : p['index'] = p["index"];
                     }
                 });
+
                 propetiesUpdate.push(p);
             });
         }

@@ -2,7 +2,7 @@
 const data = [
     {
         "short_key": "V",
-        "displayname": "Vest",
+        "displayname": "Áo vest",
         "level": 1,
         "properties": [
             {
@@ -17,7 +17,7 @@ const data = [
                         "id": "single_breasted_buttons_2",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["neck_single_breasted+buttons_2"],
+                                "front": ["neck_single_breasted+buttons_2", "", ""],
                             },
                             "vat_ao_vest": {
                                 "front": ["bottom_single_breasted+length_long+hemline_open"],
@@ -62,19 +62,19 @@ const data = [
                                 "front": ["interior+espalda_abajo+length_long+unlined_v2"]
                             },
                             "cuc_boc_vai_truoc": {
-                                "front": ["neck_single_breasted+buttons_2"]
+                                "front": ["neck_single_breasted+buttons_2", "", ""]
                             },
                             "holes_ban_ve": {
-                                "front": ["neck_single_breasted+buttons_2"]
+                                "front": ["neck_single_breasted+buttons_2", "", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_2"]
+                                "front": ["neck_single_breasted+buttons_2", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_2"]
+                                "front": ["neck_single_breasted+buttons_2", "", ""]
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["neck_single_breasted+buttons_2"]
+                                "front": ["neck_single_breasted+buttons_2", "", ""]
                             }
                         },
                         "group_extra": ["default_lot_ao_vest_tren", "default_lot_ao_vest_duoi",
@@ -104,7 +104,7 @@ const data = [
                         "id": "single_breasted_buttons_1",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["neck_single_breasted+buttons_1"],
+                                "front": ["neck_single_breasted+buttons_1", "", ""],
                             },
                             "vat_ao_vest": {
                                 "front": ["bottom_single_breasted+length_long+hemline_open"],
@@ -149,19 +149,19 @@ const data = [
                                 "front": ["interior+espalda_abajo+length_long+unlined_v2"]
                             },
                             "cuc_boc_vai_truoc": {
-                                "front": ["neck_single_breasted+buttons_1"]
+                                "front": ["neck_single_breasted+buttons_1", "", ""]
                             },
                             "holes_ban_ve": {
-                                "front": ["neck_single_breasted+buttons_1"]
+                                "front": ["neck_single_breasted+buttons_1", "", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_1"]
+                                "front": ["neck_single_breasted+buttons_1", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_1"]
+                                "front": ["neck_single_breasted+buttons_1", "", ""]
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["neck_single_breasted+buttons_1"]
+                                "front": ["neck_single_breasted+buttons_1", "", ""]
                             }
                         },
                         "group_extra": ["default_lot_ao_vest_tren", "default_lot_ao_vest_duoi",
@@ -191,7 +191,7 @@ const data = [
                         "id": "single_breasted_buttons_3",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["neck_single_breasted+buttons_3"],
+                                "front": ["neck_single_breasted+buttons_3", "", ""],
                             },
                             "vat_ao_vest": {
                                 "front": ["bottom_single_breasted+length_long+hemline_open"],
@@ -236,19 +236,19 @@ const data = [
                                 "front": ["interior+espalda_abajo+length_long+unlined_v2"]
                             },
                             "cuc_boc_vai_truoc": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", ""]
                             },
                             "holes_ban_ve": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", ""]
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", ""]
                             }
                         },
                         "group_extra": ["default_lot_ao_vest_tren", "default_lot_ao_vest_duoi",
@@ -278,7 +278,7 @@ const data = [
                         "id": "double_breasted_buttons_2",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["neck_double_breasted+buttons_2"],
+                                "front": ["neck_double_breasted+buttons_2", "", ""],
                             },
                             "vat_ao_vest": {
                                 "front": ["bottom_double_breasted+length_long"],
@@ -323,19 +323,19 @@ const data = [
                                 "front": ["interior+espalda_abajo+length_long+unlined_v2"]
                             },
                             "cuc_boc_vai_truoc": {
-                                "front": ["neck_double_breasted+buttons_2"]
+                                "front": ["neck_double_breasted+buttons_2", "", ""]
                             },
                             "holes_ban_ve": {
-                                "front": ["neck_double_breasted+buttons_2"]
+                                "front": ["neck_double_breasted+buttons_2", "", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_2"]
+                                "front": ["neck_double_breasted+buttons_2", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_2"]
+                                "front": ["neck_double_breasted+buttons_2", "", ""]
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["neck_double_breasted+buttons_2"]
+                                "front": ["neck_double_breasted+buttons_2", "", ""]
                             }
                         },
                         "group_extra": ["default_lot_ao_vest_tren", "default_lot_ao_vest_duoi",
@@ -365,7 +365,7 @@ const data = [
                         "id": "double_breasted_buttons_4",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["neck_double_breasted+buttons_4"],
+                                "front": ["neck_double_breasted+buttons_4", "", ""],
                             },
                             "vat_ao_vest": {
                                 "front": ["bottom_double_breasted+length_long"],
@@ -410,19 +410,19 @@ const data = [
                                 "front": ["interior+espalda_abajo+length_long+unlined_v2"]
                             },
                             "cuc_boc_vai_truoc": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", ""]
                             },
                             "holes_ban_ve": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", ""]
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", ""]
                             }
                         },
                         "group_extra": ["default_lot_ao_vest_tren", "default_lot_ao_vest_duoi",
@@ -452,7 +452,7 @@ const data = [
                         "id": "double_breasted_buttons_6",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["neck_double_breasted+buttons_6"],
+                                "front": ["neck_double_breasted+buttons_6", "", ""],
                             },
                             "vat_ao_vest": {
                                 "front": ["bottom_double_breasted+length_long"],
@@ -497,19 +497,19 @@ const data = [
                                 "front": ["interior+espalda_abajo+length_long+unlined_v2"]
                             },
                             "cuc_boc_vai_truoc": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", ""]
                             },
                             "holes_ban_ve": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", ""]
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", ""]
                             }
                         },
                         "group_extra": ["default_lot_ao_vest_tren", "default_lot_ao_vest_duoi",
@@ -539,7 +539,7 @@ const data = [
                         "id": "neck_mao",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["neck_mao"],
+                                "front": ["neck_mao", "", ""],
                             },
                             "vat_ao_vest": {
                                 "front": ["bottom_mao+length_long"],
@@ -635,7 +635,7 @@ const data = [
                         "id": "jacket_lapel_notch",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["style_lapel_notch"],
+                                "front": ["", "", "style_lapel_notch"],
                             },
                         },
                         "img_icon": "v-11",
@@ -649,16 +649,16 @@ const data = [
                         "props_name": "jacket_lapel_type",
                         "image_extra": {
                             "holes_ban_ve": {
-                                "front": ["style_lapel_notch"],
+                                "front": ["", "", "style_lapel_notch", ""],
                             },
                             "holes_kieu_dang": {
-                                "front": ["style_lapel_notch"],
+                                "front": ["", "", "style_lapel_notch"],
                             },
                             "threads_kieu_dang": {
-                                "front": ["style_lapel_notch"],
+                                "front": ["", "", "style_lapel_notch"],
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["style_lapel_notch"],
+                                "front": ["", "", "style_lapel_notch"],
                             }
                         },
                         "group_extra": ["holes_ban_ve", "holes_kieu_dang", "threads_kieu_dang", "bong_ve_ao_vest"],
@@ -674,7 +674,7 @@ const data = [
                         "id": "jacket_lapel_peak",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["style_lapel_peak"]
+                                "front": ["", "", "style_lapel_peak"]
                             },
                         },
                         "img_icon": "v-12",
@@ -688,16 +688,16 @@ const data = [
                         "props_name": "jacket_lapel_type",
                         "image_extra": {
                             "holes_ban_ve": {
-                                "front": ["style_lapel_peak"],
+                                "front": ["", "", "style_lapel_peak", ""],
                             },
                             "holes_kieu_dang": {
-                                "front": ["style_lapel_peak"],
+                                "front": ["", "", "style_lapel_peak"],
                             },
                             "threads_kieu_dang": {
-                                "front": ["style_lapel_peak"],
+                                "front": ["", "", "style_lapel_peak"],
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["style_lapel_peak"],
+                                "front": ["", "", "style_lapel_peak"],
                             }
                         },
                         "group_extra": ["holes_ban_ve", "holes_kieu_dang", "threads_kieu_dang", "bong_ve_ao_vest"],
@@ -713,7 +713,7 @@ const data = [
                         "id": "jacket_lapel_round",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["style_lapel_round"]
+                                "front": ["", "", "style_lapel_round"]
                             },
                         },
                         "img_icon": "v-13",
@@ -727,16 +727,16 @@ const data = [
                         "props_name": "jacket_lapel_type",
                         "image_extra": {
                             "holes_ban_ve": {
-                                "front": ["style_lapel_round"],
+                                "front": ["", "", "style_lapel_round", ""],
                             },
                             "holes_kieu_dang": {
-                                "front": ["style_lapel_round"],
+                                "front": ["", "", "style_lapel_round"],
                             },
                             "threads_kieu_dang": {
-                                "front": ["style_lapel_round"],
+                                "front": ["", "", "style_lapel_round"],
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["style_lapel_round"],
+                                "front": ["", "", "style_lapel_round"],
                             }
                         },
                         "group_extra": ["holes_ban_ve", "holes_kieu_dang", "threads_kieu_dang", "bong_ve_ao_vest"],
@@ -761,7 +761,7 @@ const data = [
                         "id": "jacket_lapel_medium",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["lapel_medium"],
+                                "front": ["", "lapel_medium", ""],
                             },
                         },
                         "img_icon": "v-11",
@@ -774,16 +774,16 @@ const data = [
                         "props_name": "jacket_wide_lapel",
                         "image_extra": {
                             "holes_ban_ve": {
-                                "front": ["lapel_medium"],
+                                "front": ["", "lapel_medium", "", ""],
                             },
                             "holes_kieu_dang": {
-                                "front": ["lapel_medium"],
+                                "front": ["", "lapel_medium", ""],
                             },
                             "threads_kieu_dang": {
-                                "front": ["lapel_medium"],
+                                "front": ["", "lapel_medium", ""],
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["lapel_medium"],
+                                "front": ["", "lapel_medium", ""],
                             }
                         },
                         "group_extra": ["holes_ban_ve", "holes_kieu_dang", "threads_kieu_dang", "bong_ve_ao_vest"],
@@ -799,7 +799,7 @@ const data = [
                         "id": "jacket_lapel_narrow",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["lapel_narrow"],
+                                "front": ["", "lapel_narrow", ""],
                             },
                         },
                         "img_icon": "v-14",
@@ -812,16 +812,16 @@ const data = [
                         "props_name": "jacket_wide_lapel",
                         "image_extra": {
                             "holes_ban_ve": {
-                                "front": ["lapel_narrow"],
+                                "front": ["", "lapel_narrow", "", ""],
                             },
                             "holes_kieu_dang": {
-                                "front": ["lapel_narrow"],
+                                "front": ["", "lapel_narrow", ""],
                             },
                             "threads_kieu_dang": {
-                                "front": ["lapel_narrow"],
+                                "front": ["", "lapel_narrow", ""],
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["lapel_narrow"],
+                                "front": ["", "lapel_narrow", ""],
                             }
                         },
                         "group_extra": ["holes_ban_ve", "holes_kieu_dang", "threads_kieu_dang", "bong_ve_ao_vest"],
@@ -837,7 +837,7 @@ const data = [
                         "id": "jacket_lapel_wide",
                         "image": {
                             "giua_ao_vest": {
-                                "front": ["lapel_wide"],
+                                "front": ["", "lapel_wide", ""],
                             },
                         },
                         "img_icon": "v-15",
@@ -850,16 +850,16 @@ const data = [
                         "props_name": "jacket_wide_lapel",
                         "image_extra": {
                             "holes_ban_ve": {
-                                "front": ["lapel_wide"],
+                                "front": ["", "lapel_wide", "", ""],
                             },
                             "holes_kieu_dang": {
-                                "front": ["lapel_wide"],
+                                "front": ["", "lapel_wide", ""],
                             },
                             "threads_kieu_dang": {
-                                "front": ["lapel_wide"],
+                                "front": ["", "lapel_wide", ""],
                             },
                             "bong_ve_ao_vest": {
-                                "front": ["lapel_wide"],
+                                "front": ["", "lapel_wide", ""],
                             }
                         },
                         "group_extra": ["holes_ban_ve", "holes_kieu_dang", "threads_kieu_dang", "bong_ve_ao_vest"],
@@ -1004,10 +1004,10 @@ const data = [
                                 "front": ["fit_slim"],
                             },
                             "tui_ao_vest": {
-                                "front": ["fit_slim"],
+                                "front": ["", "fit_slim"],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["fit_slim"],
+                                "front": ["", "fit_slim", ""],
                             }
                         },
                         "img_icon": "v-9",
@@ -1029,10 +1029,10 @@ const data = [
                                 "front": ["body_baggy"],
                             },
                             "tui_ao_vest": {
-                                "front": ["fit_baggy"],
+                                "front": ["", "fit_baggy"],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["fit_baggy"],
+                                "front": ["", "fit_baggy", ""],
                             }
                         },
                         "img_icon": "v-10",
@@ -1060,10 +1060,10 @@ const data = [
                         "id": "jacket_pockets_with_flap",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_with_flap"],
+                                "front": ["hip_pockets_with_flap", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["empty"],
+                                "front": ["empty", "", ""],
                             },
                         },
                         "img_icon": "v-17",
@@ -1081,10 +1081,10 @@ const data = [
                         "id": "jacket_pockets_double_welt",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_double_welt"],
+                                "front": ["hip_pockets_double_welt", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["empty"],
+                                "front": ["empty", "", ""],
                             },
                         },
                         "img_icon": "v-18",
@@ -1101,10 +1101,10 @@ const data = [
                         "id": "jacket_pockets_patched",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_patched"],
+                                "front": ["hip_pockets_patched", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["empty"],
+                                "front": ["empty", "", ""],
                             },
                         },
                         "img_icon": "v-19",
@@ -1121,10 +1121,10 @@ const data = [
                         "id": "jacket_pockets_with_flap_x3",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_with_flap"],
+                                "front": ["hip_pockets_with_flap", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["hip_pockets_with_flap"],
+                                "front": ["hip_pockets_with_flap", "", ""],
                             },
                         },
                         "img_icon": "v-17",
@@ -1141,10 +1141,10 @@ const data = [
                         "id": "jacket_pockets_double_welt_x3",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_double_welt"],
+                                "front": ["hip_pockets_double_welt", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["hip_pockets_double_welt"],
+                                "front": ["hip_pockets_double_welt", "", ""],
                             },
                         },
                         "img_icon": "v-18",
@@ -1161,10 +1161,10 @@ const data = [
                         "id": "jacket_pockets_with_flap_slanted",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_with_flap_slanted"],
+                                "front": ["hip_pockets_with_flap_slanted", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["empty"],
+                                "front": ["empty", "", ""],
                             },
                         },
                         "img_icon": "v-20",
@@ -1182,10 +1182,10 @@ const data = [
                         "id": "jacket_pockets_double_welt_slanted",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_double_welt_slanted"],
+                                "front": ["hip_pockets_double_welt_slanted", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["empty"],
+                                "front": ["empty", "", ""],
                             },
                         },
                         "img_icon": "v-21",
@@ -1199,13 +1199,13 @@ const data = [
                     },
                     {
                         "value": "Túi viền ngang nghiêng x3",
-                        "id": "jacket_pockets_with_flap_slanted_x3",
+                        "id": "jacket_pockets_with_flap_slanted",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_with_flap_slanted"],
+                                "front": ["hip_pockets_with_flap_slanted", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["hip_pockets_with_flap_slanted"],
+                                "front": ["hip_pockets_with_flap_slanted", "", ""],
                             },
                         },
                         "img_icon": "v-20",
@@ -1220,13 +1220,13 @@ const data = [
                     },
                     {
                         "value": "Túi viền chéo nghiêng x3",
-                        "id": "jacket_pockets_double_welt_slanted_x3",
+                        "id": "jacket_pockets_double_welt_slanted",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["hip_pockets_double_welt_slanted"],
+                                "front": ["hip_pockets_double_welt_slanted", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["hip_pockets_double_welt_slanted"],
+                                "front": ["hip_pockets_double_welt_slanted", "", ""],
                             },
                         },
                         "img_icon": "v-21",
@@ -1243,10 +1243,10 @@ const data = [
                         "id": "jacket_no_pockets",
                         "image": {
                             "tui_ao_vest": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                             "tui_thu3_ao_vest": {
-                                "front": ["empty"],
+                                "front": ["empty", "", ""],
                             },
                         },
                         "img_icon": "v-16",
@@ -1482,10 +1482,10 @@ const data = [
                                 "back": ["length_long+cut_slim"],
                             },
                             "gau_quan": {
-                                "front": ["cut_slim"],
+                                "front": ["", "cut_slim"],
                             },
                             "gau_quan_sau": {
-                                "back": ["cut_slim"],
+                                "back": ["", "cut_slim"],
                             }
                         },
                         "img_icon": "q-2",
@@ -1510,10 +1510,10 @@ const data = [
                                 "back": ["length_long+cut_regular"],
                             },
                             "gau_quan": {
-                                "front": ["cut_regular"],
+                                "front": ["", "cut_regular"],
                             },
                             "gau_quan_sau": {
-                                "back": ["cut_slim"],
+                                "back": ["", "cut_slim"],
                             }
                         },
                         "img_icon": "q-1",
@@ -1628,7 +1628,7 @@ const data = [
                         "id": "pants_fastening_center_no_button",
                         "image": {
                             "cap_quan": {
-                                "front": ["fastening_moved+hidden_button"],
+                                "front": ["fastening_center+hidden_button"],
                             },
                         },
                         "img_icon": "q-9",
@@ -1644,7 +1644,7 @@ const data = [
                         "id": "pants_fastening_moved_no_button",
                         "image": {
                             "cap_quan": {
-                                "front": ["fastening_center+hidden_button"],
+                                "front": ["fastening_moved+hidden_button"],
                             },
                         },
                         "img_icon": "q-7",
@@ -1844,10 +1844,10 @@ const data = [
                         "id": "pants_no_cuffs",
                         "image": {
                             "gau_quan": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                             "gau_quan_sau": {
-                                "back": ["empty"],
+                                "back": ["empty", ""],
                             }
                         },
                         "img_icon": "q-20",
@@ -1864,10 +1864,10 @@ const data = [
                         "id": "pants_cuff_lengths_long",
                         "image": {
                             "gau_quan": {
-                                "front": ["cuffs+length_long"],
+                                "front": ["cuffs+length_long", ""],
                             },
                             "gau_quan_sau": {
-                                "back": ["cuffs+length_long"],
+                                "back": ["cuffs+length_long", ""],
                             }
                         },
                         "img_icon": "q-21",
@@ -1929,10 +1929,10 @@ const data = [
                         "id": "waistcoat_single_breasted_buttons_5",
                         "image": {
                             "ao_gile": {
-                                "front": ["neck_single_breasted+buttons_5"],
+                                "front": ["neck_single_breasted+buttons_5", "", ""],
                             },
                             "vat_ao_gile": {
-                                "front": ["bottom_single_breasted"]
+                                "front": ["bottom_single_breasted", ""]
                             }
                         },
                         "img_icon": "g-3",
@@ -1945,13 +1945,13 @@ const data = [
                         "props_name": "waistcoat_style_combined",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["neck_single_breasted+buttons_5"]
+                                "front": ["neck_single_breasted+buttons_5", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_5"]
+                                "front": ["neck_single_breasted+buttons_5", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_5"]
+                                "front": ["neck_single_breasted+buttons_5", "", ""]
                             },
                         },
                         "index_extra": {
@@ -1966,10 +1966,10 @@ const data = [
                         "id": "waistcoat_single_breasted_buttons_3",
                         "image": {
                             "ao_gile": {
-                                "front": ["neck_single_breasted+buttons_3"],
+                                "front": ["neck_single_breasted+buttons_3", "", ""],
                             },
                             "vat_ao_gile": {
-                                "front": ["bottom_single_breasted"]
+                                "front": ["bottom_single_breasted", ""]
                             }
                         },
                         "img_icon": "g-1",
@@ -1982,13 +1982,13 @@ const data = [
                         "props_name": "waistcoat_style_combined",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_3"]
+                                "front": ["neck_single_breasted+buttons_3", "", ""]
                             },
                         },
                         "index_extra": {
@@ -2003,10 +2003,10 @@ const data = [
                         "id": "waistcoat_single_breasted_buttons_4",
                         "image": {
                             "ao_gile": {
-                                "front": ["neck_single_breasted+buttons_4"],
+                                "front": ["neck_single_breasted+buttons_4", "", ""],
                             },
                             "vat_ao_gile": {
-                                "front": ["bottom_single_breasted"]
+                                "front": ["bottom_single_breasted", ""]
                             }
                         },
                         "img_icon": "g-2",
@@ -2019,13 +2019,13 @@ const data = [
                         "props_name": "waistcoat_style_combined",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["neck_single_breasted+buttons_4"]
+                                "front": ["neck_single_breasted+buttons_4", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_4"]
+                                "front": ["neck_single_breasted+buttons_4", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_4"]
+                                "front": ["neck_single_breasted+buttons_4", "", ""]
                             }
                         },
                         "index_extra": {
@@ -2040,10 +2040,10 @@ const data = [
                         "id": "waistcoat_single_breasted_buttons_6",
                         "image": {
                             "ao_gile": {
-                                "front": ["neck_single_breasted+buttons_6"],
+                                "front": ["neck_single_breasted+buttons_6", "", ""],
                             },
                             "vat_ao_gile": {
-                                "front": ["bottom_single_breasted"]
+                                "front": ["bottom_single_breasted", ""]
                             }
                         },
                         "img_icon": "g-4",
@@ -2056,13 +2056,13 @@ const data = [
                         "props_name": "waistcoat_style_combined",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["neck_single_breasted+buttons_6"]
+                                "front": ["neck_single_breasted+buttons_6", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_6"]
+                                "front": ["neck_single_breasted+buttons_6", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_single_breasted+buttons_6"]
+                                "front": ["neck_single_breasted+buttons_6", "", ""]
                             }
                         },
                         "index_extra": {
@@ -2077,10 +2077,10 @@ const data = [
                         "id": "waistcoat_double_breasted_buttons_4",
                         "image": {
                             "ao_gile": {
-                                "front": ["neck_double_breasted+buttons_4"],
+                                "front": ["neck_double_breasted+buttons_4", "", ""],
                             },
                             "vat_ao_gile": {
-                                "front": ["bottom_double_breasted"]
+                                "front": ["bottom_double_breasted", ""]
                             }
                         },
                         "img_icon": "g-5",
@@ -2093,13 +2093,13 @@ const data = [
                         "props_name": "waistcoat_style_combined",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_4"]
+                                "front": ["neck_double_breasted+buttons_4", "", ""]
                             }
                         },
                         "index_extra": {
@@ -2114,10 +2114,10 @@ const data = [
                         "id": "waistcoat_double_breasted_buttons_6",
                         "image": {
                             "ao_gile": {
-                                "front": ["neck_double_breasted+buttons_6"],
+                                "front": ["neck_double_breasted+buttons_6", "", ""],
                             },
                             "vat_ao_gile": {
-                                "front": ["bottom_double_breasted"]
+                                "front": ["bottom_double_breasted", ""]
                             }
                         },
                         "img_icon": "g-6",
@@ -2130,13 +2130,13 @@ const data = [
                         "props_name": "waistcoat_style_combined",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["neck_double_breasted+buttons_6"]
+                                "front": ["neck_double_breasted+buttons_6", "", ""]
                             }
                         },
                         "index_extra": {
@@ -2159,7 +2159,7 @@ const data = [
                         "id": "waistcoat_no_lapel",
                         "image": {
                             "ao_gile": {
-                                "front": ["style_lapel_no"],
+                                "front": ["", "", "style_lapel_no"],
                             },
                         },
                         "img_icon": "g-25",
@@ -2172,13 +2172,13 @@ const data = [
                         "props_name": "waistcoat_lapel",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["style_lapel_no"]
+                                "front": ["", "", "style_lapel_no"]
                             },
                             "holes_kieu_dang": {
-                                "front": ["style_lapel_no"]
+                                "front": ["", "", "style_lapel_no"]
                             },
                             "threads_kieu_dang": {
-                                "front": ["style_lapel_no"]
+                                "front": ["", "", "style_lapel_no"]
                             },
                         },
                         "index_extra": {
@@ -2193,7 +2193,7 @@ const data = [
                         "id": "waistcoat_lapel_notch",
                         "image": {
                             "ao_gile": {
-                                "front": ["style_lapel_notch"],
+                                "front": ["", "", "style_lapel_notch"],
                             },
                         },
                         "img_icon": "g-26",
@@ -2206,13 +2206,13 @@ const data = [
                         "props_name": "waistcoat_lapel",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["style_lapel_notch"]
+                                "front": ["", "", "style_lapel_notch"]
                             },
                             "holes_kieu_dang": {
-                                "front": ["style_lapel_notch"]
+                                "front": ["", "", "style_lapel_notch"]
                             },
                             "threads_kieu_dang": {
-                                "front": ["style_lapel_notch"]
+                                "front": ["", "", "style_lapel_notch"]
                             },
                         },
                         "index_extra": {
@@ -2227,7 +2227,7 @@ const data = [
                         "id": "waistcoat_lapel_peak",
                         "image": {
                             "ao_gile": {
-                                "front": ["style_lapel_peak"],
+                                "front": ["", "", "style_lapel_peak"],
                             },
                         },
                         "img_icon": "g-27",
@@ -2240,13 +2240,13 @@ const data = [
                         "props_name": "waistcoat_lapel",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["style_lapel_peak"]
+                                "front": ["", "", "style_lapel_peak"]
                             },
                             "holes_kieu_dang": {
-                                "front": ["style_lapel_peak"]
+                                "front": ["", "", "style_lapel_peak"]
                             },
                             "threads_kieu_dang": {
-                                "front": ["style_lapel_peak"]
+                                "front": ["", "", "style_lapel_peak"]
                             }
                         },
                         "index_extra": {
@@ -2261,7 +2261,7 @@ const data = [
                         "id": "waistcoat_lapel_round",
                         "image": {
                             "ao_gile": {
-                                "front": ["style_lapel_round"],
+                                "front": ["", "", "style_lapel_round"],
                             },
                         },
                         "img_icon": "g-28",
@@ -2274,13 +2274,13 @@ const data = [
                         "props_name": "waistcoat_lapel",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["style_lapel_round"]
+                                "front": ["", "", "style_lapel_round"]
                             },
                             "holes_kieu_dang": {
-                                "front": ["style_lapel_round"]
+                                "front": ["", "", "style_lapel_round"]
                             },
                             "threads_kieu_dang": {
-                                "front": ["style_lapel_round"]
+                                "front": ["", "", "style_lapel_round"]
                             }
                         },
                         "index_extra": {
@@ -2303,7 +2303,7 @@ const data = [
                         "id": "waistcoat_lapel_medium",
                         "image": {
                             "ao_gile": {
-                                "front": ["lapel_medium"],
+                                "front": ["", "lapel_medium", ""],
                             },
                         },
                         "img_icon": "g-30",
@@ -2315,13 +2315,13 @@ const data = [
                         "props_name": "waistcoat_lapel_width",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["lapel_medium"]
+                                "front": ["", "lapel_medium", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["lapel_medium"]
+                                "front": ["", "lapel_medium", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["lapel_medium"]
+                                "front": ["", "lapel_medium", ""]
                             },
                         },
                         "index_extra": {
@@ -2336,7 +2336,7 @@ const data = [
                         "id": "waistcoat_lapel_narrow",
                         "image": {
                             "ao_gile": {
-                                "front": ["lapel_narrow"],
+                                "front": ["", "lapel_narrow", ""],
                             },
                         },
                         "img_icon": "g-29",
@@ -2348,13 +2348,13 @@ const data = [
                         "props_name": "waistcoat_lapel_width",
                         "image_extra": {
                             "cuc_boc_vai": {
-                                "front": ["lapel_narrow"]
+                                "front": ["", "lapel_narrow", ""]
                             },
                             "holes_kieu_dang": {
-                                "front": ["lapel_narrow"]
+                                "front": ["", "lapel_narrow", ""]
                             },
                             "threads_kieu_dang": {
-                                "front": ["lapel_narrow"]
+                                "front": ["", "lapel_narrow", ""]
                             }
                         },
                         "index_extra": {
@@ -2378,7 +2378,7 @@ const data = [
                         "id": "waistcoat_edge_diagonal",
                         "image": {
                             "vat_ao_gile": {
-                                "front": ["edge_diagonal"],
+                                "front": ["", "edge_diagonal"],
                             },
                         },
                         "img_icon": "g-23",
@@ -2394,7 +2394,7 @@ const data = [
                         "id": "waistcoat_edge_straight",
                         "image": {
                             "vat_ao_gile": {
-                                "front": ["edge_straight"],
+                                "front": ["", "edge_straight"],
                             },
                         },
                         "img_icon": "g-22",
@@ -2410,7 +2410,7 @@ const data = [
                         "id": "waistcoat_edge_rounded",
                         "image": {
                             "vat_ao_gile": {
-                                "front": ["edge_rounded"],
+                                "front": ["", "edge_rounded"],
                             },
                         },
                         "img_icon": "g-24",
@@ -2477,7 +2477,7 @@ const data = [
                                 "front": ["hip_pockets_welt"],
                             },
                             "tui_thu3_ao_gile": {
-                                "front": ["empty"]
+                                "front": ["empty", ""]
                             }
                         },
                         "img_icon": "g-15",
@@ -2517,7 +2517,7 @@ const data = [
                                 "front": ["hip_pockets_with_flap"],
                             },
                             "tui_thu3_ao_gile": {
-                                "front": ["empty"]
+                                "front": ["empty", ""]
                             }
                         },
                         "img_icon": "g-17",
@@ -2537,7 +2537,7 @@ const data = [
                                 "front": ["hip_pockets_welt"],
                             },
                             "tui_thu3_ao_gile": {
-                                "front": ["hip_pockets_welt"]
+                                "front": ["hip_pockets_welt", ""]
                             }
                         },
                         "img_icon": "g-15",
@@ -2557,7 +2557,7 @@ const data = [
                                 "front": ["hip_pockets_double_welt"],
                             },
                             "tui_thu3_ao_gile": {
-                                "front": ["hip_pockets_double_welt"]
+                                "front": ["hip_pockets_double_welt", ""]
                             }
                         },
                         "img_icon": "g-18",
@@ -2577,7 +2577,7 @@ const data = [
                                 "front": ["hip_pockets_with_flap"],
                             },
                             "tui_thu3_ao_gile": {
-                                "front": ["hip_pockets_with_flap"]
+                                "front": ["hip_pockets_with_flap", ""]
                             }
                         },
                         "img_icon": "g-17",
@@ -2597,7 +2597,7 @@ const data = [
                                 "front": ["empty"],
                             },
                             "tui_thu3_ao_gile": {
-                                "front": ["empty"]
+                                "front": ["empty", ""]
                             }
                         },
                         "img_icon": "g-14",
@@ -2629,7 +2629,7 @@ const data = [
                         "id": "shirt_necklines_classic",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_classic"],
+                                "front": ["necklines_classic", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -2645,19 +2645,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_classic"],
+                                "front": ["", "necklines_classic", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_classic"]
+                                "front": ["necklines_classic", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_classic"]
+                                "front": ["necklines_classic", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_classic"],
+                                "front": ["necklines_classic", "", ""],
                             }
                         },
                         "index_extra": {
@@ -2676,7 +2676,7 @@ const data = [
                         "id": "shirt_necklines_open",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_open"],
+                                "front": ["necklines_open", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -2692,19 +2692,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_open"],
+                                "front": ["", "necklines_open", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_open"]
+                                "front": ["necklines_open", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_open"]
+                                "front": ["necklines_open", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_open"],
+                                "front": ["necklines_open", "", ""],
                             }
                         },
                         "index_extra": {
@@ -2723,7 +2723,7 @@ const data = [
                         "id": "shirt_necklines_open_extreme",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_open_extreme"],
+                                "front": ["necklines_open_extreme", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -2739,19 +2739,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_open_extreme"],
+                                "front": ["", "necklines_open_extreme", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_open_extreme"]
+                                "front": ["necklines_open_extreme", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_open_extreme"]
+                                "front": ["necklines_open_extreme", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_open_extreme"],
+                                "front": ["necklines_open_extreme", "", ""],
                             }
                         },
                         "index_extra": {
@@ -2770,7 +2770,7 @@ const data = [
                         "id": "shirt_necklines_long",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_long"],
+                                "front": ["necklines_long", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -2786,19 +2786,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_long"],
+                                "front": ["", "necklines_long", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_long"]
+                                "front": ["necklines_long", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_long"]
+                                "front": ["necklines_long", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_long"],
+                                "front": ["necklines_long", "", ""],
                             }
                         },
                         "index_extra": {
@@ -2817,7 +2817,7 @@ const data = [
                         "id": "shirt_necklines_buttons",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_buttons"],
+                                "front": ["necklines_buttons", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -2833,19 +2833,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_buttons"],
+                                "front": ["", "necklines_buttons", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_buttons"]
+                                "front": ["necklines_buttons", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_buttons"]
+                                "front": ["necklines_buttons", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_buttons"],
+                                "front": ["necklines_buttons", "", ""],
                             }
                         },
                         "index_extra": {
@@ -2864,7 +2864,7 @@ const data = [
                         "id": "shirt_necklines_mao",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_mao"],
+                                "front": ["necklines_mao", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_mao"]
@@ -2880,19 +2880,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_mao"],
+                                "front": ["", "necklines_mao", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_mao"]
+                                "back": ["", "necklines_mao"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_mao"]
+                                "front": ["necklines_mao", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_mao"]
+                                "front": ["necklines_mao", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_mao"],
+                                "front": ["necklines_mao", "", ""],
                             }
                         },
                         "index_extra": {
@@ -2911,7 +2911,7 @@ const data = [
                         "id": "shirt_necklines_tuxedo",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_tuxedo"],
+                                "front": ["necklines_tuxedo", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -2927,19 +2927,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_tuxedo"],
+                                "front": ["", "necklines_tuxedo", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_tuxedo"]
+                                "front": ["necklines_tuxedo", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_tuxedo"]
+                                "front": ["necklines_tuxedo", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_tuxedo"],
+                                "front": ["necklines_tuxedo", "", ""],
                             }
                         },
                         "index_extra": {
@@ -2958,7 +2958,7 @@ const data = [
                         "id": "shirt_necklines_lady",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_lady"],
+                                "front": ["necklines_lady", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -2974,19 +2974,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_lady"],
+                                "front": ["", "necklines_lady", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_lady"]
+                                "front": ["necklines_lady", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_lady"]
+                                "front": ["necklines_lady", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_lady"],
+                                "front": ["necklines_lady", "", ""],
                             }
                         },
                         "index_extra": {
@@ -3005,7 +3005,7 @@ const data = [
                         "id": "shirt_necklines_classic_low",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_classic_low"],
+                                "front": ["necklines_classic_low", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -3021,19 +3021,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_classic_low"],
+                                "front": ["", "necklines_classic_low", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_classic_low"]
+                                "front": ["necklines_classic_low", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_classic_low"]
+                                "front": ["necklines_classic_low", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_classic_low"],
+                                "front": ["necklines_classic_low", "", ""],
                             }
                         },
                         "index_extra": {
@@ -3052,7 +3052,7 @@ const data = [
                         "id": "shirt_necklines_pin",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["necklines_pin"],
+                                "front": ["necklines_pin", "", ""],
                             },
                             "co_ao_somi_sau": {
                                 "back": ["necklines_1_button"]
@@ -3068,19 +3068,19 @@ const data = [
                         "props_name": "shirt_neck",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["necklines_pin"],
+                                "front": ["", "necklines_pin", "", ""],
                             },
                             "pha_co_sau_ao_somi": {
-                                "back": ["necklines_1_button"]
+                                "back": ["", "necklines_1_button"]
                             },
                             "button_holes_collar_top": {
-                                "front": ["necklines_pin"]
+                                "front": ["necklines_pin", "", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["necklines_pin"]
+                                "front": ["necklines_pin", "", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["necklines_pin"],
+                                "front": ["necklines_pin", "", ""],
                             }
                         },
                         "index_extra": {
@@ -3107,7 +3107,7 @@ const data = [
                         "id": "shirt_neck_buttons_1",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["number_1"],
+                                "front": ["", "number_1", ""],
                             },
                         },
                         "img_icon": "s-1",
@@ -3119,16 +3119,16 @@ const data = [
                         "props_name": "shirt_neck_buttons",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["number_1"]
+                                "front": ["", "", "number_1", ""]
                             },
                             "button_holes_collar_top": {
-                                "front": ["number_1"]
+                                "front": ["", "number_1", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["number_1"]
+                                "front": ["", "number_1", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["number_1"]
+                                "front": ["", "number_1", ""]
                             }
                         },
                         "index_extra": {
@@ -3145,7 +3145,7 @@ const data = [
                         "id": "shirt_neck_buttons_2",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["number_2"],
+                                "front": ["", "number_2", ""],
                             },
                         },
                         "img_icon": "s-1",
@@ -3157,16 +3157,16 @@ const data = [
                         "props_name": "shirt_neck_buttons",
                         "image_extra": {
                             "pha_co_ao_somi": {
-                                "front": ["number_2"]
+                                "front": ["", "", "number_2", ""]
                             },
                             "button_holes_collar_top": {
-                                "front": ["number_2"]
+                                "front": ["", "number_2", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["number_2"]
+                                "front": ["", "number_2", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["number_2"]
+                                "front": ["", "number_2", ""]
                             }
                         },
                         "index_extra": {
@@ -3191,7 +3191,7 @@ const data = [
                         "id": "shirt_cuffs_squared",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_squared"],
+                                "back": ["", "cuffs_style_squared"],
                             }
                         },
                         "img_icon": "s-11",
@@ -3203,16 +3203,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_squared"]
+                                "back": ["", "", "cuffs_style_squared"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_squared"]
+                                "back": ["", "cuffs_style_squared"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_squared"]
+                                "back": ["", "cuffs_style_squared"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_squared"]
+                                "back": ["", "cuffs_style_squared"]
                             }
                         },
                         "index_extra": {
@@ -3232,7 +3232,7 @@ const data = [
                         "id": "shirt_cuffs_squared_2_buttons",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_squared_2_buttons"],
+                                "back": ["", "cuffs_style_squared_2_buttons"],
                             }
                         },
                         "img_icon": "s-12",
@@ -3244,16 +3244,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_squared_2_buttons"]
+                                "back": ["", "", "cuffs_style_squared_2_buttons"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_squared_2_buttons"]
+                                "back": ["", "cuffs_style_squared_2_buttons"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_squared_2_buttons"]
+                                "back": ["", "cuffs_style_squared_2_buttons"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_squared_2_buttons"]
+                                "back": ["", "cuffs_style_squared_2_buttons"]
                             }
                         },
                         "index_extra": {
@@ -3273,7 +3273,7 @@ const data = [
                         "id": "shirt_cuffs_cut",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_cut"],
+                                "back": ["", "cuffs_style_cut"],
                             }
                         },
                         "img_icon": "s-13",
@@ -3285,16 +3285,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_cut"]
+                                "back": ["", "", "cuffs_style_cut"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_cut"]
+                                "back": ["", "cuffs_style_cut"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_cut"]
+                                "back": ["", "cuffs_style_cut"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_cut"]
+                                "back": ["", "cuffs_style_cut"]
                             }
                         },
                         "index_extra": {
@@ -3314,7 +3314,7 @@ const data = [
                         "id": "shirt_cuffs_cut_2_buttons",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_cut_2_buttons"],
+                                "back": ["", "cuffs_style_cut_2_buttons"],
                             }
                         },
                         "img_icon": "s-14",
@@ -3326,16 +3326,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_cut_2_buttons"]
+                                "back": ["", "", "cuffs_style_cut_2_buttons"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_cut_2_buttons"]
+                                "back": ["", "cuffs_style_cut_2_buttons"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_cut_2_buttons"]
+                                "back": ["", "cuffs_style_cut_2_buttons"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_cut_2_buttons"]
+                                "back": ["", "cuffs_style_cut_2_buttons"]
                             }
                         },
                         "index_extra": {
@@ -3355,7 +3355,7 @@ const data = [
                         "id": "shirt_cuffs_rounded",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_rounded"],
+                                "back": ["", "cuffs_style_rounded"],
                             }
                         },
                         "img_icon": "s-15",
@@ -3367,16 +3367,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_rounded"]
+                                "back": ["", "", "cuffs_style_rounded"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_rounded"]
+                                "back": ["", "cuffs_style_rounded"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_rounded"]
+                                "back": ["", "cuffs_style_rounded"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_rounded"]
+                                "back": ["", "cuffs_style_rounded"]
                             }
                         },
                         "index_extra": {
@@ -3396,7 +3396,7 @@ const data = [
                         "id": "shirt_cuffs_rounded_2_buttons",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_rounded_2_buttons"],
+                                "back": ["", "cuffs_style_rounded_2_buttons"],
                             }
                         },
                         "img_icon": "s-16",
@@ -3408,16 +3408,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_rounded_2_buttons"]
+                                "back": ["", "", "cuffs_style_rounded_2_buttons"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_rounded_2_buttons"]
+                                "back": ["", "cuffs_style_rounded_2_buttons"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_rounded_2_buttons"]
+                                "back": ["", "cuffs_style_rounded_2_buttons"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_rounded_2_buttons"]
+                                "back": ["", "cuffs_style_rounded_2_buttons"]
                             }
                         },
                         "index_extra": {
@@ -3437,7 +3437,7 @@ const data = [
                         "id": "shirt_cuffs_squared_french",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_squared_french_cuff"],
+                                "back": ["", "cuffs_style_squared_french_cuff"],
                             }
                         },
                         "img_icon": "s-17",
@@ -3449,16 +3449,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_squared_french_cuff"]
+                                "back": ["", "", "cuffs_style_squared_french_cuff"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_squared_french_cuff"]
+                                "back": ["", "cuffs_style_squared_french_cuff"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_squared_french_cuff"]
+                                "back": ["", "cuffs_style_squared_french_cuff"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_squared_french_cuff"]
+                                "back": ["", "cuffs_style_squared_french_cuff"]
                             }
                         },
                         "index_extra": {
@@ -3478,7 +3478,7 @@ const data = [
                         "id": "shirt_cuffs_squared_double_french",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_squared_double_french_cuff"],
+                                "back": ["", "cuffs_style_squared_double_french_cuff"],
                             }
                         },
                         "img_icon": "s-18",
@@ -3490,16 +3490,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_squared_double_french_cuff"]
+                                "back": ["", "", "cuffs_style_squared_double_french_cuff"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_squared_double_french_cuff"]
+                                "back": ["", "cuffs_style_squared_double_french_cuff"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_squared_double_french_cuff"]
+                                "back": ["", "cuffs_style_squared_double_french_cuff"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_squared_double_french_cuff"]
+                                "back": ["", "cuffs_style_squared_double_french_cuff"]
                             }
                         },
                         "index_extra": {
@@ -3519,7 +3519,7 @@ const data = [
                         "id": "shirt_cuffs_squared_rounded_french",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_rounded_french_cuff"],
+                                "back": ["", "cuffs_style_rounded_french_cuff"],
                             }
                         },
                         "img_icon": "s-19",
@@ -3531,16 +3531,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_rounded_french_cuff"]
+                                "back": ["", "", "cuffs_style_rounded_french_cuff"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_rounded_french_cuff"]
+                                "back": ["", "cuffs_style_rounded_french_cuff"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_rounded_french_cuff"]
+                                "back": ["", "cuffs_style_rounded_french_cuff"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_rounded_french_cuff"]
+                                "back": ["", "cuffs_style_rounded_french_cuff"]
                             }
                         },
                         "index_extra": {
@@ -3560,7 +3560,7 @@ const data = [
                         "id": "shirt_cuffs_rounded_double_french",
                         "image": {
                             "bac_tay_ao_somi": {
-                                "back": ["cuffs_style_rounded_double_french_cuff"],
+                                "back": ["", "cuffs_style_rounded_double_french_cuff"],
                             }
                         },
                         "img_icon": "s-20",
@@ -3572,16 +3572,16 @@ const data = [
                         "props_name": "shirt_cuffs",
                         "image_extra": {
                             "co_tay_sau_ao_somi": {
-                                "back": ["cuffs_style_rounded_double_french_cuff"]
+                                "back": ["", "", "cuffs_style_rounded_double_french_cuff"]
                             },
                             "button_holes_cuffs": {
-                                "back": ["cuffs_style_rounded_double_french_cuff"]
+                                "back": ["", "cuffs_style_rounded_double_french_cuff"]
                             },
                             "button_threads_cuffs": {
-                                "back": ["cuffs_style_rounded_double_french_cuff"]
+                                "back": ["", "cuffs_style_rounded_double_french_cuff"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["cuffs_style_rounded_double_french_cuff"]
+                                "back": ["", "cuffs_style_rounded_double_french_cuff"]
                             }
                         },
                         "index_extra": {
@@ -3609,10 +3609,10 @@ const data = [
                         "id": "shirt_button_close_standard",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["button_close_standard"],
+                                "front": ["", "", "button_close_standard"],
                             },
                             "nep_ao_somi": {
-                                "front": ["button_close_standard"],
+                                "front": ["", "button_close_standard", ""],
                             },
                         },
                         "img_icon": "s-30",
@@ -3625,22 +3625,22 @@ const data = [
                         "props_name": "shirt_neck_no_interfacing",
                         "image_extra": {
                             "button_holes_collar_top": {
-                                "front": ["button_close_standard"]
+                                "front": ["", "", "button_close_standard"]
                             },
                             "button_holes_collar_bottom": {
-                                "front": ["button_close_standard_"]
+                                "front": ["", "button_close_standard_", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["button_close_standard"]
+                                "front": ["", "", "button_close_standard"]
                             },
                             "button_threads_collar_bottom": {
-                                "front": ["button_close_standard_"]
+                                "front": ["", "button_close_standard_", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["button_close_standard"]
+                                "front": ["", "", "button_close_standard"]
                             },
                             "cuc_ao_somi_duoi": {
-                                "front": ["button_close_standard_"]
+                                "front": ["", "button_close_standard_", ""]
                             }
                         },
                         "index_extra": {
@@ -3661,10 +3661,10 @@ const data = [
                         "id": "shirt_button_close_hidden",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["button_close_hidden"],
+                                "front": ["", "", "button_close_hidden"],
                             },
                             "nep_ao_somi": {
-                                "front": ["button_close_hidden"],
+                                "front": ["", "button_close_hidden", ""],
                             },
                         },
                         "img_icon": "s-32",
@@ -3677,22 +3677,22 @@ const data = [
                         "props_name": "shirt_neck_no_interfacing",
                         "image_extra": {
                             "button_holes_collar_top": {
-                                "front": ["button_close_hidden"]
+                                "front": ["", "", "button_close_hidden"]
                             },
                             "button_holes_collar_bottom": {
-                                "front": ["button_close_hidden_"]
+                                "front": ["", "button_close_hidden_", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["button_close_hidden"]
+                                "front": ["", "", "button_close_hidden"]
                             },
                             "button_threads_collar_bottom": {
-                                "front": ["button_close_hidden_"]
+                                "front": ["", "button_close_hidden_", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["button_close_hidden"]
+                                "front": ["", "", "button_close_hidden"]
                             },
                             "cuc_ao_somi_duoi": {
-                                "front": ["button_close_hidden_"]
+                                "front": ["", "button_close_hidden_", ""]
                             }
                         },
                         "index_extra": {
@@ -3713,10 +3713,10 @@ const data = [
                         "id": "shirt_button_close_french",
                         "image": {
                             "co_ao_somi": {
-                                "front": ["button_close_french"],
+                                "front": ["", "", "button_close_french"],
                             },
                             "nep_ao_somi": {
-                                "front": ["button_close_french"],
+                                "front": ["", "button_close_french", ""],
                             },
                         },
                         "img_icon": "s-31",
@@ -3729,22 +3729,22 @@ const data = [
                         "props_name": "shirt_neck_no_interfacing",
                         "image_extra": {
                             "button_holes_collar_top": {
-                                "front": ["button_close_french"]
+                                "front": ["", "", "button_close_french"]
                             },
                             "button_holes_collar_bottom": {
-                                "front": ["button_close_french_"]
+                                "front": ["", "button_close_french_", ""]
                             },
                             "button_threads_collar_top": {
-                                "front": ["button_close_french"]
+                                "front": ["", "", "button_close_french"]
                             },
                             "button_threads_collar_bottom": {
-                                "front": ["button_close_french_"]
+                                "front": ["", "button_close_french_", ""]
                             },
                             "cuc_ao_somi_tren": {
-                                "front": ["button_close_french"]
+                                "front": ["", "", "button_close_french"]
                             },
                             "cuc_ao_somi_duoi": {
-                                "front": ["button_close_french_"]
+                                "front": ["", "button_close_french_", ""]
                             }
                         },
                         "index_extra": {
@@ -3773,10 +3773,10 @@ const data = [
                         "id": "shirt_fit",
                         "image": {
                             "nep_ao_somi": {
-                                "front": ["fit_fit"],
+                                "front": ["fit_fit", "", ""],
                             },
                             "ao_somi_sau": {
-                                "back": ["fit_fit"],
+                                "back": ["fit_fit", ""],
                             },
                         },
                         "img_icon": "s-23",
@@ -3789,13 +3789,13 @@ const data = [
                         "props_name": "shirt_fit",
                         "image_extra": {
                             "button_holes_collar_bottom": {
-                                "front": ["fit_fit"]
+                                "front": ["fit_fit", "", ""]
                             },
                             "button_threads_collar_bottom": {
-                                "front": ["fit_fit"]
+                                "front": ["fit_fit", "", ""]
                             },
                             "cuc_ao_somi_duoi": {
-                                "front": ["fit_fit"]
+                                "front": ["fit_fit", "", ""]
                             }
                         },
                         "index_extra": {
@@ -3812,10 +3812,10 @@ const data = [
                         "id": "shirt_loose",
                         "image": {
                             "nep_ao_somi": {
-                                "front": ["fit_loose"],
+                                "front": ["fit_loose", "", ""],
                             },
                             "ao_somi_sau": {
-                                "back": ["fit_loose"],
+                                "back": ["fit_loose", ""],
                             },
                         },
                         "img_icon": "s-24",
@@ -3828,13 +3828,13 @@ const data = [
                         "props_name": "shirt_fit",
                         "image_extra": {
                             "button_holes_collar_bottom": {
-                                "front": ["fit_loose"]
+                                "front": ["fit_loose", "", ""]
                             },
                             "button_threads_collar_bottom": {
-                                "front": ["fit_loose"]
+                                "front": ["fit_loose", "", ""]
                             },
                             "cuc_ao_somi_duoi": {
-                                "front": ["fit_loose"]
+                                "front": ["fit_loose", "", ""]
                             }
                         },
                         "index_extra": {
@@ -3862,7 +3862,7 @@ const data = [
                                 "front": ["sleeves_long+cuffs_classic"],
                             },
                             "bac_tay_ao_somi": {
-                                "back": ["sleeves_long"],
+                                "back": ["sleeves_long", ""],
                             }
                         },
                         "img_icon": "s-21",
@@ -3875,28 +3875,28 @@ const data = [
                         "group": ["ong_tay_ao_somi", "bac_tay_ao_somi"],
                         "image_extra": {
                             "co_tay_ao_somi": {
-                                "front": ["sleeves_long"]
+                                "front": ["", "sleeves_long", ""]
                             },
                             "co_tay_ngan_ao_somi": {
-                                "front": ["sleeves_long"]
+                                "front": ["", "sleeves_long"]
                             },
                             "co_tay_sau_ao_somi": {
-                                "back": ["sleeves_long"]
+                                "back": ["", "sleeves_long", ""]
                             },
                             "co_tay_ngan_sau_ao_somi": {
-                                "back": ["sleeves_long"]
+                                "back": ["", "sleeves_long"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["sleeves_long"]
+                                "back": ["sleeves_long", ""]
                             },
                             "button_holes_cuffs": {
-                                "back": ["sleeves_long"]
+                                "back": ["sleeves_long", ""]
                             },
                             "button_threads_cuffs": {
-                                "back": ["sleeves_long"]
+                                "back": ["sleeves_long", ""]
                             },
                             "elbow_patches": {
-                                "back": ["elbow_patches"]
+                                "back": ["", "elbow_patches"]
                             }
                         },
                         "index_extra": {
@@ -3936,28 +3936,28 @@ const data = [
                         "group": ["ong_tay_ao_somi", "bac_tay_ao_somi"],
                         "image_extra": {
                             "co_tay_ao_somi": {
-                                "front": ["sleeves_short"]
+                                "front": ["", "sleeves_short", ""]
                             },
                             "co_tay_ngan_ao_somi": {
-                                "front": ["sleeves_short"]
+                                "front": ["", "sleeves_short"]
                             },
                             "co_tay_sau_ao_somi": {
-                                "back": ["sleeves_short"]
+                                "back": ["", "sleeves_short", ""]
                             },
                             "co_tay_ngan_sau_ao_somi": {
-                                "back": ["sleeves_short"]
+                                "back": ["", "sleeves_short"]
                             },
                             "cuc_bac_tay": {
-                                "back": ["sleeves_short"]
+                                "back": ["sleeves_short", ""]
                             },
                             "button_holes_cuffs": {
-                                "back": ["sleeves_short"]
+                                "back": ["sleeves_short", ""]
                             },
                             "button_threads_cuffs": {
-                                "back": ["sleeves_short"]
+                                "back": ["sleeves_short", ""]
                             },
                             "elbow_patches": {
-                                "back": ["empty"]
+                                "back": ["", "empty"]
                             }
                         },
                         "index_extra": {
@@ -4284,11 +4284,11 @@ const data = [
                             "giua_ao_mangto": {
                                 "front": ["top", "style_simple", "collar_flap",
                                     "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched",
-                                    "fastening_boton_standard"],
+                                    "", "fastening_boton_standard"],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["buttons", "lapel_lenght_long", "empty",
-                                    ""],
+                                "front": ["buttons", "lapel_lenght_long", "", "empty",
+                                    "", ""],
                             },
                             "vat_ao_mangto": {
                                 "front": ["bottom", "style_simple", "collar_flap",
@@ -4301,7 +4301,7 @@ const data = [
                                 "front": [""]
                             },
                             "tui_ao_mangto": {
-                                "front": ["pockets_type_diagonal"],
+                                "front": ["pockets_type_diagonal", ""],
                             },
                             "tui_nguc_ao_mangto": {
                                 "front": ["chest_pocket_life", "style_simple", "collar_flap",
@@ -4314,13 +4314,13 @@ const data = [
                                 "back": ["empty"]
                             },
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["empty"],
+                                "back": ["empty", ""],
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["style_simple", "collar_flap"],
+                                "front": ["", "style_simple", "collar_flap", ""],
                             },
                             "gunflaps_ao_mangto": {
                                 "front": ["empty"],
@@ -4354,20 +4354,20 @@ const data = [
                         "id": "over_coat",
                         "image_extra": {
                             "default_lot_ao_mangto_tren": {
-                                "front": ["style_simple", "collar_classic"]
+                                "front": ["", "style_simple", "collar_classic"]
                             },
                             "pha_co_ao_mangto": {
                                 "front": ["top", "style_simple", "collar_flap",
                                     "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched",
-                                    "fastening_boton_standard"],
+                                    "", "fastening_boton_standard"],
                             },
                             "button_holes_collar_top": {
-                                "front": ["buttons", "lapel_lenght_long",
-                                    ""],
+                                "front": ["buttons", "", "", "lapel_lenght_long",
+                                    "", "", "", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": ["buttons", "lapel_lenght_long",
-                                    ""],
+                                "front": ["buttons", "", "", "lapel_lenght_long",
+                                    "", "", "", ""],
                             },
                             "button_holes_collar_bottom": {
                                 "front": [""],
@@ -4403,28 +4403,28 @@ const data = [
                         "image": {
                             "giua_ao_mangto": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_notched"],
+                                    "", "", "lapel_style_notched", "", ""],
                             },
                             "vat_ao_mangto": {
                                 "front": ["bottom", "style_crossed", "collar_flap",
-                                    "lenght_short"],
+                                    "lenght_short", ""],
                             },
                             "khuy_ao_mangto": {
                                 "front": [""],
                             },
                             "cuc_ao_mangto_tren": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_notched"],
+                                    "lapel_style_notched", "", ""],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": ["bottom", "style_crossed", "collar_flap", "lenght_short"]
+                                "front": ["bottom", "style_crossed", "collar_flap", "lenght_short", ""]
                             },
                             "tui_ao_mangto": {
-                                "front": ["pockets_type_diagonal"],
+                                "front": ["pockets_type_diagonal", ""],
                             },
                             "tui_nguc_ao_mangto": {
                                 "front": ["chest_pocket_life", "style_crossed", "collar_flap",
-                                    "lapel_style_ulster"]
+                                    "lapel_style_ulster", "", ""]
                             },
                             "giua_ao_mangto_sau": {
                                 "back": ["top", "collar_classic+flap"]
@@ -4433,13 +4433,13 @@ const data = [
                                 "back": ["empty"]
                             },
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["empty"],
+                                "back": ["empty", ""],
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["style_crossed", "collar_flap", "empty"],
+                                "front": ["", "style_crossed", "collar_flap", "empty"],
                             },
                             "gunflaps_ao_mangto": {
                                 "front": ["empty"],
@@ -4473,27 +4473,27 @@ const data = [
                         "id": "double_breasted_coat",
                         "image_extra": {
                             "default_lot_ao_mangto_tren": {
-                                "front": ["style_simple", "collar_classic"]
+                                "front": ["", "style_simple", "collar_classic"]
                             },
                             "pha_co_ao_mangto": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_notched"],
+                                    "", "", "lapel_style_notched", "", ""],
                             },
                             "button_holes_collar_top": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_notched"],
+                                    "", "", "lapel_style_notched", "", ""],
                             },
                             "button_threads_collar_top": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_notched"],
+                                    "", "", "lapel_style_notched", "", ""],
                             },
                             "button_holes_collar_bottom": {
                                 "front": ["bottom", "style_crossed", "collar_flap",
-                                    "lenght_short"],
+                                    "lenght_short", ""],
                             },
                             "button_threads_collar_bottom": {
                                 "front": ["bottom", "style_crossed", "collar_flap",
-                                    "lenght_short"],
+                                    "lenght_short", ""],
                             },
                             "pha_co_sau_ao_mangto": {
                                 "back": ["top", "collar_classic", "flap"]
@@ -4522,7 +4522,7 @@ const data = [
                         "image": {
                             "giua_ao_mangto": {
                                 "front": ["body", "style_simple", "collar_standup",
-                                    "lenght_short", "fastening_boton_standard"],
+                                    "", "", "", "lenght_short", "fastening_boton_standard"],
                             },
                             "vat_ao_mangto": {
                                 "front": ["empty"]
@@ -4531,18 +4531,18 @@ const data = [
                                 "front": [""],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["body", "style_simple", "collar_standup",
+                                "front": ["body", "style_simple", "collar_standup", "",
                                     "lenght_short", "fastening_boton_standard"],
                             },
                             "cuc_ao_mangto_duoi": {
                                 "front": ["empty"]
                             },
                             "tui_ao_mangto": {
-                                "front": ["pockets_type_diagonal"],
+                                "front": ["pockets_type_diagonal", ""],
                             },
                             "tui_nguc_ao_mangto": {
                                 "front": ["chest_pocket_life", "style_simple", "collar_standup",
-                                    ""]
+                                    "", "", ""]
                             },
                             "giua_ao_mangto_sau": {
                                 "back": ["top", "collar_standup"]
@@ -4551,13 +4551,13 @@ const data = [
                                 "back": ["empty"]
                             },
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["empty"],
+                                "back": ["empty", ""],
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["style_simple", "collar_standup"],
+                                "front": ["", "style_simple", "collar_standup", ""],
                             },
                             "gunflaps_ao_mangto": {
                                 "front": ["empty"],
@@ -4591,18 +4591,18 @@ const data = [
                         "id": "funnel_neck",
                         "image_extra": {
                             "default_lot_ao_mangto_tren": {
-                                "front": ["style_simple", "collar_standup"]
+                                "front": ["", "style_simple", "collar_standup"]
                             },
                             "pha_co_ao_mangto": {
                                 "front": ["empty"],
                             },
                             "button_holes_collar_top": {
                                 "front": ["body", "style_simple", "collar_standup",
-                                    "lenght_short", "fastening_boton_standard"],
+                                    "", "", "", "lenght_short", "fastening_boton_standard"],
                             },
                             "button_threads_collar_top": {
                                 "front": ["body", "style_simple", "collar_standup",
-                                    "lenght_short", "fastening_boton_standard"],
+                                    "", "", "", "lenght_short", "fastening_boton_standard"],
                             },
                             "button_holes_collar_bottom": {
                                 "front": ["empty"]
@@ -4637,25 +4637,25 @@ const data = [
                         "image": {
                             "giua_ao_mangto": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_ulster"],
+                                    "", "", "lapel_style_ulster", "", ""],
                             },
                             "vat_ao_mangto": {
                                 "front": ["bottom", "style_crossed", "collar_flap",
-                                    "lenght_super_short"],
+                                    "lenght_super_short", ""],
                             },
                             "khuy_ao_mangto": {
                                 "front": [""],
                             },
                             "cuc_ao_mangto_tren": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_ulster"],
+                                    "lapel_style_ulster", "", ""],
                             },
                             "cuc_ao_mangto_duoi": {
                                 "front": ["bottom", "style_crossed", "collar_flap",
-                                    "lenght_super_short"]
+                                    "lenght_super_short", ""]
                             },
                             "tui_ao_mangto": {
-                                "front": ["pockets_type_diagonal"],
+                                "front": ["pockets_type_diagonal", ""],
                             },
                             "tui_nguc_ao_mangto": {
                                 "front": [""]
@@ -4667,13 +4667,13 @@ const data = [
                                 "back": ["empty"]
                             },
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["empty"],
+                                "back": ["empty", ""],
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["style_crossed", "collar_flap", "lapel_style_ulster"],
+                                "front": ["", "style_crossed", "collar_flap", "lapel_style_ulster"],
                             },
                             "gunflaps_ao_mangto": {
                                 "front": ["empty"],
@@ -4707,27 +4707,27 @@ const data = [
                         "id": "pea_coat",
                         "image_extra": {
                             "default_lot_ao_mangto_tren": {
-                                "front": ["style_simple", "collar_classic"]
+                                "front": ["", "style_simple", "collar_classic"]
                             },
                             "pha_co_ao_mangto": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_ulster"],
+                                    "", "", "lapel_style_ulster", "", ""],
                             },
                             "button_holes_collar_top": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_ulster"],
+                                    "", "", "lapel_style_ulster", "", ""],
                             },
                             "button_threads_collar_top": {
                                 "front": ["top", "style_crossed", "collar_flap",
-                                    "lapel_style_ulster"],
+                                    "", "", "lapel_style_ulster", "", ""],
                             },
                             "button_holes_collar_bottom": {
                                 "front": ["bottom", "style_crossed", "collar_flap",
-                                    "lenght_super_short"],
+                                    "lenght_super_short", ""],
                             },
                             "button_threads_collar_bottom": {
                                 "front": ["bottom", "style_crossed", "collar_flap",
-                                    "lenght_super_short"],
+                                    "lenght_super_short", ""],
                             },
                             "pha_co_sau_ao_mangto": {
                                 "back": ["top", "collar_classic", "flap"]
@@ -4756,7 +4756,7 @@ const data = [
                         "image": {
                             "giua_ao_mangto": {
                                 "front": ["top", "style_simple", "collar_classic",
-                                    "fastening_trench"],
+                                    "", "", "", "", "fastening_trench"],
                             },
                             "vat_ao_mangto": {
                                 "front": ["bottom", "style_simple", "collar_classic",
@@ -4767,14 +4767,14 @@ const data = [
                             },
                             "cuc_ao_mangto_tren": {
                                 "front": ["top", "style_simple", "collar_classic",
-                                    "fastening_trench"],
+                                    "", "", "fastening_trench"],
                             },
                             "cuc_ao_mangto_duoi": {
                                 "front": ["bottom", "style_simple", "collar_classic",
                                     "lenght_short", "fastening_trench"]
                             },
                             "tui_ao_mangto": {
-                                "front": ["pockets_type_diagonal"],
+                                "front": ["pockets_type_diagonal", ""],
                             },
                             "tui_nguc_ao_mangto": {
                                 "front": [""]
@@ -4786,10 +4786,10 @@ const data = [
                                 "back": ["hood"]
                             },
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["empty"],
+                                "back": ["empty", ""],
                             },
                             "cau_vai_truoc_ao_mangto": {
                                 "front": [""],
@@ -4832,7 +4832,7 @@ const data = [
                         "id": "duffle_coat",
                         "image_extra": {
                             "default_lot_ao_mangto_tren": {
-                                "front": ["style_simple", "collar_classic", "fastening_trench"]
+                                "front": ["", "style_simple", "collar_classic", "fastening_trench"]
                             },
                             "pha_co_ao_mangto": {
                                 "front": ["empty"],
@@ -4884,23 +4884,23 @@ const data = [
                         "value": "Có cúc",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_boton_standard"],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["empty",
+                                "front": ["", "", "", "empty", "",
                                     "fastening_boton_standard"],
                             },
                             "vat_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_boton_standard"],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_boton_standard"],
                             },
                             "khuy_ao_mangto": {
-                                "front": ["buttons"],
+                                "front": ["buttons", ""],
                             },
                         },
                         "img_icon": "m-6",
@@ -4909,7 +4909,7 @@ const data = [
                         "group": ["giua_ao_mangto", "vat_ao_mangto", "khuy_ao_mangto",
                             "cuc_ao_mangto_tren", "cuc_ao_mangto_duoi"],
                         "index": {
-                            "giua_ao_mangto": [7],
+                            "giua_ao_mangto": [1, 2, 3, 4, 5, 7],
                             "vat_ao_mangto": [4],
                             "khuy_ao_mangto": [0, 1],
                             "cuc_ao_mangto_tren": [3, 5],
@@ -4919,15 +4919,15 @@ const data = [
                         "id": "buttons",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_boton_standard"],
                             },
                             "button_holes_collar_top": {
-                                "front": ["lapel_lenght_long",
+                                "front": ["", "", "", "lapel_lenght_long", "", "", "",
                                     "fastening_boton_standard"],
                             },
                             "button_threads_collar_top": {
-                                "front": ["lapel_lenght_long",
+                                "front": ["", "", "", "lapel_lenght_long", "", "", "",
                                     "fastening_boton_standard"],
                             }
                         },
@@ -4943,23 +4943,23 @@ const data = [
                         "value": "Ẩn cúc",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_boton_hide"],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["this_only_for_hiding_over_coat_buttons",
-                                    "fastening_boton_hide"],
+                                "front": ["", "", "", "this_only_for_hiding_over_coat_buttons",
+                                    "", "fastening_boton_hide"],
                             },
                             "vat_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_boton_hide"],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_boton_hide"],
                             },
                             "khuy_ao_mangto": {
-                                "front": ["empty"],
+                                "front": ["empty", ""],
                             },
                         },
                         "img_icon": "m-7",
@@ -4978,15 +4978,15 @@ const data = [
                         "id": "hidden_buttons",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_boton_hide"],
                             },
                             "button_holes_collar_top": {
-                                "front": ["empty",
+                                "front": ["", "", "", "empty", "", "", "",
                                     "fastening_boton_hide"],
                             },
                             "button_threads_collar_top": {
-                                "front": ["empty",
+                                "front": ["", "", "", "empty", "", "", "",
                                     "fastening_boton_hide"],
                             }
                         },
@@ -5002,19 +5002,19 @@ const data = [
                         "value": "Khóa kéo",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_zipper_standard"],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": [
+                                "front": ["", "", "", "", "",
                                     "fastening_zipper_standard"],
                             },
                             "vat_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_zipper_standard"],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_zipper_standard"],
                             }
                         },
@@ -5033,15 +5033,15 @@ const data = [
                         "id": "zipper",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_zipper_standard"],
                             },
                             "button_holes_collar_top": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_zipper_standard"],
                             },
                             "button_threads_collar_top": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_zipper_standard"],
                             }
                         },
@@ -5057,19 +5057,19 @@ const data = [
                         "value": "Nút gài",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_trench"],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": [
+                                "front": ["", "", "", "", "",
                                     "fastening_trench"],
                             },
                             "vat_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_trench"],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_trench"],
                             }
                         },
@@ -5094,19 +5094,19 @@ const data = [
                         "value": "Nút gài kèm khóa kéo",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "", "", "",
                                     "fastening_trench_zipper"],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": [
+                                "front": ["", "", "", "", "",
                                     "fastening_trench_zipper"],
                             },
                             "vat_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_trench"],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": [
+                                "front": ["", "", "", "",
                                     "fastening_trench"],
                             }
                         },
@@ -5140,19 +5140,19 @@ const data = [
                         "value": "Cơ bản",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": ["lapel_lenght_classic",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_classic",
+                                    "", "", "", ""],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["lapel_lenght_classic",
-                                    ""],
+                                "front": ["", "lapel_lenght_classic", "",
+                                    "", "", ""],
                             },
                             "khuy_ao_mangto": {
-                                "front": ["lapel_lenght_classic"],
+                                "front": ["", "lapel_lenght_classic"],
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": ["lapel_lenght_classic",
-                                    ""]
+                                "front": ["", "", "", "lapel_lenght_classic",
+                                    "", ""]
                             }
                         },
                         "img_icon": "m-10",
@@ -5170,16 +5170,16 @@ const data = [
                         "id": "lape_length_classic",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": ["lapel_lenght_classic",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_classic",
+                                    "", "", "", ""],
                             },
                             "button_holes_collar_top": {
-                                "front": ["lapel_lenght_classic",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_classic",
+                                    "", "", "", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": ["lapel_lenght_classic",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_classic",
+                                    "", "", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto",
@@ -5194,19 +5194,19 @@ const data = [
                         "value": "Dài",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": ["lapel_lenght_long",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_long",
+                                    "", "", "", ""],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["lapel_lenght_long",
-                                    ""],
+                                "front": ["", "lapel_lenght_long", "",
+                                    "", "", ""],
                             },
                             "khuy_ao_mangto": {
-                                "front": ["lapel_lenght_long"],
+                                "front": ["", "lapel_lenght_long"],
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": ["lapel_lenght_long",
-                                    ""]
+                                "front": ["", "", "", "lapel_lenght_long",
+                                    "", ""]
                             }
                         },
                         "img_icon": "m-11",
@@ -5224,16 +5224,16 @@ const data = [
                         "id": "lape_length_long",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": ["lapel_lenght_long",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_long",
+                                    "", "", "", ""],
                             },
                             "button_holes_collar_top": {
-                                "front": ["lapel_lenght_long",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_long",
+                                    "", "", "", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": ["lapel_lenght_long",
-                                    ""],
+                                "front": ["", "", "", "lapel_lenght_long",
+                                    "", "", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto",
@@ -5257,19 +5257,19 @@ const data = [
                         "value": "Ve đoa",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lapel_style_notched"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_notched", "", ""],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["lapel_style_notched",
-                                    ""]
+                                "front": ["", "", "", "lapel_style_notched",
+                                    "", ""]
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "",
                                     "lapel_style_notched"]
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["empty"]
+                                "front": ["", "", "", "empty"]
                             }
                         },
                         "img_icon": "m-12",
@@ -5286,16 +5286,16 @@ const data = [
                         "id": "lapel_style_notched",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
-                                    "lapel_style_notched"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_notched", "", ""],
                             },
                             "button_holes_collar_top": {
-                                "front": [
-                                    "lapel_style_notched"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_notched", "", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": [
-                                    "lapel_style_notched"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_notched", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto",
@@ -5310,19 +5310,19 @@ const data = [
                         "value": "Ve véch",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lapel_style_peak"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_peak", "", ""],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["lapel_style_peak",
-                                    ""]
+                                "front": ["", "", "", "lapel_style_peak",
+                                    "", ""]
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "",
                                     "lapel_style_peak"]
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["empty"]
+                                "front": ["", "", "", "empty"]
                             }
                         },
                         "img_icon": "m-13",
@@ -5339,16 +5339,16 @@ const data = [
                         "id": "lapel_style_peak",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
-                                    "lapel_style_peak"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_peak", "", ""],
                             },
                             "button_holes_collar_top": {
-                                "front": [
-                                    "lapel_style_peak"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_peak", "", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": [
-                                    "lapel_style_peak"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_peak", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto",
@@ -5363,19 +5363,19 @@ const data = [
                         "value": "Ve sam",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lapel_style_rounded"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_rounded", "", ""],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["lapel_style_rounded",
-                                    ""]
+                                "front": ["", "", "", "lapel_style_rounded",
+                                    "", ""]
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "",
                                     "lapel_style_rounded"]
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["empty"]
+                                "front": ["", "", "", "empty"]
                             }
                         },
                         "img_icon": "m-14",
@@ -5392,16 +5392,16 @@ const data = [
                         "id": "lapel_style_rounded",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
-                                    "lapel_style_rounded"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_rounded", "", ""],
                             },
                             "button_holes_collar_top": {
-                                "front": [
-                                    "lapel_style_rounded"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_rounded", "", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": [
-                                    "lapel_style_rounded"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_rounded", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto",
@@ -5416,19 +5416,19 @@ const data = [
                         "value": "Ve ulster",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lapel_style_ulster"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_ulster", "", ""],
                             },
                             "cuc_ao_mangto_tren": {
-                                "front": ["lapel_style_ulster",
-                                    ""]
+                                "front": ["", "", "", "lapel_style_ulster",
+                                    "", ""]
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": [
+                                "front": ["", "", "", "", "",
                                     "lapel_style_ulster"]
                             },
                             "cau_vai_truoc_ao_mangto": {
-                                "front": ["lapel_style_ulster"]
+                                "front": ["", "", "", "lapel_style_ulster"]
                             }
                         },
                         "img_icon": "m-15",
@@ -5445,16 +5445,16 @@ const data = [
                         "id": "lapel_style_ulster",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
-                                    "lapel_style_ulster"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_ulster", "", ""],
                             },
                             "button_holes_collar_top": {
-                                "front": [
-                                    "lapel_style_ulster"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_ulster", "", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": [
-                                    "lapel_style_ulster"],
+                                "front": ["", "", "", "",
+                                    "", "lapel_style_ulster", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto",
@@ -5478,12 +5478,12 @@ const data = [
                         "value": "Vừa",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lapel_wide_standard"],
+                                "front": ["", "", "", "",
+                                    "lapel_wide_standard", "", "", ""],
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": [
-                                    "lapel_wide_standard"]
+                                "front": ["", "", "", "",
+                                    "lapel_wide_standard", ""]
                             }
                         },
                         "img_icon": "mw-11",
@@ -5498,8 +5498,8 @@ const data = [
                         "id": "lapel_wide_standard",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
-                                    "lapel_wide_standard"],
+                                "front": ["", "", "", "",
+                                    "lapel_wide_standard", "", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto"],
@@ -5511,12 +5511,12 @@ const data = [
                         "value": "Lớn",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lapel_wide_wide"],
+                                "front": ["", "", "", "",
+                                    "lapel_wide_wide", "", "", ""],
                             },
                             "tui_nguc_ao_mangto": {
-                                "front": [
-                                    "lapel_wide_wide"]
+                                "front": ["", "", "", "",
+                                    "lapel_wide_wide", ""]
                             }
                         },
                         "img_icon": "mw-12",
@@ -5531,8 +5531,8 @@ const data = [
                         "id": "lapel_wide_wide",
                         "image_extra": {
                             "pha_co_ao_mangto": {
-                                "front": [
-                                    "lapel_wide_wide"],
+                                "front": ["", "", "", "",
+                                    "lapel_wide_wide", "", "", ""],
                             }
                         },
                         "group_extra": ["pha_co_ao_mangto"],
@@ -5553,19 +5553,19 @@ const data = [
                         "value": "Cơ bản",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lenght_short"],
+                                "front": ["", "", "", "", "", "",
+                                    "lenght_short", ""],
                             },
                             "vat_ao_mangto": {
-                                "front": [
-                                    "lenght_short"],
+                                "front": ["", "", "",
+                                    "lenght_short", ""],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": [
-                                    "lenght_short"],
+                                "front": ["", "", "",
+                                    "lenght_short", ""],
                             },
                             "vat_ao_mangto_sau": {
-                                "back": ["lenght_short"],
+                                "back": ["", "lenght_short", ""],
                             }
                         },
                         "img_icon": "m-17",
@@ -5583,18 +5583,18 @@ const data = [
                         "id": "coat_length_short",
                         "image_extra": {
                             "button_holes_collar_top": {
-                                "front": [
-                                    "lenght_short"],
+                                "front": ["", "", "", "", "", "",
+                                    "lenght_short", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": [
-                                    "lenght_short"],
+                                "front": ["", "", "", "", "", "",
+                                    "lenght_short", ""],
                             },
                             "button_holes_collar_bottom": {
-                                "front": ["lenght_short"],
+                                "front": ["", "", "", "lenght_short", ""],
                             },
                             "button_threads_collar_bottom": {
-                                "front": ["lenght_short"],
+                                "front": ["", "", "", "lenght_short", ""],
                             },
                         },
                         "group_extra": ["button_holes_collar_top", "button_threads_collar_top",
@@ -5610,19 +5610,19 @@ const data = [
                         "value": "Dài",
                         "image": {
                             "giua_ao_mangto": {
-                                "front": [
-                                    "lenght_long"],
+                                "front": ["", "", "", "", "", "",
+                                    "lenght_long", ""],
                             },
                             "vat_ao_mangto": {
-                                "front": [
-                                    "lenght_long"],
+                                "front": ["", "", "",
+                                    "lenght_long", ""],
                             },
                             "cuc_ao_mangto_duoi": {
-                                "front": [
-                                    "lenght_long"],
+                                "front": ["", "", "",
+                                    "lenght_long", ""],
                             },
                             "vat_ao_mangto_sau": {
-                                "back": ["lenght_long"],
+                                "back": ["", "lenght_long", ""],
                             }
                         },
                         "img_icon": "m-16",
@@ -5640,18 +5640,18 @@ const data = [
                         "id": "coat_length_long",
                         "image_extra": {
                             "button_holes_collar_top": {
-                                "front": [
-                                    "lenght_long"],
+                                "front": ["", "", "", "", "", "",
+                                    "lenght_long", ""],
                             },
                             "button_threads_collar_top": {
-                                "front": [
-                                    "lenght_long"],
+                                "front": ["", "", "", "", "", "",
+                                    "lenght_long", ""],
                             },
                             "button_holes_collar_bottom": {
-                                "front": ["lenght_long"],
+                                "front": ["", "", "", "lenght_long", ""],
                             },
                             "button_threads_collar_bottom": {
-                                "front": ["lenght_long"],
+                                "front": ["", "", "", "lenght_long", ""],
                             },
                         },
                         "group_extra": ["button_holes_collar_top", "button_threads_collar_top",
@@ -5682,13 +5682,13 @@ const data = [
                                 "back": ["empty"],
                             },
                             "tui_ao_mangto": {
-                                "front": ["fit_waisted"],
+                                "front": ["", "fit_waisted"],
                             },
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["fit_waisted"],
+                                "front": ["", "fit_waisted"],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["fit_waisted"],
+                                "back": ["", "fit_waisted"],
                             },
                         },
                         "img_icon": "m-18",
@@ -5719,13 +5719,13 @@ const data = [
                                 "back": ["fit_straight"],
                             },
                             "tui_ao_mangto": {
-                                "front": ["fit_straight"],
+                                "front": ["", "fit_straight"],
                             },
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["fit_straight"],
+                                "front": ["", "fit_straight"],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["fit_straight"],
+                                "back": ["", "fit_straight"],
                             },
                         },
                         "img_icon": "m-19",
@@ -6090,10 +6090,10 @@ const data = [
                         "value": "Dây buộc",
                         "image": {
                             "day_buoc_truoc_ao_mangto": {
-                                "front": ["belt_loose"],
+                                "front": ["belt_loose", ""],
                             },
                             "day_buoc_sau_ao_mangto": {
-                                "back": ["belt_loose"],
+                                "back": ["belt_loose", ""],
                             },
                         },
                         "img_icon": "m-33",
@@ -6248,7 +6248,7 @@ const data = [
                         "value": "Xẻ sau",
                         "image": {
                             "vat_ao_mangto_sau": {
-                                "back": ["backcut_1"],
+                                "back": ["", "", "backcut_1"],
                             }
                         },
                         "img_icon": "m-31",
@@ -6267,7 +6267,7 @@ const data = [
                         "value": "Xẻ sườn",
                         "image": {
                             "vat_ao_mangto_sau": {
-                                "back": ["backcut_2"],
+                                "back": ["", "", "backcut_2"],
                             }
                         },
                         "img_icon": "m-32",
@@ -6286,7 +6286,7 @@ const data = [
                         "value": "Không xẻ",
                         "image": {
                             "vat_ao_mangto_sau": {
-                                "back": ["backcut_0"],
+                                "back": ["", "", "backcut_0"],
                             }
                         },
                         "img_icon": "m-49",
