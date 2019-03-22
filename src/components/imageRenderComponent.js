@@ -7,54 +7,36 @@ class ImageRenderComponent extends Component {
         super(props);
         this.state = {
             prefix: true,
-            isTrenchcoat: false,
         }
     }
 
-    componentDidMount() {
-        if (this.props.passRefUpward) this.props.passRefUpward(this);
-    }
 
-    componentWillMount() {
-        var images = initPropeties.jacket.value.concat(initPropeties.pants.value)
-        this.setState({ initPropeties: images })
-    }
+    componentDidMount() { if (this.props.passRefUpward) this.props.passRefUpward(this); }
+
+    componentWillMount() { var images = initPropeties.jacket.value.concat(initPropeties.pants.value); this.setState({ initPropeties: images }) }
 
     showImageRender = images => {
-
         var result = images.map((element, index) => {
             var subUrl = "";
-            if (element.element.length === 0) return false
-            if (element.index) {
-                element.index.forEach(ix => {
-                    subUrl += element.element[ix] + "+";
-                });
-            } else {
-                element.element.forEach((e, index) => {
-                    subUrl += e + "+"
-                });
-            }
+            if (element.element.length === 0) return false;
+            (element.index) ? element.index.map(ix => { subUrl += element.element[ix] + "+"; }) : element.element.map(e => { subUrl += e + "+" });
             subUrl = subUrl.slice(0, subUrl.length - 1);
             if (subUrl === "empty+cut_slim" || subUrl === "empty" || subUrl === "cut_slim+cut_slim" || subUrl === "empty+third" || subUrl === "cut_regular+cut_slim") return false;
             if (element.prefix === "front/" && this.state.prefix) {
                 switch (element.key) {
-                    case "caravat":
-                        return <img key={index} name={`image_${index}`} id={`image_${index}_id`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
-                    default:
-                        return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                    case "caravat": return <img key={index} name={`image_${index}`} id={`image_${index}_id`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                    default: return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
                 }
             }
             if (element.prefix === "back/" && !this.state.prefix) return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
         })
-
         return result;
     }
 
     setProperties = (style) => {
-        console.log(style);
 
+        console.log(style);
         if (!style) return false;
-        style.short_key === "M" ? this.setState({ isTrenchcoat: true }) : this.setState({ isTrenchcoat: false })
         var indexType; var propetiesUpdate = [];
         /**check index update element */
         switch (style.props_name) {
@@ -87,64 +69,63 @@ class ImageRenderComponent extends Component {
                 break;
         }
 
-        if (style.short_key === "V") {
-            initPropeties.jacket.value.map(p => {
-                style.group.map(g => {
-                    if (p.key === g) {
-                        if (p.key === 'tui_ao_vest' && style.props_name === "jacket_fit") indexType = 1;
-                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-                        p['index'] = style.index[g]
-                    }
-                });
-                propetiesUpdate.push(p)
-            });
-        }
+        // if (style.short_key === "V") {
+        //     initPropeties.jacket.value.map(p => {
+        //         style.group.map(g => {
+        //             if (p.key === g) {
+        //                 if (p.key === 'tui_ao_vest' && style.props_name === "jacket_fit") indexType = 1;
+        //                 p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
+        //                 p['index'] = style.index[g]
+        //             }
+        //         });
+        //         propetiesUpdate.push(p)
+        //     });
+        // }
 
-        if (style.short_key === "V" || style.short_key === "G" || style.short_key === "S" || style.short_key === "Q") {
-            initPropeties.pants.value.map(p => {
-                style.group.map(g => {
-                    if (p.key === g) {
-                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-                        p['index'] = style.index[g]
-                    }
-                });
-                propetiesUpdate.push(p)
-            });
-        }
 
-        if (style.short_key === "G") {
-            if (style.id === "waistcoat_lapel_peak" || style.id === "waistcoat_lapel_round" || style.id === "waistcoat_lapel_notch") this.isNotExists = false;
-            if (style.id === "waistcoat_no_lapel" || style.id === "waistcoat_piece") this.isNotExists = true;
-            initPropeties.gile.value.map(p => {
-                if (style.group.length === 0 && p.key === "ao_gile") p['index'] = [0, 1, 2];
-                style.group.map(g => {
-                    if (p.key === g) {
-                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-                        p['index'] = style.index[g];
-                    }
-                });
-                if (this.isNotExists && p.key === "ao_gile" && p.index.length == 3) p.index.splice(1, 1);
-                if (!this.isNotExists && p.key === "ao_gile" && p.index.length == 2) p.index.splice(1, 0, 1);
+        // initPropeties.pants.value.map(p => {
+        //     style.group.map(g => {
+        //         if (p.key === g) {
+        //             p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
+        //             p['index'] = style.index[g]
+        //         }
+        //     });
+        //     propetiesUpdate.push(p)
+        // });
 
-                propetiesUpdate.push(p);
-            });
-        }
+        // if (style.short_key === "G") {
+        //     if (style.id === "waistcoat_lapel_peak" || style.id === "waistcoat_lapel_round" || style.id === "waistcoat_lapel_notch") this.isNotExists = false;
+        //     if (style.id === "waistcoat_no_lapel" || style.id === "waistcoat_piece") this.isNotExists = true;
+        //     initPropeties.gile.value.map(p => {
+        //         if (style.group.length === 0 && p.key === "ao_gile") p['index'] = [0, 1, 2];
+        //         style.group.map(g => {
+        //             if (p.key === g) {
+        //                 p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
+        //                 p['index'] = style.index[g];
+        //             }
+        //         });
+        //         if (this.isNotExists && p.key === "ao_gile" && p.index.length == 3) p.index.splice(1, 1);
+        //         if (!this.isNotExists && p.key === "ao_gile" && p.index.length == 2) p.index.splice(1, 0, 1);
 
-        if (style.short_key === "S") {
-            initPropeties.shirt.value.map(p => {
-                style.group.map(g => {
-                    if (p.key === g) {
-                        if (g === "co_ao_somi" && style.props_name === "shirt_neck_no_interfacing") indexType = 2;
-                        if (g === "nep_ao_somi") indexType = 1;
-                        if (g === "nep_ao_somi" && style.props_name === "shirt_fit") indexType = 0;
-                        p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
-                        p['index'] = style.index[g];
-                    }
-                });
+        //         propetiesUpdate.push(p);
+        //     });
+        // }
 
-                propetiesUpdate.push(p)
-            });
-        }
+        // if (style.short_key === "S") {
+        //     initPropeties.shirt.value.map(p => {
+        //         style.group.map(g => {
+        //             if (p.key === g) {
+        //                 if (g === "co_ao_somi" && style.props_name === "shirt_neck_no_interfacing") indexType = 2;
+        //                 if (g === "nep_ao_somi") indexType = 1;
+        //                 if (g === "nep_ao_somi" && style.props_name === "shirt_fit") indexType = 0;
+        //                 p.element[indexType] = style.image[g].front ? style.image[g].front[0] : style.image[g].back[0];
+        //                 p['index'] = style.index[g];
+        //             }
+        //         });
+
+        //         propetiesUpdate.push(p)
+        //     });
+        // }
 
         if (style.short_key === "M") {
             initPropeties.coat.value.map(p => {
@@ -154,15 +135,12 @@ class ImageRenderComponent extends Component {
                         p['index'] = style.index[g]
                     }
                 });
-                propetiesUpdate.push(p)
+                propetiesUpdate.push(p);
             });
         }
-        console.log(propetiesUpdate);
 
-        this.setState({
-            initPropeties: propetiesUpdate,
-            short_key: style.short_key
-        })
+        this.setState({ initPropeties: propetiesUpdate, short_key: style.short_key })
+        console.log(propetiesUpdate);
     }
 
     showSubImageRender = short_key => {
@@ -185,16 +163,9 @@ class ImageRenderComponent extends Component {
         }
     }
 
-    revetseImageRender = () => {
-        var prefix = !this.state.prefix
-        this.setState({
-            prefix
-        })
-
-    }
+    revetseImageRender = () => { var prefix = !this.state.prefix; this.setState({ prefix }) }
 
     showImageRenderReverse = () => {
-        if (this.state.isTrenchcoat) return true;
         if (this.state.prefix) {
             return (
                 <div>
@@ -211,8 +182,8 @@ class ImageRenderComponent extends Component {
                 <img src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/zapatos/black/back/zapatos.png" style={{ zIndex: 26 }} />
             </div>
         )
-
     }
+
     render() {
 
         return (

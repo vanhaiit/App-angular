@@ -460,8 +460,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["top", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -471,8 +471,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["buttons", "lapel_lenght_long", "collar_flap", "lapel_style_ulster", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -482,8 +482,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["bottom", "style_simple", "collar_flap", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -493,8 +493,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["empty", "style_crossed", "collar_flap", "lenght_short", "fastening_trench"]
             },
             {
@@ -504,8 +504,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["buttons", "lapel_lenght_long"]
             },
             {
@@ -515,8 +515,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["sleeves"]
             },
             {
@@ -526,8 +526,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["chest_pocket_life", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched"]
             },
             {
@@ -537,8 +537,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["pockets_type_diagonal", "fit_waisted"]
             },
             {
@@ -548,8 +548,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["pockets_type_warmer"]
             },
             {
@@ -559,8 +559,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["empty", "style_simple", "collar_flap", "lapel_style_ulster"]
             },
             {
@@ -570,8 +570,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["empty", "fit_waisted"]
             },
             {
@@ -581,8 +581,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["sleeves_tape"]
             },
             {
@@ -592,8 +592,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["empty"]
             },
             {
@@ -603,8 +603,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["fit_straight"]
             },
             {
@@ -614,8 +614,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["carlos_manos"]
             },
             {
@@ -625,8 +625,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["fit_straight"]
             },
             {
@@ -636,8 +636,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["top", "collar_classic+flap"]
             },
             {
@@ -647,8 +647,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["hood"]
             },
             {
@@ -658,8 +658,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["bottom", "lenght_short", "backcut_1"]
             },
             {
@@ -669,8 +669,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["sleeves"]
             },
             {
@@ -680,8 +680,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["empty"]
             },
             {
@@ -691,8 +691,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["empty", "fit_waisted"]
             },
             {
@@ -702,8 +702,8 @@ const initPropeties = {
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,
-                className: 'man_trenchcoat',
-                zIndex: 31,
+                className: 'man_coat',
+                zIndex: 100,
                 element: ["sleeves_tape"]
             },
         ]
