@@ -34,7 +34,6 @@ class ImageRenderComponent extends Component {
 
     setProperties = (style) => {
 
-        console.log(style);
         if (!style) return false;
         var propetiesUpdate = [];
         this.props.hidenSubMenuProperties(style)
@@ -110,13 +109,15 @@ class ImageRenderComponent extends Component {
                     if (p.key === g) {
                         style.index[g].forEach((ix, index) => {
                             if (!style.special) {
-                                p.element[ix] = style.image[g].front[ix] ? style.image[g].front[ix] : p.element[ix];
+                                (style.image[g].front) ?
+                                    p.element[ix] = style.image[g].front[ix] ? style.image[g].front[ix] : p.element[ix] :
+                                    p.element[ix] = style.image[g].back[ix] ? style.image[g].back[ix] : p.element[ix];
+
                             } else {
                                 if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
                                 if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
                                 if (ix > index) p.element[ix] = style.image[g].front[ix];
                             }
-
                         });
                         style.special ? p['index'] = style.index[g] : p['index'] = p["index"];
                     }
@@ -125,9 +126,7 @@ class ImageRenderComponent extends Component {
                 propetiesUpdate.push(p);
             });
         }
-
         this.setState({ initPropeties: propetiesUpdate, short_key: style.short_key })
-        console.log(propetiesUpdate);
     }
 
     showSubImageRender = short_key => {
