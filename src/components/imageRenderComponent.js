@@ -37,7 +37,7 @@ class ImageRenderComponent extends Component {
         console.log(style);
         if (!style) return false;
         var propetiesUpdate = [];
-
+        this.props.hidenSubMenuProperties(style)
         if (style.short_key === "V" || style.short_key === "M") {
             initPropeties.jacket.value.map(p => {
                 style.group.map(g => {
@@ -110,7 +110,7 @@ class ImageRenderComponent extends Component {
                     if (p.key === g) {
                         style.index[g].forEach((ix, index) => {
                             if (!style.special) {
-                                p.element[ix] = style.image[g].front[index] ? style.image[g].front[ix] : p.element[ix];
+                                p.element[ix] = style.image[g].front[ix] ? style.image[g].front[ix] : p.element[ix];
                             } else {
                                 if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
                                 if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
@@ -141,8 +141,7 @@ class ImageRenderComponent extends Component {
                     <div>
                         <img src="http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/corbata_estrecha.png" alt="" className="shirt" style={{ zIndex: 25 }} />
                         <img src="http://cdn.csell.vn/duynguyen/3d/new_man/shirt/STD/699_fabric/front/shirt_to_pants.png" alt="" className="shirt" style={{ zIndex: 20 }} />
-                    </div>
-                )
+                    </div>)
             case "S":
                 return true;
             case "M":

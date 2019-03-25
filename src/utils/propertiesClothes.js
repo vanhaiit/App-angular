@@ -5018,7 +5018,7 @@ const data = [
                                     "fastening_zipper_standard"],
                             }
                         },
-                        "img_icon": "m-8",
+                        "img_icon": "m-7",
                         "level": 3,
                         "short_key": "M",
                         "group": ["giua_ao_mangto", "vat_ao_mangto",

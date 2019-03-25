@@ -6,13 +6,15 @@ import data from '../../utils/propertiesClothes';
 import { connect } from 'react-redux';
 
 class ConfigPage extends Component {
+    items_hide = [];
+    check_null_document = false;
     constructor(props) {
         super(props);
         this.state = {
             properties: [],
             key: null,
             style: null,
-            active: null
+            active: null,
         }
     }
 
@@ -57,8 +59,11 @@ class ConfigPage extends Component {
                     {/**END::Phần menu bên trái */}
 
                     {/**BIGIN::Hiển hị kế quả khi lựa chọn */}
-                    <ImageRenderComponent style={this.state.style} category={this.state.category}
-                        passRefUpward={ref => (this.imageRender = ref)} />
+                    <ImageRenderComponent
+                        style={this.state.style}
+                        category={this.state.category}
+                        passRefUpward={ref => (this.imageRender = ref)}
+                        hidenSubMenuProperties={this.hidenSubMenuProperties} />
                     {/**END::Hiển hị kế quả khi lựa chọn */}
 
                     {/**BIGIN::Hiên thị giá tiền và chi tiết thiết kế đã chọ  */}
@@ -69,6 +74,12 @@ class ConfigPage extends Component {
                 {/**END::Phân body */}
             </div>
         );
+    }
+    hidenSubMenuProperties = style => {
+
+        this.setState({ style }, () => {
+            this.showPropertiesContent()
+        });
     }
 
     showPropertiesClothes = data => {
@@ -92,10 +103,10 @@ class ConfigPage extends Component {
     }
 
     showSubMenuProperties(data) {
-
         let sub_result = null;
         if (data.length > 0) {
             sub_result = data.map((item, index) => {
+
                 return (
                     <li id="list_unstyled-item" className="list_unstyled-item" key={index} onClick={() => this.selectPropertiesClothes(item.props_name, item.short_key)}>
                         <div className="list_unstyled-link option_title"><i className={`icon-${item.img_icon}`} ></i></div>
@@ -107,17 +118,89 @@ class ConfigPage extends Component {
         return sub_result;
     }
 
+    removeItemInArray = (array, element) => {
+        const index = array.indexOf(element);
+        array.splice(index, 1);
+    }
+
     showPropertiesContent = () => {
         var result = null;
         if (this.state.properties.length > 0) {
             result = this.state.properties.map((item, index) => {
-                return (
-                    <div className={`col-md-6 col-6 option_trigger ${item.id === this.state.active ? 'active_trigger' : ''}`} key={index} onClick={() => this.optionStyleTrigger(item)} >
-                        <i className={`icon-${item.img_icon} large-icon`} ></i>
-                        <div className="text-uppercase">{item.value}</div>
-                    </div>
-                )
+                var hide = false;
+
+                /***----------------------------- */
+                if (item.id === "waistcoat_no_lapel" && this.state.style.id === "waistcoat_no_lapel") {
+                    var checkNull = this.items_hide.find(x => x === "waistcoat_lapel_width")
+                    if (!checkNull) this.items_hide.push("waistcoat_lapel_width")
+                }
+                if (item.id === "waistcoat_no_lapel" && this.state.style.id !== "waistcoat_no_lapel") {
+                    this.removeItemInArray(this.items_hide, "waistcoat_lapel_width");
+                }
+
+                /***----------------------------- */
+                if (item.id === "over_coat" && this.state.style.id === "over_coat") {
+                    this.items_hide = []
+                    var checkArray = this.items_hide.filter(x => x === "horn_toogle_with_zipper" || x === "zipper" || x === "horn_toogle");
+                    var arraydefault = ["horn_toogle_with_zipper", "zipper", "horn_toogle"];
+                    arraydefault.forEach(element => {
+                        var check = checkArray.find(x => x === element);
+                        if (!check) this.items_hide.push(element);
+                    });
+                }
+
+                if (item.id === "double_breasted_coat" && this.state.style.id === "double_breasted_coat") {
+                    this.items_hide = []
+                    var checkArray = this.items_hide.filter(x => x === "horn_toogle_with_zipper" || x === "zipper" || x === "horn_toogle" || x === "buttons" || x === "hidden_buttons")
+                    var arraydefault = ["horn_toogle_with_zipper", "zipper", "horn_toogle", "buttons", "hidden_buttons"];
+                    arraydefault.forEach(element => {
+                        var check = checkArray.find(x => x === element);
+                        if (!check) this.items_hide.push(element)
+                    });
+                }
+
+                if (item.id === "funnel_neck" && this.state.style.id === "funnel_neck") {
+                    this.items_hide = []
+                    var checkArray = this.items_hide.filter(x => x === "horn_toogle_with_zipper" || x === "horn_toogle")
+                    var arraydefault = ["horn_toogle_with_zipper", "horn_toogle", "coat_lapel_length", "coat_lapel_style", "coat_lapel_wide"];
+                    arraydefault.forEach(element => {
+                        var check = checkArray.find(x => x === element);
+                        if (!check) this.items_hide.push(element)
+                    });
+                }
+
+                if (item.id === "pea_coat" && this.state.style.id === "pea_coat") {
+                    this.items_hide = []
+                    var checkArray = this.items_hide.filter(x => x === "horn_toogle_with_zipper" || x === "zipper" || x === "horn_toogle" || x === "buttons" || x === "hidden_buttons")
+                    var arraydefault = ["horn_toogle_with_zipper", "zipper", "horn_toogle", "buttons", "hidden_buttons"];
+                    arraydefault.forEach(element => {
+                        var check = checkArray.find(x => x === element);
+                        if (!check) this.items_hide.push(element)
+                    });
+                }
+
+                if (item.id === "duffle_coat" && this.state.style.id === "duffle_coat") {
+                    this.items_hide = []
+                    var checkArray = this.items_hide.filter(x => x === "horn_toogle_with_zipper" || x === "zipper" || x === "horn_toogle" || x === "buttons" || x === "hidden_buttons")
+                    var arraydefault = ["horn_toogle_with_zipper", "zipper", "horn_toogle", "buttons", "hidden_buttons"];
+                    arraydefault.forEach(element => {
+                        var check = checkArray.find(x => x === element);
+                        if (!check) this.items_hide.push(element)
+                    });
+                }
+
+                var check_hiden = this.items_hide.find(x => x === item.props_name || x === item.id)
+                if (check_hiden) hide = true;
+                if (!hide) {
+                    return (
+                        <div className={`col-md-6 col-6 option_trigger ${item.id === this.state.active ? 'active_trigger' : ''}`} key={index} onClick={() => this.optionStyleTrigger(item)} >
+                            <i className={`icon-${item.img_icon} large-icon`} ></i>
+                            <div className="text-uppercase">{item.value}</div>
+                        </div>
+                    )
+                }
             });
+
         }
         return result;
     }
@@ -138,7 +221,6 @@ class ConfigPage extends Component {
             style: properties,
             active: properties.id
         });
-
     }
 }
 
