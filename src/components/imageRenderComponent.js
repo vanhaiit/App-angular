@@ -1,43 +1,73 @@
 import React, { Component } from 'react';
 import initPropeties from '../utils/defaultPropetiesClothes';
+import initPropetiesExtra from '../utils/defaultPropetiesClothesExtra';
+
 
 class ImageRenderComponent extends Component {
     isNotExists = false;
+
+    imageError = ["empty+cut_slim", "empty", "fit_baggy", "fit_slim", "empty+fit_slim", "empty+fit_baggy",
+        "empty+cut_regular", "empty+third", "e+m", "h", "empty+m", "e+m", "h", "hip_pockets_welt+m", "empty+m", "hip_pockets_double_welt+m",
+        "hip_pockets_with_flap+m", "pockets_2+pockets_type_flap", "buttons+lapel_lenght_long+empty", "empty+style_simple+collar_flap", "empty+fit_waisted",
+        "carlos_manos", "buttons", "chest_pocket_life+style_crossed+collar_flap", "empty+style_crossed+collar_flap+empty", "empty+style_simple+collar_standup",
+        "chest_pocket_life", "empty+style_crossed+collar_flap+lapel_style_ulster", "empty+lapel_lenght_long", "buttons+lapel_lenght_long+this_only_for_hiding_over_coat_buttons",
+        "buttons+lapel_lenght_classic+this_only_for_hiding_over_coat_buttons", "empty+lapel_lenght_classic",
+        "chest_pocket_life+style_simple+collar_flap+lapel_lenght_classic+lapel_wide_wide+lapel_style_notched", "buttons+lapel_lenght_long+lapel_style_notched",
+        "buttons+lapel_lenght_long+lapel_style_peak", "chest_pocket_life+style_simple+collar_flap+lapel_lenght_long+lapel_wide_wide+lapel_style_peak",
+    ]
+
     constructor(props) {
-        super(props);
-        this.state = {
-            prefix: true,
-        }
+        super(props); this.state = { prefix: true, inside: false }
     }
 
-    componentDidMount() { if (this.props.passRefUpward) this.props.passRefUpward(this); }
-
-    componentWillMount() { var images = initPropeties.jacket.value.concat(initPropeties.pants.value); this.setState({ initPropeties: images }) }
+    componentWillMount() {
+        if (this.props.passRefUpward) this.props.passRefUpward(this);
+        var images = initPropeties.jacket.value.concat(initPropeties.pants.value);
+        this.setState({ initPropeties: images })
+    }
 
     showImageRender = images => {
         var result = images.map((element, index) => {
             var subUrl = "";
             if (element.element.length === 0) return false;
-            (element.index) ? element.index.map(ix => { subUrl += element.element[ix] + "+"; }) : element.element.map(e => { subUrl += e + "+" });
+            element.index ? element.index.map(ix => { if (element.element[ix]) subUrl += element.element[ix] + "+"; }) : element.element.map(e => { if (e) subUrl += e + "+" });
             subUrl = subUrl.slice(0, subUrl.length - 1);
-            if (subUrl === "empty+cut_slim" || subUrl === "empty" || subUrl === "cut_slim+cut_slim" || subUrl === "empty+third" || subUrl === "cut_regular+cut_slim") return false;
+
+            let check = this.imageError.find(x => x === subUrl);
+            if (check) return false;
             if (element.prefix === "front/" && this.state.prefix) {
-                switch (element.key) {
-                    case "caravat": return <img key={index} name={`image_${index}`} id={`image_${index}_id`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
-                    default: return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
-                }
+                if (element.key === "caravat") return false;
+                if (element.inside) return <img key={index} hidden={this.state.inside} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                if (element.inside_extra) return <img key={index} hidden={!this.state.inside} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+
             }
             if (element.prefix === "back/" && !this.state.prefix) return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
         })
         return result;
     }
 
-    setProperties = (style) => {
+    setProperties = (style, fabric) => {
+
+        console.log(style, fabric);
 
         if (!style) return false;
         var propetiesUpdate = [];
-        this.props.hidenSubMenuProperties(style)
+        if (style.group_extra) this.props.hidenSubMenuProperties(style)
         if (style.short_key === "V" || style.short_key === "M") {
+
+            initPropetiesExtra.jacket.value.map(p => {
+                style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
+                if (style.group_to_change) style.group_to_change.map(g => {
+                    if (p.key === g) if (fabric) p[style.index[g]] = fabric.fabric;
+                });
+                if (style.id === "have_metal_buttons" && fabric) p['inside_extra'] = false;
+                else p['inside_extra'] = true;
+                console.log(p);
+
+                propetiesUpdate.push(p)
+            });
+
             initPropeties.jacket.value.map(p => {
                 style.group.map(g => {
                     if (p.key === g) {
@@ -45,7 +75,7 @@ class ImageRenderComponent extends Component {
                             if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
                             if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
                         });
-                        p['index'] = style.index[g]
+                        p['index'] = style.index[g];
                     }
                 });
                 propetiesUpdate.push(p)
@@ -59,13 +89,14 @@ class ImageRenderComponent extends Component {
                         if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
                         if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
                     });
-                    p['index'] = style.index[g]
+                    p['index'] = style.index[g];
                 }
             });
+            p['inside'] = true;
             propetiesUpdate.push(p)
         });
 
-        if (style.short_key === "S") {
+        if (style.short_key === "S" || style.short_key === "Q" || style.short_key === "G") {
             initPropeties.shirt.value.map(p => {
                 style.group.map(g => {
                     if (p.key === g) {
@@ -126,34 +157,16 @@ class ImageRenderComponent extends Component {
                 propetiesUpdate.push(p);
             });
         }
+
         this.setState({ initPropeties: propetiesUpdate, short_key: style.short_key })
     }
 
-    showSubImageRender = short_key => {
-        switch (short_key) {
-            case "V":
-                return true;
-            case "Q":
-                return <img src="http://cdn.csell.vn/duynguyen/3d/new_man/shirt/STD/699_fabric/front/shirt_to_pants.png" alt="" className="shirt" style={{ zIndex: 20 }} />
-            case "G":
-                return (
-                    <div>
-                        <img src="http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/corbata_estrecha.png" alt="" className="shirt" style={{ zIndex: 25 }} />
-                        <img src="http://cdn.csell.vn/duynguyen/3d/new_man/shirt/STD/699_fabric/front/shirt_to_pants.png" alt="" className="shirt" style={{ zIndex: 20 }} />
-                    </div>)
-            case "S":
-                return true;
-            case "M":
-                return true;
-        }
-    }
-
-    revetseImageRender = () => { var prefix = !this.state.prefix; this.setState({ prefix }) }
-
     showImageRenderReverse = () => {
+        if (this.state.inside) return <img className="pants_folded" src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/1645_fabric/folded/length_long+cut_slim.png" style={{ zIndex: 26 }} />;
         if (this.state.prefix) {
             return (
                 <div>
+                    <img src="http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/corbata_estrecha.png" alt="" className="shirt" style={{ zIndex: 31 }} />
                     <img src="http://cdn.csell.vn/duynguyen/3d/new_man/shirt/STD/699_fabric/front/shirt_to_jacket.png" className="shirt" style={{ zIndex: 20 }} />
                     <img src="http://cdn.csell.vn/duynguyen/3d/new_man/models/STD/front/carlos.png" style={{ zIndex: 10 }} />
                     <img src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/zapatos/black/front/zapatos.png" style={{ zIndex: 26 }} />
@@ -177,13 +190,14 @@ class ImageRenderComponent extends Component {
                 <div id="available_window" className="image_render man_suit fabric_step">
                     <div className="layers viewport " id="viewport" style={{ width: '250px', left: '-238px', top: '0' }}>
                         {this.showImageRender(this.state.initPropeties)}
-                        {this.showSubImageRender(this.state.short_key)}
                         {this.showImageRenderReverse()}
                     </div>
                 </div>
                 <div className="btn_togger_back_front">
                     <span className="btngroup">
-                        <button className="btngroup--btn" onClick={() => this.revetseImageRender()}><i className="fas fa-sync-alt"></i></button>
+                        <button className="btngroup--btn" onClick={() => this.setState({ inside: !this.state.inside, prefix: true })}><i className="fas fa-paint-brush"></i></button>
+                        <span style={{ color: "#afafaf" }}>accents</span>
+                        <button className="btngroup--btn" onClick={() => this.setState({ prefix: !this.state.prefix, inside: false })}><i className="fas fa-sync-alt"></i></button>
                         <span style={{ color: "#afafaf" }}>reverse</span>
                         <button className="btngroup--btn"><i style={{ paddingLeft: "4px" }} className="fas fa-arrows-alt-v"></i></button>
                         <span style={{ color: "#afafaf" }}>move</span>

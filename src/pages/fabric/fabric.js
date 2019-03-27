@@ -4,6 +4,7 @@ import ImageRenderComponent from '../../components/imageRenderComponent';
 import ActionFabricInfoComponent from '../../components/actionFabricInfoComponent';
 import { getListFabricRequest } from '../../actions/fabric';
 import { connect } from 'react-redux';
+import { toggleIcon } from '../../demo';
 class FabricPage extends Component {
 
     constructor(props) {
@@ -12,10 +13,48 @@ class FabricPage extends Component {
             fabric: null
         }
     }
+    componentDidMount() { toggleIcon(); }
 
-    componentDidMount() {
+    componentWillMount() {
         var param = { skip: 0, limit: 50, type: 38 }
         this.props.getListFabric(param);
+    }
+
+
+    showFabricList = fabrics => {
+        let result = null;
+        if (fabrics.length > 0) {
+
+
+            result = fabrics.map((fabric, index) => {
+                if (fabric.price) {
+                    var active = '';
+                    fabric.partid === this.state.active ? active = "active_img" : active = '';
+                    return (
+                        <div id="item-show_part" className={`col-md-4 col-4 scrollbox-content ${active}`} key={index} >
+                            <img src={fabric.images.length > 0 ? fabric.images[0] : 'http://www.grondals.com/wp-content/themes/Anchor/images/bolg_noimage.jpg'} onClick={() => this.selectFabric(fabric)} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                            <a href="#" className="thumb_preview"><i className="fa fa-search"></i></a>
+                            <a>{fabric.name}</a><br></br>
+                            <label style={{ color: 'red' }}>{fabric.price}</label>
+                        </div>
+                    )
+                }
+            })
+        }
+        return result;
+    }
+
+    selectFabric = fabric => {
+        this.setState({
+            fabric: fabric,
+            active: fabric.partid
+        })
+    }
+
+    searchFabric = e => {
+        this.setState({ [e.target.name]: e.target.value });
+        var param = { skip: 0, limit: 50, type: 38, keyword: this.state.keyword }
+        this.props.getListFabric(param)
     }
 
     render() {
@@ -60,42 +99,6 @@ class FabricPage extends Component {
             </div>
 
         );
-    }
-
-    showFabricList = fabrics => {
-        let result = null;
-        if (fabrics.length > 0) {
-
-
-            result = fabrics.map((fabric, index) => {
-                if (fabric.price) {
-                    var active = '';
-                    fabric.partid === this.state.active ? active = "active_img" : active = '';
-                    return (
-                        <div id="item-show_part" className={`col-md-4 col-4 scrollbox-content ${active}`} key={index} >
-                            <img src={fabric.images.length > 0 ? fabric.images[0] : 'http://www.grondals.com/wp-content/themes/Anchor/images/bolg_noimage.jpg'} onClick={() => this.selectFabric(fabric)} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
-                            <a href="#" className="thumb_preview"><i className="fa fa-search"></i></a>
-                            <a>{fabric.name}</a><br></br>
-                            <label style={{ color: 'red' }}>{fabric.price}</label>
-                        </div>
-                    )
-                }
-            })
-        }
-        return result;
-    }
-
-    selectFabric = fabric => {
-        this.setState({
-            fabric: fabric,
-            active: fabric.partid
-        })
-    }
-
-    searchFabric = e => {
-        this.setState({ [e.target.name]: e.target.value });
-        var param = { skip: 0, limit: 50, type: 38, keyword: this.state.keyword }
-        this.props.getListFabric(param)
     }
 }
 

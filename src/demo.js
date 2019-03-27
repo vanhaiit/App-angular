@@ -102,9 +102,7 @@ export function toggleIcon() {
             if ($(window).width() >= 992) {
                 $('[id="sidebar_menu-left"]').show(200);
             }
-
             check_sub_menu = false;
-
         }
     });
 
@@ -139,4 +137,5 @@ export function toggleIcon() {
         }
 
     });
+
 }

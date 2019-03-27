@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ActionFabricInfoComponent extends Component {
 
     render() {
-        var { fabric } = this.props;
+        var fabric = this.props.fabric ? this.props.fabric : fabric;
         if (!fabric) {
             fabric = { images: ["http://www.grondals.com/wp-content/themes/Anchor/images/bolg_noimage.jpg"] }
         }

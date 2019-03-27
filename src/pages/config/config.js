@@ -4,9 +4,11 @@ import ImageRenderComponent from '../../components/imageRenderComponent';
 import ActionFabricInfoComponent from '../../components/actionFabricInfoComponent';
 import data from '../../utils/propertiesClothes';
 import { connect } from 'react-redux';
+import { toggleIcon } from '../../demo';
 
 class ConfigPage extends Component {
     items_hide = [];
+    menu = [];
     check_null_document = false;
     constructor(props) {
         super(props);
@@ -18,74 +20,64 @@ class ConfigPage extends Component {
         }
     }
 
-    render() {
-        return (
-            <div>
-                {/**BIGIN::Phầng header */}
-                <HeaderComponent />
-                {/**END::Phần header */}
+    componentDidMount() { toggleIcon(); }
 
-                {/**BIGIN::Phân body */}
-                <div className="row container-fluid">
+    componentWillMount() {
+        var { match } = this.props;
+        if (match) {
+            var id = match.params.id;
+            switch (id) {
+                case "v":
+                    this.menu = data.filter(x => x.short_key === "V" || x.short_key === "Q" || x.short_key === "G");
+                    this.setState({ category: "V" })
+                    break;
+                case "s":
+                    this.menu = data.find(x => x.short_key === "S");
+                    this.setState({ category: "S" })
+                    break;
+                case "m":
+                    this.menu = data.find(x => x.short_key === "M");
+                    this.setState({ category: "M" })
+                    break;
+            }
+        }
+    }
 
-                    {/**BIGIN :: Phần menu bên trái  */}
-                    <div className="col-md-4" id="sidebarLeft">
-                        <div className="title_sidebar_mobile-left">
-                            <label className="subtitle_sidebar_mobile">THIẾT KẾ</label>
-                            <span className="btn_sidebar-hide"><i className="fa fa-arrow-left icon_back" aria-hidden="true"></i></span>
-                        </div>
-                        <div className="row" id="scrollbar_custom" >
-                            <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
-                                <div id="transfer_scrollbar">
-                                    <div className="accordian sidebarNav  scrollbox-content">
-                                        <ul className="sidebarNav">
-                                            {this.showPropertiesClothes(data)}
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="sidebar_menu_content-left" className="col-md-9">
-                                <div className="back-sub-menu">
-                                    <p style={{ width: "90%" }}>TÙY CHỌN</p>
-                                    <i className="fa fa-angle-left icon_back" aria-hidden="true" ></i>
-                                </div>
-                                <div className="row ">
-                                    {this.showPropertiesContent()}
-                                </div>
-
-                            </div>
+    showMenuSideBarLeft = () => {
+        if (this.state.category === "V")
+            return (
+                <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
+                    <div id="transfer_scrollbar">
+                        <div className="accordian sidebarNav  scrollbox-content">
+                            <ul className="sidebarNav">
+                                {this.showPropertiesClothes(this.menu)}
+                            </ul>
                         </div>
                     </div>
-                    {/**END::Phần menu bên trái */}
-
-                    {/**BIGIN::Hiển hị kế quả khi lựa chọn */}
-                    <ImageRenderComponent
-                        style={this.state.style}
-                        category={this.state.category}
-                        passRefUpward={ref => (this.imageRender = ref)}
-                        hidenSubMenuProperties={this.hidenSubMenuProperties}
-
-                    />
-                    {/**END::Hiển hị kế quả khi lựa chọn */}
-
-                    {/**BIGIN::Hiên thị giá tiền và chi tiết thiết kế đã chọ  */}
-                    <ActionFabricInfoComponent />
-                    {/**END::Hiên thị giá tiền và chi tiết thiết kế đã chọ  */}
-
                 </div>
-                {/**END::Phân body */}
+            )
+        return (
+            <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
+                <div className="accordian sidebarNav">
+                    <ul className="list-unstyled mt-2 mb-2 ">
+                        {this.showPropertiesClothes(this.menu)}
+                    </ul>
+                </div>
             </div>
-        );
+        )
+
     }
 
     hidenSubMenuProperties = style => {
         var data_hide = [];
         if (style.id === "funnel_neck") data_hide = ["coat_lapel_length", "coat_lapel_style", "coat_lapel_wide"];
         if (style.id === "over_coat" || style.id === "double_breasted_coat" || style.id === "pea_coat" || style.id === "duffle_coat") data_hide = [""];
+
+        if (style.id === "neck_mao") data_hide = ["jacket_lapel_type", "jacket_wide_lapel"];
+        if (style.id === "single_breasted_buttons_2" || style.id === "single_breasted_buttons_1" || style.id === "single_breasted_buttons_3"
+            || style.id === "double_breasted_buttons_2" || style.id === "double_breasted_buttons_4" || style.id === "double_breasted_buttons_6") data_hide = [""];
         if (data_hide.length === 0) data_hide = this.state.data_hide
-        this.setState({ style, data_hide }, () => {
-            this.showPropertiesContent();
-        });
+        this.setState({ style, data_hide }, () => { this.showPropertiesContent(); });
     }
 
     showSubMenuProperties(data) {
@@ -95,7 +87,7 @@ class ConfigPage extends Component {
                 var check_hide = false;
                 if (this.state.data_hide) this.state.data_hide.find(x => x === item.props_name) ? check_hide = true : check_hide = false;
                 return (
-                    <li id="list_unstyled-item" hidden={check_hide} className="list_unstyled-item" key={index} onClick={() => this.selectPropertiesClothes(item.props_name, item.short_key)}>
+                    <li id="list_unstyled-item" hidden={check_hide} className="list_unstyled-item" key={index} onClick={() => this.selectPropertiesClothes(item)}>
                         <div className="list_unstyled-link option_title"><i className={`icon-${item.img_icon}`} ></i></div>
                         <div className="option_title title-mobile">{item.displayname}</div>
                     </li >
@@ -105,22 +97,26 @@ class ConfigPage extends Component {
         return sub_result;
     }
 
-    showPropertiesClothes = data => {
+    showPropertiesClothes = menu => {
         let result = null;
-        if (data.length > 0) {
-            result = data.map((item, index) => {
-                return (
-                    <li id={`sidebar_accordian_list_${index}`} key={index} >
-                        <div className="sidebar_title_accordian" id={`title_${index}`} >
-                            <h3 id="title-menu" className="text-uppercase "> <span className="arrow" />{item.displayname}</h3>
-                        </div>
-                        <ul className="list-unstyled mt-2 mb-2 ">
-                            {this.showSubMenuProperties(item.properties)}
-                        </ul>
-                    </li>
-                )
 
-            })
+        if (this.state.category === "V") {
+            if (menu.length > 0) {
+                result = menu.map((item, index) => {
+                    return (
+                        <li id={`sidebar_accordian_list_${index}`} key={index} >
+                            <div className="sidebar_title_accordian" id={`title_${index}`} >
+                                <h3 id="title-menu" className="text-uppercase "> <span className="arrow" />{item.displayname}</h3>
+                            </div>
+                            <ul className="list-unstyled mt-2 mb-2 ">
+                                {this.showSubMenuProperties(item.properties)}
+                            </ul>
+                        </li>
+                    )
+                })
+            }
+        } else {
+            return this.showSubMenuProperties(menu.properties);
         }
         return result;
     }
@@ -222,15 +218,7 @@ class ConfigPage extends Component {
         return result;
     }
 
-    selectPropertiesClothes = (name, key) => {
-        var result = data.find(x => x.short_key === key).properties;
-        var properties_value = result.find(x => x.props_name === name).values;
-        this.setState({
-            properties: properties_value,
-            category: key,
-            style: properties_value[0]
-        });
-    }
+    selectPropertiesClothes = (data) => { this.setState({ properties: data.values, style: data.values[0] }); }
 
     optionStyleTrigger = properties => {
         this.imageRender.setProperties(properties)
@@ -239,6 +227,59 @@ class ConfigPage extends Component {
             active: properties.id
         });
     }
+
+    render() {
+        return (
+            <div>
+                {/**BIGIN::Phầng header */}
+                <HeaderComponent />
+                {/**END::Phần header */}
+
+                {/**BIGIN::Phân body */}
+                <div className="row container-fluid">
+
+                    {/**BIGIN :: Phần menu bên trái  */}
+                    <div className="col-md-4" id="sidebarLeft">
+                        <div className="title_sidebar_mobile-left">
+                            <label className="subtitle_sidebar_mobile">THIẾT KẾ</label>
+                            <span className="btn_sidebar-hide"><i className="fa fa-arrow-left icon_back" aria-hidden="true"></i></span>
+                        </div>
+                        <div className="row" id="scrollbar_custom" >
+                            {this.showMenuSideBarLeft()}
+                            <div id="sidebar_menu_content-left" className="col-md-9">
+                                <div className="back-sub-menu">
+                                    <p style={{ width: "90%" }}>TÙY CHỌN</p>
+                                    <i className="fa fa-angle-left icon_back" aria-hidden="true" ></i>
+                                </div>
+                                <div className="row ">
+                                    {this.showPropertiesContent()}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {/**END::Phần menu bên trái */}
+
+                    {/**BIGIN::Hiển hị kế quả khi lựa chọn */}
+                    <ImageRenderComponent
+                        style={this.state.style}
+                        category={this.state.category}
+                        passRefUpward={ref => (this.imageRender = ref)}
+                        hidenSubMenuProperties={this.hidenSubMenuProperties}
+
+                    />
+                    {/**END::Hiển hị kế quả khi lựa chọn */}
+
+                    {/**BIGIN::Hiên thị giá tiền và chi tiết thiết kế đã chọ  */}
+                    <ActionFabricInfoComponent />
+                    {/**END::Hiên thị giá tiền và chi tiết thiết kế đã chọ  */}
+
+                </div>
+                {/**END::Phân body */}
+            </div>
+        );
+    }
+
 }
 
 

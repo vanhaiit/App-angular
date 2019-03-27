@@ -72,6 +72,7 @@ code {
 .scrollbox-content, #scrollbar_custom:hover {
   visibility: visible;
   transition: visibility 0s 0.2s;
+  cursor: pointer;
 }
 
 .dunnio_navbar {
@@ -161,11 +162,11 @@ code {
   width: 100%;
   height: 75px;
   border-bottom: 1px solid #eee !important;
-  display: flex
+  display: flex;
+  cursor: pointer;
 }
 
 .list_unstyled-link {
-  margin-left: 18px;
   padding: 5px;
   text-align: center
 }
@@ -200,7 +201,7 @@ code {
 .accordian h3 {
   cursor: pointer;
   background-color: #f7f9f9;
-  padding: 1.2rem 1rem 1rem 1.2rem;
+  padding: 1.2rem 1rem 1rem 0rem;
   margin: 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.07);
   display: block;
@@ -350,7 +351,8 @@ li {
 
 .option_trigger {
   text-align: center;
-  color: #b1a6a6
+  color: #b1a6a6;
+  cursor: pointer;
 }
 
 .option_trigger:hover {
@@ -564,6 +566,10 @@ li {
   border: 2px solid #EEE
 }
 
+.pants_folded {
+  margin-top: 150%
+}
+
 span.btngroup {
   width: 100%;
   margin: 0 auto;
@@ -595,4 +601,102 @@ button.btngroup--btn:focus {
   right: 10%;
   bottom: 10%;
   position: absolute;
+}
+
+.title-lable_header {
+  padding-left: 15px;
+  text-align: center;
+  color: #b1a6a6;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+
+.radio {
+  margin: 0.5rem;
+}
+
+.radio input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio input[type="radio"]+.radio-label:before {
+  content: '';
+  background: #f4f4f4;
+  border-radius: 100%;
+  border: 1px solid #b4b4b4;
+  display: inline-block;
+  width: 1.4em;
+  height: 1.4em;
+  position: relative;
+  top: -0.2em;
+  margin-right: 1em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+}
+
+.radio input[type="radio"]:checked+.radio-label:before {
+  background-color: #dc3545;
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.radio input[type="radio"]:focus+.radio-label:before {
+  outline: none;
+  border-color: #3197EE;
+}
+
+.radio input[type="radio"]:disabled+.radio-label:before {
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+  border-color: #b4b4b4;
+  background: #b4b4b4;
+}
+
+.radio input[type="radio"]+.radio-label:empty:before {
+  margin-right: 0;
+}
+
+.item_show-color {
+  width: 100%;
+  height: 35px;
+  margin: 10px;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+
+.item_show-color:hover {
+  border-bottom: 2px solid red
+}
+
+/**loading img*/
+
+#overlay {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: 1s 0.4s;
+}
+
+#progress {
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  width: 0;
+  top: 50%;
+}
+
+#progstat {
+  font-size: 0.7em;
+  letter-spacing: 3px;
+  position: absolute;
+  top: 50%;
+  margin-top: -40px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
 }

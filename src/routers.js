@@ -16,14 +16,14 @@ const routes = [
         main: () => <FabricPage></FabricPage>
     },
     {
-        path: '/config',
+        path: '/config/:id',
         exact: true,
-        main: ({ history }) => <ConfigPage history={history}></ConfigPage>
+        main: ({ match, history }) => <ConfigPage match={match} history={history}></ConfigPage>
     },
     {
-        path: '/extra',
+        path: '/extra/:id',
         exact: true,
-        main: ({ history }) => <ExtraPage history={history}></ExtraPage>
+        main: ({ match, history }) => <ExtraPage match={match} history={history}></ExtraPage>
     },
     {
         path: '',

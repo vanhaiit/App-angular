@@ -2,7 +2,7 @@
 const data = [
     {
         "short_key": "V",
-        "displayname": "Áo vest",
+        "displayname": "vest",
         "level": 1,
         "properties": [
             {
@@ -1199,7 +1199,7 @@ const data = [
                     },
                     {
                         "value": "Túi viền ngang nghiêng x3",
-                        "id": "jacket_pockets_with_flap_slanted",
+                        "id": "jacket_pockets_with_flap_slanted_x3",
                         "image": {
                             "tui_ao_vest": {
                                 "front": ["hip_pockets_with_flap_slanted", ""],
@@ -1220,7 +1220,7 @@ const data = [
                     },
                     {
                         "value": "Túi viền chéo nghiêng x3",
-                        "id": "jacket_pockets_double_welt_slanted",
+                        "id": "jacket_pockets_double_welt_slanted_x3",
                         "image": {
                             "tui_ao_vest": {
                                 "front": ["hip_pockets_double_welt_slanted", ""],
