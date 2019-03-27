@@ -48,9 +48,6 @@ class ImageRenderComponent extends Component {
     }
 
     setProperties = (style, fabric) => {
-
-        console.log(style, fabric);
-
         if (!style) return false;
         var propetiesUpdate = [];
         if (style.group_extra) this.props.hidenSubMenuProperties(style)
@@ -61,11 +58,13 @@ class ImageRenderComponent extends Component {
                 if (style.group_to_change) style.group_to_change.map(g => {
                     if (p.key === g) if (fabric) p[style.index[g]] = fabric.fabric;
                 });
-                if (style.id === "have_metal_buttons" && fabric) p['inside_extra'] = false;
-                else p['inside_extra'] = true;
+                p['inside_extra'] = true;
+                if (p.key === "cuc_boc_vai_sau" || p.key === "cuc_boc_vai_truoc") p.inside_extra = false;
                 console.log(p);
-
+                console.log(this.state.initPropeties);
+                if (p.key === "cuc_boc_vai_truoc") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
                 propetiesUpdate.push(p)
+
             });
 
             initPropeties.jacket.value.map(p => {
@@ -75,6 +74,7 @@ class ImageRenderComponent extends Component {
                             if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
                             if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
                         });
+
                         p['index'] = style.index[g];
                     }
                 });
