@@ -105,7 +105,6 @@ class ExtraPage extends Component {
 
     selectPropertiesClothesExtra = data => {
         console.log(data);
-
         this.setState({
             properties: data.values,
             props_name: data.props_name,
@@ -135,7 +134,6 @@ class ExtraPage extends Component {
     }
 
     showSubPropertiesContentExtra = () => {
-
         switch (this.state.props_name) {
             case "lining__contrast":
                 return (
@@ -220,6 +218,24 @@ class ExtraPage extends Component {
                         </div>
                     </div>
                 );
+            case "jacket_lapel_satin__contrast":
+                return (
+                    <div className="col-12 col-md-12">
+                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
+                        <div className="row">
+                            {this.showImagePropertiesExtra()}
+                        </div>
+                    </div>
+                );
+            case "handkerchief__contrast":
+                return (
+                    <div className="col-12 col-md-12">
+                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
+                        <div className="row">
+                            {this.showImagePropertiesExtra()}
+                        </div>
+                    </div>
+                );
         }
     }
 
@@ -237,6 +253,12 @@ class ExtraPage extends Component {
                 break;
             case "neck_lining__contrast":
                 (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "neck_lining__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "jacket_lapel_satin__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "jacket_lapel_satin__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "handkerchief__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "handkerchief__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
                 break;
         }
         var type = (this.state.value_properties === "Lót bông") ? "2" : "1";
@@ -276,6 +298,18 @@ class ExtraPage extends Component {
                 case "neck_lining__contrast":
                     result = list_image[type].map((item, index) => {
                         return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }}> </div>)
+                    });
+                    break;
+                case "jacket_lapel_satin__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ backgroundImage: `url("${item.image}")` }}>
+                        </div>)
+                    });
+                    break;
+                case "handkerchief__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ backgroundImage: `url("${item.image}")` }}>
+                        </div>)
                     });
                     break;
             }

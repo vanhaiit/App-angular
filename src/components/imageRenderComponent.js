@@ -1,20 +1,10 @@
 import React, { Component } from 'react';
 import initPropeties from '../utils/defaultPropetiesClothes';
 import initPropetiesExtra from '../utils/defaultPropetiesClothesExtra';
-
+import imageError from '../utils/imageEmpty';
 
 class ImageRenderComponent extends Component {
     isNotExists = false;
-
-    imageError = ["empty+cut_slim", "empty", "fit_baggy", "fit_slim", "empty+fit_slim", "empty+fit_baggy",
-        "empty+cut_regular", "empty+third", "e+m", "h", "empty+m", "e+m", "h", "hip_pockets_welt+m", "empty+m", "hip_pockets_double_welt+m",
-        "hip_pockets_with_flap+m", "pockets_2+pockets_type_flap", "buttons+lapel_lenght_long+empty", "empty+style_simple+collar_flap", "empty+fit_waisted",
-        "carlos_manos", "buttons", "chest_pocket_life+style_crossed+collar_flap", "empty+style_crossed+collar_flap+empty", "empty+style_simple+collar_standup",
-        "chest_pocket_life", "empty+style_crossed+collar_flap+lapel_style_ulster", "empty+lapel_lenght_long", "buttons+lapel_lenght_long+this_only_for_hiding_over_coat_buttons",
-        "buttons+lapel_lenght_classic+this_only_for_hiding_over_coat_buttons", "empty+lapel_lenght_classic",
-        "chest_pocket_life+style_simple+collar_flap+lapel_lenght_classic+lapel_wide_wide+lapel_style_notched", "buttons+lapel_lenght_long+lapel_style_notched",
-        "buttons+lapel_lenght_long+lapel_style_peak", "chest_pocket_life+style_simple+collar_flap+lapel_lenght_long+lapel_wide_wide+lapel_style_peak",
-    ]
 
     constructor(props) {
         super(props); this.state = { prefix: true, inside: false }
@@ -33,7 +23,7 @@ class ImageRenderComponent extends Component {
             element.index ? element.index.map(ix => { if (element.element[ix]) subUrl += element.element[ix] + "+"; }) : element.element.map(e => { if (e) subUrl += e + "+" });
             subUrl = subUrl.slice(0, subUrl.length - 1);
 
-            let check = this.imageError.find(x => x === subUrl);
+            let check = imageError.find(x => x === subUrl);
             if (check) return false;
             if (element.prefix === "front/" && this.state.prefix) {
                 if (element.key === "caravat") return false;
@@ -60,11 +50,8 @@ class ImageRenderComponent extends Component {
                 });
                 p['inside_extra'] = true;
                 if (p.key === "cuc_boc_vai_sau" || p.key === "cuc_boc_vai_truoc") p.inside_extra = false;
-                console.log(p);
-                console.log(this.state.initPropeties);
                 if (p.key === "cuc_boc_vai_truoc") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
                 propetiesUpdate.push(p)
-
             });
 
             initPropeties.jacket.value.map(p => {
