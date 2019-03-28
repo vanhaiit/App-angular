@@ -65,7 +65,7 @@ const data = [
                         }
                     },
                     {
-                        "value": "Màu tùy chọn",
+                        "value": "Kiểu thường",
                         "image": {
                             "lot_ao_vest_tren": {
                                 "front": 'linings/161_fabric/',
@@ -262,7 +262,6 @@ const data = [
                     }
                 ]
             },
-
             {
                 "props_name": "handkerchief__contrast",
                 "displayname": "Khăn túi ngực",
@@ -536,54 +535,54 @@ const data = [
                     }
                 ]
             },
-            {
-                "props_name": "patches_vest__contrast",
-                "displayname": "Vá khuỷu tay",
-                "img_icon": "s-47",
-                "short_key": "V",
-                "level": 2,
-                "values": [
-                    {
-                        "value": "Mặc định",
-                        "image": {
-                            "elbow_patches": {
-                                "": "empty",
-                            },
-                        },
-                        "img_icon": "s-48",
-                        "level": 3,
-                        "short_key": "V",
-                        "group": ["elbow_patches"],
-                        "group_to_change": ["elbow_patches"],
-                        "index": {
-                            "elbow_patches": "fabric",
-                        },
-                        "type": 0,
-                        "props_name": "patches_vest__contrast",
-                        "props_extra": {
-                            "patches_vest__color": ""
-                        }
-                    },
-                    {
-                        "value": "Màu tùy chọn",
-                        "image": {
-                            "elbow_patches": {
-                                "back": "",
-                            },
-                        },
-                        "img_icon": "s-47",
-                        "level": 3,
-                        "short_key": "V",
-                        "group": [],
-                        "group_to_change": ["elbow_patches"],
-                        "index": {
-                            "elbow_patches": "fabric",
-                        },
-                        "type": 1,
-                        "props_name": "patches_vest__contrast",
-                    }
-                ]
-            },
+            // {
+            //     "props_name": "patches_vest__contrast",
+            //     "displayname": "Vá khuỷu tay",
+            //     "img_icon": "s-47",
+            //     "short_key": "V",
+            //     "level": 2,
+            //     "values": [
+            //         {
+            //             "value": "Mặc định",
+            //             "image": {
+            //                 "elbow_patches": {
+            //                     "": "empty",
+            //                 },
+            //             },
+            //             "img_icon": "s-48",
+            //             "level": 3,
+            //             "short_key": "V",
+            //             "group": ["elbow_patches"],
+            //             "group_to_change": ["elbow_patches"],
+            //             "index": {
+            //                 "elbow_patches": "fabric",
+            //             },
+            //             "type": 0,
+            //             "props_name": "patches_vest__contrast",
+            //             "props_extra": {
+            //                 "patches_vest__color": ""
+            //             }
+            //         },
+            //         {
+            //             "value": "Màu tùy chọn",
+            //             "image": {
+            //                 "elbow_patches": {
+            //                     "back": "",
+            //                 },
+            //             },
+            //             "img_icon": "s-47",
+            //             "level": 3,
+            //             "short_key": "V",
+            //             "group": [],
+            //             "group_to_change": ["elbow_patches"],
+            //             "index": {
+            //                 "elbow_patches": "fabric",
+            //             },
+            //             "type": 1,
+            //             "props_name": "patches_vest__contrast",
+            //         }
+            //     ]
+            // },
         ]
     },
     {

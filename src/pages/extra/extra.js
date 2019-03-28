@@ -7,7 +7,7 @@ import { extraMan } from '../../utils/extralining';
 import { toggleIcon } from '../../demo';
 
 class ExtraPage extends Component {
-    menu = data[1].properties;
+
     constructor(props) {
         super(props);
         this.state = {
@@ -23,7 +23,8 @@ class ExtraPage extends Component {
             var id = match.params.id;
             switch (id) {
                 case "v":
-                    this.menu = data.filter(x => x.short_key === "V" || x.short_key === "G");
+                    // this.menu = data.filter(x => x.short_key === "V" || x.short_key === "G");
+                    this.menu = data.find(x => x.short_key === "V");
                     this.setState({ category: "V" })
                     break;
                 case "s":
@@ -40,18 +41,18 @@ class ExtraPage extends Component {
     }
 
     showMenuSideBarLeftExtra = () => {
-        if (this.state.category === "V")
-            return (
-                <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
-                    <div id="transfer_scrollbar">
-                        <div className="accordian sidebarNav  scrollbox-content">
-                            <ul className="sidebarNav">
-                                {this.showPropertiesClothesExtra(this.menu)}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            )
+        // if (this.state.category === "V")
+        //     return (
+        //         <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
+        //             <div id="transfer_scrollbar">
+        //                 <div className="accordian sidebarNav  scrollbox-content">
+        //                     <ul className="sidebarNav">
+        //                         {this.showPropertiesClothesExtra(this.menu)}
+        //                     </ul>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     )
         return (
             <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
                 <div className="accordian sidebarNav">
@@ -65,27 +66,27 @@ class ExtraPage extends Component {
     }
 
     showPropertiesClothesExtra = menu => {
-        let result = null;
-
-        if (this.state.category === "V") {
-            if (menu.length > 0) {
-                result = menu.map((item, index) => {
-                    return (
-                        <li id={`sidebar_accordian_list_${index}`} key={index} >
-                            <div className="sidebar_title_accordian" id={`title_${index}`} >
-                                <h3 id="title-menu" className="text-uppercase "> <span className="arrow" />{item.displayname}</h3>
-                            </div>
-                            <ul className="list-unstyled mt-2 mb-2 ">
-                                {this.showSubMenuPropertiesExtra(item.properties)}
-                            </ul>
-                        </li>
-                    )
-                })
-            }
-        } else {
-            return this.showSubMenuPropertiesExtra(menu.properties);
-        }
-        return result;
+        return this.showSubMenuPropertiesExtra(menu.properties);
+        // let result = null;
+        // if (this.state.category === "V") {
+        //     if (menu.length > 0) {
+        //         result = menu.map((item, index) => {
+        //             return (
+        //                 <li id={`sidebar_accordian_list_${index}`} key={index} >
+        //                     <div className="sidebar_title_accordian" id={`title_${index}`} >
+        //                         <h3 id="title-menu" className="text-uppercase "> <span className="arrow" />{item.displayname}</h3>
+        //                     </div>
+        //                     <ul className="list-unstyled mt-2 mb-2 ">
+        //                         {this.showSubMenuPropertiesExtra(item.properties)}
+        //                     </ul>
+        //                 </li>
+        //             )
+        //         })
+        //     }
+        // } else {
+        //     return this.showSubMenuPropertiesExtra(menu.properties);
+        // }
+        // return result;
     }
 
     showSubMenuPropertiesExtra(data) {
@@ -105,6 +106,8 @@ class ExtraPage extends Component {
 
     selectPropertiesClothesExtra = data => {
         console.log(data);
+
+        this.optionStyleTriggerExtra(null)
         this.setState({
             properties: data.values,
             props_name: data.props_name,
@@ -112,6 +115,8 @@ class ExtraPage extends Component {
     }
 
     optionStyleTriggerExtra = data => {
+        console.log(data);
+
         if (!data) return this.setState({ img_properties: [], value_properties: null, style: data });
         this.setState({ img_properties: data.value !== "Mặc định" ? extraMan[data.props_name] : [], value_properties: data ? data.value : null, style: data }, () => {
         }); this.imageRender.setProperties(data, null)
@@ -121,6 +126,13 @@ class ExtraPage extends Component {
         var result = null;
         if (this.state.properties.length > 0) {
             result = this.state.properties.map((item, index) => {
+                if (this.state.props_name === "chest_pleats")
+                    return (
+                        <div className={`col-md-6 col-6 option_trigger`} key={index} onClick={() => this.imageRender.setProperties(item)} >
+                            <i className={`icon-${item.img_icon} large-icon`} ></i>
+                            <div className="text-uppercase">{item.value}</div>
+                        </div>
+                    )
                 return (
                     <div hidden={this.state.img_properties.length !== 0} className={`col-md-6 col-6 option_trigger`} key={index} onClick={() => this.optionStyleTriggerExtra(item)} >
                         <i className={`icon-${item.img_icon} large-icon`} ></i>
@@ -134,109 +146,59 @@ class ExtraPage extends Component {
     }
 
     showSubPropertiesContentExtra = () => {
-        switch (this.state.props_name) {
-            case "lining__contrast":
-                return (
-                    <div className="col-12 col-md-12">
-                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
-                        <div className="row" id="scrollbar_custom">
-                            {this.showImagePropertiesExtra()}
-                        </div>
+        if (this.state.props_name === "initials__text")
+            return (
+                <div className="col-12 col-md-12" >
+                    <label className="title-lable_header">BLAZER INITIALS</label>
+                    <div className="col-md-12 col-12 option_trigger" >
+                        <input id="initial" type="text" className="form-control" name="initial" placeholder="Thiêu tên.." />
                     </div>
-                );
-            case "initials__text":
-                return (
-                    <div className="col-12 col-md-12" >
-                        <label className="title-lable_header">BLAZER INITIALS</label>
-                        <div className="col-md-12 col-12 option_trigger" >
-                            <input id="initial" type="text" className="form-control" name="initial" placeholder="Thiêu tên.." />
-                        </div>
-                        <label className="title-lable_header">FONT</label>
-                        <div className="col-md-12 col-12 option_trigger" >
-                            <div className="row">
-                                <div className="col-md-6 col-6">
-                                    <div className="radio">
-                                        <input id="radio-1" name="radio" type="radio" defaultChecked />
-                                        <label htmlFor="radio-1" className="radio-label"><i className="icon-v-37 large-icon" ></i></label>
-                                    </div>
+                    <label className="title-lable_header">FONT</label>
+                    <div className="col-md-12 col-12 option_trigger" >
+                        <div className="row">
+                            <div className="col-md-6 col-6">
+                                <div className="radio">
+                                    <input id="radio-1" name="radio" type="radio" defaultChecked />
+                                    <label htmlFor="radio-1" className="radio-label"><i className="icon-v-37 large-icon" ></i></label>
                                 </div>
-                                <div className="col-md-6 col-6">
-                                    <div className="radio">
-                                        <input id="radio-2" name="radio" type="radio" />
-                                        <label htmlFor="radio-2" className="radio-label"><i className="icon-v-38 large-icon" ></i></label>
-                                    </div>
+                            </div>
+                            <div className="col-md-6 col-6">
+                                <div className="radio">
+                                    <input id="radio-2" name="radio" type="radio" />
+                                    <label htmlFor="radio-2" className="radio-label"><i className="icon-v-38 large-icon" ></i></label>
+                                </div>
 
+                            </div>
+                            <div className="col-md-6 col-6">
+                                <div className="radio">
+                                    <input id="radio-3" name="radio" type="radio" />
+                                    <label htmlFor="radio-3" className="radio-label"><i className="icon-v-39 large-icon" ></i></label>
                                 </div>
-                                <div className="col-md-6 col-6">
-                                    <div className="radio">
-                                        <input id="radio-3" name="radio" type="radio" />
-                                        <label htmlFor="radio-3" className="radio-label"><i className="icon-v-39 large-icon" ></i></label>
-                                    </div>
-                                </div>
-                                <div className="col-md-6 col-6">
-                                    <div className="radio">
-                                        <input id="radio-4" name="radio" type="radio" />
-                                        <label htmlFor="radio-4" className="radio-label"><i className="icon-v-41 large-icon" ></i></label>
-                                    </div>
+                            </div>
+                            <div className="col-md-6 col-6">
+                                <div className="radio">
+                                    <input id="radio-4" name="radio" type="radio" />
+                                    <label htmlFor="radio-4" className="radio-label"><i className="icon-v-41 large-icon" ></i></label>
                                 </div>
                             </div>
                         </div>
-                        <label className="title-lable_header">MONOGRAM THREAD COLOR:</label>
-                        <div className="col-md-12 col-12 option_trigger" >
-                            <div className="row" >
-                                {this.showImagePropertiesExtra()}
-                            </div>
-                        </div>
                     </div>
-                );
-            case "metal_buttons__contrast":
-                return (
-                    <div className="col-12 col-md-12">
-                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
-                        <div className="col-md-12 col-12 option_trigger" >
-                            <div className="row">
-                                {this.showImagePropertiesExtra()}
-                            </div>
-                        </div>
-                    </div>
-                );
-            case "button_holes_threads__contrast":
-                return (
-                    <div className="col-12 col-md-12">
-                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
-                        <div className="row">
+                    <label className="title-lable_header">MONOGRAM THREAD COLOR:</label>
+                    <div className="col-md-12 col-12 option_trigger" >
+                        <div className="row" >
                             {this.showImagePropertiesExtra()}
                         </div>
                     </div>
-                );
-            case "neck_lining__contrast":
-                return (
-                    <div className="col-12 col-md-12">
-                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
-                        <div className="row">
-                            {this.showImagePropertiesExtra()}
-                        </div>
-                    </div>
-                );
-            case "jacket_lapel_satin__contrast":
-                return (
-                    <div className="col-12 col-md-12">
-                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
-                        <div className="row">
-                            {this.showImagePropertiesExtra()}
-                        </div>
-                    </div>
-                );
-            case "handkerchief__contrast":
-                return (
-                    <div className="col-12 col-md-12">
-                        <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
-                        <div className="row">
-                            {this.showImagePropertiesExtra()}
-                        </div>
-                    </div>
-                );
-        }
+                </div>
+            );
+        return (
+            <div className="col-12 col-md-12">
+                <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
+                <div className="row" id={this.state.props_name === "lining__contrast" || this.state.props_name === "neck_fabric__contrast" || this.state.props_name === "coat_lining__contrast"  ? "scrollbar_custom" : "none"}>
+                    {this.showImagePropertiesExtra()}
+                </div>
+            </div>
+        );
     }
 
     showImagePropertiesExtra = () => {
@@ -244,6 +206,9 @@ class ExtraPage extends Component {
         switch (this.state.props_name) {
             case "lining__contrast":
                 (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "lining__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "initials__text":
+                list_image = extraMan[this.state.props_name];
                 break;
             case "metal_buttons__contrast":
                 (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "metal_buttons__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
@@ -260,10 +225,26 @@ class ExtraPage extends Component {
             case "handkerchief__contrast":
                 (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "handkerchief__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
                 break;
+            case "neck_fabric__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "neck_fabric__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "cuffs_fabric__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "cuffs_fabric__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "button_holes_threads_shirt__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "button_holes_threads_shirt__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "patches_shirt__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "patches_shirt__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "coat_lining__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "coat_lining__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
         }
         var type = (this.state.value_properties === "Lót bông") ? "2" : "1";
         if (!list_image[type]) return false;
-        if (list_image[type].length > 0 || this.state.props_name === "button_holes_threads__contrast") {
+
+        if (list_image[type].length > 0 || this.state.props_name === "button_holes_threads__contrast" || this.state.props_name === "button_holes_threads_shirt__contrast") {
             var result = null;
             switch (this.state.props_name) {
                 case "lining__contrast":
@@ -292,28 +273,68 @@ class ExtraPage extends Component {
                     break;
                 case "button_holes_threads__contrast":
                     result = list_image[type].threads.map((item, index) => {
-                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }}> </div>)
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}> </div>)
                     });
                     break;
                 case "neck_lining__contrast":
                     result = list_image[type].map((item, index) => {
-                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }}> </div>)
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}> </div>)
                     });
                     break;
                 case "jacket_lapel_satin__contrast":
                     result = list_image[type].map((item, index) => {
-                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ backgroundImage: `url("${item.image}")` }}>
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ backgroundImage: `url("${item.image}")` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
                         </div>)
                     });
                     break;
                 case "handkerchief__contrast":
                     result = list_image[type].map((item, index) => {
-                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ backgroundImage: `url("${item.image}")` }}>
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ backgroundImage: `url("${item.image}")` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
                         </div>)
                     });
                     break;
+                case "neck_fabric__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (
+                            <div key={index} id="item-show_part" className="col-md-6 col-6 scrollbox-content" onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
+                                <img src={item.image} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                                <a className="thumb_preview"> <i className="fa fa-search" /></a> <a>{item.value}</a>  <br />
+                                <label style={{ color: 'red' }}>{item.price}</label>
+                            </div>)
+                    });
+                    break;
+                case "cuffs_fabric__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (
+                            <div key={index} id="item-show_part" className="col-md-6 col-6 scrollbox-content" onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
+                                <img src={item.image} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                                <a className="thumb_preview"> <i className="fa fa-search" /></a> <a>{item.value}</a>  <br />
+                                <label style={{ color: 'red' }}>{item.price}</label>
+                            </div>)
+                    });
+                    break;
+                case "button_holes_threads_shirt__contrast":
+                    result = list_image[type].holes.map((item, index) => {
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}> </div>)
+                    });
+                    break;
+                case "patches_shirt__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ backgroundImage: `url("${item.image}")` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
+                        </div>)
+                    });
+                    break;
+                case "coat_lining__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (
+                            <div key={index} id="item-show_part" className="col-md-6 col-6 scrollbox-content" onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
+                                <img src={item.image} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                                <a className="thumb_preview"> <i className="fa fa-search" /></a> <a>{item.value}</a>  <br />
+                                <label style={{ color: 'red' }}>{item.price}</label>
+                            </div>)
+                    });
+                    break;
             }
-
         }
         return result;
     }

@@ -1,4 +1,5 @@
 const initPropetiesExtra = {
+
     jacket: {
         index: {
             default_lot_ao_vest_tren: [0],
@@ -86,7 +87,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 150,
+                zIndex: 100,
                 element: ["interior+espalda_abajo+length_long+unlined_v2"]
             },
             {
@@ -130,7 +131,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["handkerchief_recto"]
             },
             {
@@ -175,7 +176,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 37,
+                zIndex: 101,
                 element: ["neck_single_breasted+buttons_2", "lapel_medium", "style_lapel_notch", "lapel"]
             },
             {
@@ -186,7 +187,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 37,
+                zIndex: 101,
                 element: ["neck_single_breasted+buttons_2", "lapel_medium", "style_lapel_notch"]
             },
             {
@@ -197,7 +198,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 37,
+                zIndex: 101,
                 element: ["sleeves+buttons_4"]
             },
             {
@@ -208,7 +209,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 37,
+                zIndex: 101,
                 element: ["neck_single_breasted+buttons_2", "lapel_medium", "style_lapel_notch"]
             },
             {
@@ -219,7 +220,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 37,
+                zIndex: 101,
                 element: ["sleeves+buttons_4"]
             },
             {
@@ -230,7 +231,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 37,
+                zIndex: 101,
                 element: ["neck_single_breasted+buttons_2", "lapel_narrow", "style_lapel_notch"]
             },
             {
@@ -245,6 +246,414 @@ const initPropetiesExtra = {
                 element: ["elbow_patches"]
             },
 
+        ]
+    },
+    shirt: {
+        index: {
+            pha_co_ao_somi: [0, 1, 2, 3],
+            pha_co_sau_ao_somi: [0, 1],
+            co_tay_ao_somi: [0, 1, 2],
+            co_tay_ngan_ao_somi: [0, 1],
+            co_tay_sau_ao_somi: [0, 1, 2],
+            co_tay_ngan_sau_ao_somi: [0, 1],
+            button_holes_collar_top: [0, 1, 2],
+            button_holes_collar_bottom: [0, 1, 2],
+            button_threads_collar_top: [0, 1, 2],
+            button_threads_collar_bottom: [0, 1, 2],
+            button_holes_cuffs: [0, 1],
+            button_threads_cuffs: [0, 1],
+            elbow_patches: [0, 1],
+            cuc_ao_somi_tren: [0, 1, 2],
+            cuc_ao_somi_duoi: [0, 1, 2],
+            cuc_bac_tay: [0, 1],
+            button_holes_pocket: [0],
+            button_threads_pocket: [0],
+            xep_ly_nguc: [0],
+        },
+        value: [
+            {
+                key: "pha_co_ao_somi",
+                fabric: "1737_fabric/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["neck_contrast_full", "necklines_classic", "number_1", "button_close_standard"]
+            },
+            {
+                key: "pha_co_sau_ao_somi",
+                fabric: "1737_fabric/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["neck_contrast_outer", "necklines_1_button"]
+            },
+            {
+                key: "co_tay_ao_somi",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["cuff_contrast_outer", "sleeves_long", "cuffs_classic"]
+            },
+            {
+                key: "co_tay_ngan_ao_somi",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["cuff_contrast_outer", "sleeves_long"]
+            },
+            {
+                key: "co_tay_sau_ao_somi",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["cuff_contrast_outer", "sleeves_long", "cuffs_style_squared"]
+            },
+            {
+                key: "co_tay_ngan_sau_ao_somi",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["cuff_contrast_outer", "sleeves_long"]
+            },
+            {
+                key: "button_holes_collar_top",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["necklines_classic", "number_1", "button_close_standard"]
+            },
+            {
+                key: "button_holes_collar_bottom",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["fit_fit", "button_close_standard_", "inside"]
+            },
+            {
+                key: "button_threads_collar_top",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["necklines_classic", "number_1", "button_close_standard"]
+            },
+            {
+                key: "button_threads_collar_bottom",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["fit_fit", "button_close_standard_", "inside"]
+            },
+            {
+                key: "button_holes_cuffs",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["sleeves_long", "cuffs_style_squared"]
+            },
+            {
+                key: "button_threads_cuffs",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["sleeves_long", "cuffs_style_squared"]
+            },
+            {
+                key: "elbow_patches",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["contrast", "elbow_patches"]
+            },
+            {
+                key: "cuc_ao_somi_tren",
+                fabric: "Botones/1/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["necklines_classic", "number_1", "button_close_standard"]
+            },
+            {
+                key: "cuc_ao_somi_duoi",
+                fabric: "Botones/1/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["fit_fit", "button_close_standard_", "inside"]
+            },
+            {
+                key: "cuc_bac_tay",
+                fabric: "Botones/1/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["sleeves_long", "cuffs_style_squared"]
+            },
+            {
+                key: "button_holes_pocket",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["empty"]
+            },
+            {
+                key: "button_threads_pocket",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["empty"]
+            },
+            {
+                key: "xep_ly_nguc",
+                fabric: "1737_fabric/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'shirt',
+                opacity: 1,
+                className: 'man_jacket',
+                zIndex: 100,
+                element: ["empty"]
+            }
+        ]
+    },
+    coat: {
+        index: {
+            default_lot_ao_mangto_tren: [0, 1, 2],
+            lot_ao_mangto_tren: [0],
+            lot_ao_mangto_unlined_tren: [0],
+            unlined_top_x: [0],
+            unlined_top: [0],
+            pha_co_ao_mangto: [0, 1, 2, 3, 4, 5, 7],
+            pha_co_sau_ao_mangto: [0, 1, 2],
+            button_holes_collar_top: [0, 3],
+            button_threads_collar_top: [0, 3],
+            button_holes_collar_bottom: [0],
+            button_threads_collar_bottom: [0],
+            button_holes_cuffs: [0],
+            elbow_patches: [0],
+            vong_co_sau_ao: [0]
+        },
+        value: [
+            {
+                key: "default_lot_ao_mangto_tren",
+                fabric: "1993_fabric/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["interior+arriba", "style_simple", "collar_classic", "fastening_trench"]
+            },
+            {
+                key: "lot_ao_mangto_tren",
+                fabric: "linings/163_fabric/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["interior+espalda"]
+            },
+            {
+                key: "lot_ao_mangto_unlined_tren",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["especial+interior+espalda_unlined"]
+            },
+            {
+                key: "unlined_top_x",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["interior+espalda_unlined+x"]
+            },
+            {
+                key: "unlined_top",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["interior+espalda_unlined"]
+            },
+            {
+                key: "pha_co_ao_mangto",
+                fabric: "1993_fabric/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["top", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "lenght_short", "fastening_boton_standard"]
+            },
+            {
+                key: "pha_co_sau_ao_mangto",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["top", "collar_classic", "flap"]
+            },
+            {
+                key: "button_holes_collar_top",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["buttons", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "lenght_short", "fastening_boton_standard"]
+            },
+            {
+                key: "button_holes_collar_bottom",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["empty", "style_crossed", "collar_flap", "lenght_short", "fastening_boton_standard"]
+            },
+            {
+                key: "button_threads_collar_top",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["buttons", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "lenght_short", "fastening_boton_standard"]
+            },
+            {
+                key: "button_threads_collar_bottom",
+                fabric: "empty/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["empty", "style_crossed", "collar_flap", "lenght_short", "fastening_boton_standard"]
+            },
+            {
+                key: "button_holes_cuffs",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["empty"]
+            },
+            {
+                key: "elbow_patches",
+                fabric: "empty/",
+                prefix: 'back/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["elbow_patches"]
+            },
+            {
+                key: "vong_co_sau_ao",
+                fabric: "back/",
+                prefix: 'front/',
+                suffix: '.png',
+                ingredient: 'coat_2',
+                opacity: 1,
+                className: 'man_coat',
+                zIndex: 100,
+                element: ["collar_neck_open"]
+            }
         ]
     }
 }
