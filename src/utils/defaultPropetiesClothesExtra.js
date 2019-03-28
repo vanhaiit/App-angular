@@ -32,7 +32,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_arriba"]
             },
             {
@@ -43,7 +43,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_abajo+length_long"]
             },
             {
@@ -54,7 +54,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_arriba"]
             },
             {
@@ -65,7 +65,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_abajo+length_long"]
             },
             {
@@ -76,7 +76,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_arriba+unlined_v2"]
             },
             {
@@ -87,7 +87,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_abajo+length_long+unlined_v2"]
             },
             {
@@ -98,7 +98,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_arriba+unlined_v2+x"]
             },
             {
@@ -109,7 +109,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_arriba+unlined_v2"]
             },
             {
@@ -120,7 +120,7 @@ const initPropetiesExtra = {
                 ingredient: 'jacket',
                 opacity: 1,
                 className: 'man_jacket',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["interior+espalda_abajo+length_long+unlined_v2"]
             },
             {
@@ -509,7 +509,7 @@ const initPropetiesExtra = {
                 opacity: 1,
                 className: 'man_coat',
                 zIndex: 100,
-                element: ["interior+arriba", "style_simple", "collar_classic", "fastening_trench"]
+                element: ["interior+arriba", "style_simple", "collar_classic"]
             },
             {
                 key: "lot_ao_mangto_tren",
@@ -563,7 +563,7 @@ const initPropetiesExtra = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 102,
                 element: ["top", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -607,7 +607,7 @@ const initPropetiesExtra = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 10,
                 element: ["buttons", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -640,13 +640,13 @@ const initPropetiesExtra = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 102,
                 element: ["elbow_patches"]
             },
             {
                 key: "vong_co_sau_ao",
-                fabric: "back/",
-                prefix: 'front/',
+                fabric: "empty/",
+                prefix: 'back/',
                 suffix: '.png',
                 ingredient: 'coat_2',
                 opacity: 1,

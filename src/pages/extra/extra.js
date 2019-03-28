@@ -194,7 +194,7 @@ class ExtraPage extends Component {
         return (
             <div className="col-12 col-md-12">
                 <label onClick={() => this.optionStyleTriggerExtra(null)} hidden={this.state.img_properties.length === 0} style={{ cursor: "pointer" }} className="text-uppercase" ><i className="fas fa-caret-left"></i> back</label>
-                <div className="row" id={this.state.props_name === "lining__contrast" || this.state.props_name === "neck_fabric__contrast" || this.state.props_name === "coat_lining__contrast"  ? "scrollbar_custom" : "none"}>
+                <div className="row" id={this.state.props_name === "lining__contrast" || this.state.props_name === "neck_fabric__contrast" || this.state.props_name === "coat_lining__contrast" ? "scrollbar_custom" : "none"}>
                     {this.showImagePropertiesExtra()}
                 </div>
             </div>
@@ -240,11 +240,23 @@ class ExtraPage extends Component {
             case "coat_lining__contrast":
                 (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "coat_lining__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
                 break;
+            case "coat_neck_lining__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "coat_neck_lining__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "patches_coat__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "patches_coat__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "button_holes_threads_coat__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "button_holes_threads_coat__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
+            case "coat_neck_fabric__contrast":
+                (this.state.value_properties === "Mặc định" || !this.state.value_properties && this.state.props_name === "coat_neck_fabric__contrast") ? list_image = [] : list_image = extraMan[this.state.props_name];
+                break;
         }
         var type = (this.state.value_properties === "Lót bông") ? "2" : "1";
         if (!list_image[type]) return false;
 
-        if (list_image[type].length > 0 || this.state.props_name === "button_holes_threads__contrast" || this.state.props_name === "button_holes_threads_shirt__contrast") {
+        if (list_image[type].length > 0 || this.state.props_name === "button_holes_threads__contrast" || this.state.props_name === "button_holes_threads_shirt__contrast" || this.state.props_name === "button_holes_threads_coat__contrast") {
             var result = null;
             switch (this.state.props_name) {
                 case "lining__contrast":
@@ -325,6 +337,36 @@ class ExtraPage extends Component {
                     });
                     break;
                 case "coat_lining__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (
+                            <div key={index} id="item-show_part" className="col-md-6 col-6 scrollbox-content" onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
+                                <img src={item.image} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                                <a className="thumb_preview"> <i className="fa fa-search" /></a> <a>{item.value}</a>  <br />
+                                <label style={{ color: 'red' }}>{item.price}</label>
+                            </div>)
+                    });
+                    break;
+                case "coat_neck_lining__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}> </div>)
+                    });
+                    break;
+                case "patches_coat__contrast":
+                    result = list_image[type].map((item, index) => {
+                        return (
+                            <div key={index} id="item-show_part" className="col-md-6 col-6 scrollbox-content" onClick={() => (this.imageRender.setProperties(this.state.style, item))}>
+                                <img src={item.image} className="rounded zoom" alt="Cinque Terre" style={{ width: '100%' }} />
+                                <a className="thumb_preview"> <i className="fa fa-search" /></a> <a>{item.value}</a>  <br />
+                                <label style={{ color: 'red' }}>{item.price}</label>
+                            </div>)
+                    });
+                    break;
+                case "button_holes_threads_coat__contrast":
+                    result = list_image[type].holes.map((item, index) => {
+                        return (<div key={index} className="col-md-2 col-2 item_show-color" style={{ background: `${item.color}` }} onClick={() => (this.imageRender.setProperties(this.state.style, item))}> </div>)
+                    });
+                    break;
+                case "coat_neck_fabric__contrast":
                     result = list_image[type].map((item, index) => {
                         return (
                             <div key={index} id="item-show_part" className="col-md-6 col-6 scrollbox-content" onClick={() => (this.imageRender.setProperties(this.state.style, item))}>

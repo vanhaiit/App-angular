@@ -461,7 +461,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["top", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -472,7 +472,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["buttons", "lapel_lenght_long", "collar_flap", "lapel_style_ulster", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -483,7 +483,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["bottom", "style_simple", "collar_flap", "lenght_short", "fastening_boton_standard"]
             },
             {
@@ -494,7 +494,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["empty", "style_crossed", "collar_flap", "lenght_short", "fastening_trench"]
             },
             {
@@ -505,7 +505,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["buttons", "lapel_lenght_long"]
             },
             {
@@ -516,7 +516,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["sleeves"]
             },
             {
@@ -527,7 +527,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["chest_pocket_life", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched"]
             },
             {
@@ -538,7 +538,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["pockets_type_diagonal", "fit_waisted"]
             },
             {
@@ -549,7 +549,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["pockets_type_warmer"]
             },
             {
@@ -560,7 +560,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["empty", "style_simple", "collar_flap", "lapel_style_ulster"]
             },
             {
@@ -571,7 +571,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["empty", "fit_waisted"]
             },
             {
@@ -582,7 +582,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["sleeves_tape"]
             },
             {
@@ -593,7 +593,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["empty"]
             },
             {
@@ -604,7 +604,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["fit_straight"]
             },
             {
@@ -615,7 +615,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["carlos_manos"]
             },
             {
@@ -626,7 +626,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["fit_straight"]
             },
             {
@@ -637,7 +637,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["top", "collar_classic+flap"]
             },
             {
@@ -648,7 +648,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["hood"]
             },
             {
@@ -659,7 +659,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["bottom", "lenght_short", "backcut_1"]
             },
             {
@@ -670,7 +670,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["sleeves"]
             },
             {
@@ -681,7 +681,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["empty"]
             },
             {
@@ -692,7 +692,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["empty", "fit_waisted"]
             },
             {
@@ -703,7 +703,7 @@ const initPropeties = {
                 ingredient: 'coat_2',
                 opacity: 1,
                 className: 'man_coat',
-                zIndex: 100,
+                zIndex: 101,
                 element: ["sleeves_tape"]
             },
         ]

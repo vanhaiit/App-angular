@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import initPropeties from '../utils/defaultPropetiesClothes';
 import initPropetiesExtra from '../utils/defaultPropetiesClothesExtra';
 import imageError from '../utils/imageEmpty';
+import { connect } from 'react-redux';
+import { actDesignCustom } from '../actions';
 
 class ImageRenderComponent extends Component {
     isNotExists = false;
     designCustom = {}
 
     constructor(props) {
-        super(props); this.state = { prefix: true, inside: false, hide_cavat: false }
+        super(props); this.state = { prefix: true, inside: false, hide_cavat: false, jacket: false, pants: false, waistcoat: false, shirt: false, coat_2: false }
     }
 
     componentWillMount() {
-
         if (this.props.passRefUpward) this.props.passRefUpward(this);
-        //  var design = JSON.parse(localStorage.getItem("design__custom"));
         var images = initPropeties.jacket.value.concat(initPropeties.pants.value);
         this.setState({ initPropeties: images })
     }
@@ -32,6 +32,13 @@ class ImageRenderComponent extends Component {
                 if (element.key === "caravat") return false;
                 if (element.inside) return <img key={index} hidden={this.state.inside} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
                 if (element.inside_extra) return <img key={index} hidden={!this.state.inside} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+
+                if (element.ingredient === "jacket") return <img key={index} hidden={this.state.jacket} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                if (element.ingredient === "pants") return <img key={index} hidden={this.state.pants} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                if (element.ingredient === "waistcoat") return <img key={index} hidden={this.state.waistcoat} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                if (element.ingredient === "shirt") return <img key={index} hidden={this.state.shirt} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+                if (element.ingredient === "coat_2") return <img key={index} hidden={this.state.coat_2} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
+
                 return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
             }
             if (element.prefix === "back/" && !this.state.prefix) return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
@@ -41,29 +48,44 @@ class ImageRenderComponent extends Component {
 
     setProperties = (style, fabric) => {
         if (!style) return false;
-        console.log(style, fabric);
+
         var propetiesUpdate = [];
+        var imageView = [];
+
         if (style.group_extra) this.props.hidenSubMenuProperties(style)
-        if (style.short_key === "V" || style.short_key === "M") {
+
+        if (style.short_key === "V") {
+            let exPropetiesUpdate = [];
             initPropetiesExtra.jacket.value.map(p => {
                 style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
                 if (style.group_to_change) {
                     style.group_to_change.map(g => {
                         if (p.key === g) {
                             if (fabric) p[style.index[g]] = fabric.fabric;
+                            p['inside_extra'] = true;
+                            if (p.key === "cuc_boc_vai_sau" || p.key === "cuc_boc_vai_truoc") p.inside_extra = false;
+                            if (p.key === "cuc_boc_vai_truoc") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
+                            if (p.key === "holes_ban_ve") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
+                            if (p.key === "bong_ve_ao_vest") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
+                            if (p.key === "holes_kieu_dang") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
+                            this.state.inside = true;
+                            exPropetiesUpdate.push(p);
                         }
-                        p['inside_extra'] = true;
-                        if (p.key === "cuc_boc_vai_sau" || p.key === "cuc_boc_vai_truoc") p.inside_extra = false;
-                        if (p.key === "cuc_boc_vai_truoc") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                        if (p.key === "holes_ban_ve") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                        if (p.key === "bong_ve_ao_vest") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                        if (p.key === "holes_kieu_dang") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                        this.state.inside = true;
-                        propetiesUpdate.push(p);
+                        if (p.key === "default_lot_ao_vest_tren") {
+                            p['inside_extra'] = true;
+                            exPropetiesUpdate.push(p);
+                        }
+                        this.setState({ pants: true });
                     });
                     this.setState({ hide_cavat: true })
                 }
             });
+
+            if (exPropetiesUpdate.length > 0) {
+                this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
+                this.props.onDesignCustom(this.designCustom);
+            }
+
 
             initPropeties.jacket.value.map(p => {
                 style.group.map(g => {
@@ -77,39 +99,69 @@ class ImageRenderComponent extends Component {
                 });
                 propetiesUpdate.push(p)
             });
+
+            this.designCustom[style.short_key] = propetiesUpdate;
+
+            this.props.onDesignCustom(this.designCustom);
+
+            if (!this.props.design.Q) imageView = propetiesUpdate.concat(initPropeties.pants.value);
+
+            else imageView = propetiesUpdate.concat(this.props.design.Q);
+
+            if (exPropetiesUpdate.length > 0) imageView = imageView.concat(exPropetiesUpdate);
+
+            var ex = ["V", "V_lining__contrast", "V_initials__text", "V_jacket_lapel_satin__contrast", "V_handkerchief__contrast", "V_metal_buttons__contrast", "V_button_holes_threads__contrast", "V_neck_lining__contrast"]
+
+            ex.forEach(element => {
+                if (this.props.design[element]) imageView = imageView.concat(this.props.design[element])
+            });
+
         }
 
-        initPropeties.pants.value.map(p => {
-            style.group.map(g => {
-                if (p.key === g) {
-                    style.index[g].forEach((ix, index) => {
-                        if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
-                        if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
-                    });
-                    p['index'] = style.index[g];
-                }
-            });
-            p['inside'] = true;
-            propetiesUpdate.push(p)
-        });
+        if (style.short_key === "Q") {
 
-        if (style.short_key === "S" || style.short_key === "Q" || style.short_key === "G") {
-            initPropeties.shirt.value.map(p => {
-                if (style.short_key === "S") {
-                    initPropetiesExtra.shirt.value.map(p => {
-                        style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
-                        if (style.group_to_change) {
-                            style.group_to_change.map(g => {
-                                if (p.key === g) {
-                                    if (fabric) p.fabric = fabric.fabric;
-                                    p.element[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back;
-                                    propetiesUpdate.push(p);
-                                }
-                            });
-                            this.setState({ hide_cavat: true })
+            initPropeties.pants.value.map(p => {
+                style.group.map(g => {
+                    if (p.key === g) {
+                        style.index[g].forEach((ix, index) => {
+                            if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                            if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                        });
+                        p['index'] = style.index[g];
+                    }
+                });
+                p['inside'] = true;
+                propetiesUpdate.push(p);
+            });
+
+            this.designCustom[style.short_key] = propetiesUpdate;
+            this.props.onDesignCustom(this.designCustom);
+            if (!this.props.design.S) imageView = propetiesUpdate.concat(initPropeties.shirt.value);
+            else imageView = propetiesUpdate.concat(this.props.design.S)
+        }
+
+        if (style.short_key === "S") {
+            let exPropetiesUpdate = [];
+            initPropetiesExtra.shirt.value.map(p => {
+                style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
+                if (style.group_to_change) {
+                    style.group_to_change.map(g => {
+                        if (p.key === g) {
+                            if (fabric) p.fabric = fabric.fabric;
+                            p.element[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back;
+                            exPropetiesUpdate.push(p);
                         }
                     });
+                    this.setState({ hide_cavat: true })
                 }
+            });
+
+            if (exPropetiesUpdate.length > 0) {
+                this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
+                this.props.onDesignCustom(this.designCustom);
+            }
+
+            initPropeties.shirt.value.map(p => {
 
                 style.group.map(g => {
                     if (p.key === g) {
@@ -123,23 +175,27 @@ class ImageRenderComponent extends Component {
 
                 propetiesUpdate.push(p)
             });
+            this.designCustom[style.short_key] = propetiesUpdate;
+            this.props.onDesignCustom(this.designCustom);
+            if (!this.props.design.Q) imageView = propetiesUpdate.concat(initPropeties.pants.value);
+            else imageView = propetiesUpdate.concat(this.props.design.Q);
+
+            if (exPropetiesUpdate.length > 0) imageView = imageView.concat(exPropetiesUpdate);
+
+            this.setState({ hide_cavat: true });
+
+            var ex = ["S", "S_neck_fabric__contrast", "S_initials__text", "S_cuffs_fabric__contrast", "S_button_holes_threads_shirt__contrast", "S_patches_shirt__contrast", "S_chest_pleats"]
+
+            ex.forEach(element => {
+                if (this.props.design[element]) imageView = imageView.concat(this.props.design[element])
+            });
+
+
         }
 
         if (style.short_key === "G") {
             if (style.id === "waistcoat_lapel_peak" || style.id === "waistcoat_lapel_round" || style.id === "waistcoat_lapel_notch") this.isNotExists = false;
             if (style.id === "waistcoat_no_lapel" || style.id === "waistcoat_piece") this.isNotExists = true;
-
-            // initPropetiesExtra.gile.value.map(p => {
-            //     style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
-            //     if (style.group_to_change) {
-            //         style.group_to_change.map(g => { if (p.key === g) if (fabric) p[style.index[g]] = fabric.fabric; });
-            //         p['inside_extra'] = true;
-            //         this.state.inside = true;
-            //         propetiesUpdate.push(p);
-            //         console.log(p);
-            //     }
-            // });
-
             initPropeties.gile.value.map(p => {
                 if (style.group.length === 0 && p.key === "ao_gile") p['index'] = [0, 1, 2];
                 style.group.map(g => {
@@ -156,60 +212,101 @@ class ImageRenderComponent extends Component {
                 if (!this.isNotExists && p.key === "ao_gile" && p.index.length === 2) p.index.splice(1, 0, 1);
                 propetiesUpdate.push(p);
             });
+
+            this.designCustom[style.short_key] = propetiesUpdate;
+
+            this.props.onDesignCustom(this.designCustom);
+
+            let _array, __array;
+            if (!this.props.design.S) _array = propetiesUpdate.concat(initPropeties.shirt.value);
+            else _array = propetiesUpdate.concat(this.props.design.S);
+
+            if (!this.props.design.Q) __array = propetiesUpdate.concat(initPropeties.pants.value);
+            else __array = propetiesUpdate.concat(this.props.design.Q);
+
+            imageView = _array.concat(__array);
         }
+
         if (style.short_key === "M") {
 
-            // initPropeties.coat.value.map(p => {
-            //     style.group.map(g => {
-            //         if (p.key === g) {
-
-            //             style.index[g].forEach((ix, index) => {
-            //                 if (!style.special) {
-            //                     (style.image[g].front) ?
-            //                         p.element[ix] = style.image[g].front[ix] ? style.image[g].front[ix] : p.element[ix] :
-            //                         p.element[ix] = style.image[g].back[ix] ? style.image[g].back[ix] : p.element[ix];
-            //                 } else {
-            //                     if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
-            //                     if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
-            //                     if (ix > index) p.element[ix] = style.image[g].front[ix];
-            //                 }
-            //             });
-            //             style.special ? p['index'] = style.index[g] : p['index'] = p["index"];
-
-            //         }
-            //     });
-
-            //     propetiesUpdate.push(p);
-            // });
-
+            let exPropetiesUpdate = [];
             initPropetiesExtra.coat.value.map(p => {
                 style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
                 if (style.group_to_change) {
                     style.group_to_change.map(g => {
                         if (p.key === g) {
                             if (fabric) p.fabric = fabric.fabric;
-                            propetiesUpdate.push(p);
+                            p['inside_extra'] = true;
+                            if (p.key === "pha_co_ao_mangto") p.element = this.props.design.M.find(x => x.key === "giua_ao_mangto").element;
+                            if (p.key === "pha_co_ao_mangto") p["index"] = this.props.design.M.find(x => x.key === "giua_ao_mangto").index;
+                            exPropetiesUpdate.push(p);
+                        }
+                        if (p.key === "default_lot_ao_mangto_tren") {
+                            p['inside_extra'] = true;
+                            exPropetiesUpdate.push(p);
                         }
                     });
-                    if (p.key === "giua_ao_mangto") {
-                        p.element = ["top", "style_simple", "collar_flap", "lapel_lenght_long", "lapel_wide_wide", "lapel_style_notched", "fastening_boton_standard"]
-                    }
-                    this.setState({ hide_cavat: true, hide_pants: true })
+
+                    this.setState({ hide_cavat: true, pants: true, inside: true })
                 }
+            });
+
+            if (exPropetiesUpdate.length > 0) {
+                this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
+                this.props.onDesignCustom(this.designCustom);
+            }
+
+            initPropeties.coat.value.map(p => {
+                style.group.map(g => {
+                    if (p.key === g) {
+                        style.index[g].forEach((ix, index) => {
+                            if (!style.special) {
+                                (style.image[g].front) ?
+                                    p.element[ix] = style.image[g].front[ix] ? style.image[g].front[ix] : p.element[ix] :
+                                    p.element[ix] = style.image[g].back[ix] ? style.image[g].back[ix] : p.element[ix];
+                            } else {
+                                if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                                if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                                if (ix > index) p.element[ix] = style.image[g].front[ix];
+                            }
+                        });
+                        style.special ? p['index'] = style.index[g] : p['index'] = p["index"];
+                    }
+                });
+                propetiesUpdate.push(p);
+            });
+            imageView = propetiesUpdate;
+            this.designCustom[style.short_key] = propetiesUpdate;
+
+            this.props.onDesignCustom(this.designCustom);
+
+            let _array, __array, ___array;
+            if (!this.props.design.S) _array = propetiesUpdate.concat(initPropeties.shirt.value);
+            else _array = propetiesUpdate.concat(this.props.design.S);
+
+            if (!this.props.design.Q) __array = propetiesUpdate.concat(initPropeties.pants.value);
+            else __array = propetiesUpdate.concat(this.props.design.Q);
+
+            if (!this.props.design.V) ___array = propetiesUpdate.concat(initPropeties.jacket.value);
+            else ___array = propetiesUpdate.concat(this.props.design.V);
+
+            imageView = _array.concat(__array).concat(___array);
+
+            if (exPropetiesUpdate.length > 0) imageView = imageView.concat(exPropetiesUpdate);
+
+            var ex = ["M", "M_coat_lining__contrast", "M_initials__text", "M_coat_neck_lining__contrast", "M_patches_coat__contrast", "M_button_holes_threads_coat__contrast", "M_coat_neck_fabric__contrast"]
+
+            ex.forEach(element => {
+                if (this.props.design[element]) imageView = imageView.concat(this.props.design[element])
             });
         };
 
-        this.designCustom[style.short_key] = propetiesUpdate;
-
-        localStorage.setItem("design__custom", JSON.stringify(this.designCustom));
-
-        this.setState({ initPropeties: propetiesUpdate, short_key: style.short_key })
+        this.setState({ initPropeties: imageView, short_key: style.short_key });
     }
 
     showImageRenderReverse = () => {
         if (this.state.inside) return <img hidden={this.state.hide_pants} className="pants_folded" src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/1645_fabric/folded/length_long+cut_slim.png" style={{ zIndex: 26 }} />;
         if (this.state.prefix) {
-            console.log(this.state);
             return (
                 <div>
                     <img hidden={this.state.hide_cavat} src="http://cdn.csell.vn/duynguyen/3d/new_man/jacket/STD/ties/1/corbata_estrecha.png" alt="" className="shirt" style={{ zIndex: 31 }} />
@@ -240,7 +337,7 @@ class ImageRenderComponent extends Component {
                 </div>
                 <div className="btn_togger_back_front">
                     <span className="btngroup">
-                        <button className="btngroup--btn" onClick={() => this.setState({ inside: !this.state.inside, prefix: true })}><i className="fas fa-paint-brush"></i></button>
+                        <button className="btngroup--btn" onClick={() => this.setState({ inside: !this.state.inside, prefix: true, pants: !this.state.pants })}><i className="fas fa-paint-brush"></i></button>
                         <span style={{ color: "#afafaf" }}>accents</span>
                         <button className="btngroup--btn" onClick={() => this.setState({ prefix: !this.state.prefix, inside: false })}><i className="fas fa-sync-alt"></i></button>
                         <span style={{ color: "#afafaf" }}>reverse</span>
@@ -254,4 +351,18 @@ class ImageRenderComponent extends Component {
 }
 
 
-export default ImageRenderComponent;
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onDesignCustom: design => {
+            dispatch(actDesignCustom(design))
+        }
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        design: state.design
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ImageRenderComponent);
