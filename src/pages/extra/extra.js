@@ -115,8 +115,6 @@ class ExtraPage extends Component {
     }
 
     optionStyleTriggerExtra = data => {
-        console.log(data);
-
         if (!data) return this.setState({ img_properties: [], value_properties: null, style: data });
         this.setState({ img_properties: data.value !== "Mặc định" ? extraMan[data.props_name] : [], value_properties: data ? data.value : null, style: data }, () => {
         }); this.imageRender.setProperties(data, null)

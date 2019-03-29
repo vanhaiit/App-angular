@@ -5,6 +5,8 @@ import ActionFabricInfoComponent from '../../components/actionFabricInfoComponen
 import { getListFabricRequest } from '../../actions/fabric';
 import { connect } from 'react-redux';
 import { toggleIcon } from '../../demo';
+import defaultDesign from '../../utils/defaultDesign';
+import { actDesignCustom } from '../../actions';
 class FabricPage extends Component {
 
     constructor(props) {
@@ -18,6 +20,21 @@ class FabricPage extends Component {
     componentWillMount() {
         var param = { skip: 0, limit: 50, type: 38 }
         this.props.getListFabric(param);
+        var { match } = this.props;
+        if (match) {
+            var id = match.params.id;
+            switch (id) {
+                case "v":
+                    this.props.onDesignCustom(defaultDesign.design_v);
+                    break;
+                case "s":
+                    this.props.onDesignCustom(defaultDesign.design_s);
+                    break;
+                case "m":
+                    this.props.onDesignCustom(defaultDesign.design_m);
+                    break;
+            }
+        }
     }
 
 
@@ -105,6 +122,14 @@ class FabricPage extends Component {
 
 const mapStateToProps = state => { return { fabrics: state.fabrics } }
 
-const mapDispatchToProps = dispatch => { return { getListFabric: param => { dispatch(getListFabricRequest(param)) } } }
+const mapDispatchToProps = dispatch => {
+    return {
+        getListFabric: param => {
+            dispatch(getListFabricRequest(param))
+        }, onDesignCustom: design => {
+            dispatch(actDesignCustom(design))
+        }
+    }
+}
 
 export default connect(mapStateToProps, mapDispatchToProps)(FabricPage);

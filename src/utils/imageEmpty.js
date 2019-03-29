@@ -6,7 +6,8 @@ const imageError = ["empty+cut_slim", "empty", "fit_baggy", "fit_slim", "empty+f
     "chest_pocket_life", "empty+style_crossed+collar_flap+lapel_style_ulster", "empty+lapel_lenght_long", "buttons+lapel_lenght_long+this_only_for_hiding_over_coat_buttons",
     "buttons+lapel_lenght_classic+this_only_for_hiding_over_coat_buttons", "empty+lapel_lenght_classic",
     "chest_pocket_life+style_simple+collar_flap+lapel_lenght_classic+lapel_wide_wide+lapel_style_notched", "buttons+lapel_lenght_long+lapel_style_notched",
-    "buttons+lapel_lenght_long+lapel_style_peak", "chest_pocket_life+style_simple+collar_flap+lapel_lenght_long+lapel_wide_wide+lapel_style_peak",
+    "buttons+lapel_lenght_long+lapel_style_peak", "chest_pocket_life+style_simple+collar_flap+lapel_lenght_long+lapel_wide_wide+lapel_style_peak", "interior+espalda_unlined",
+    "interior+espalda_unlined+x"
 ]
 
 export default imageError

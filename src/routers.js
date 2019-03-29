@@ -11,9 +11,9 @@ const routes = [
         main: () => <FabricPage></FabricPage>
     },
     {
-        path: '/fabric',
+        path: '/fabric/:id',
         exact: true,
-        main: () => <FabricPage></FabricPage>
+        main: ({ match, history }) => <FabricPage match={match} history={history}></FabricPage>
     },
     {
         path: '/config/:id',

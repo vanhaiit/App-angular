@@ -2,20 +2,46 @@ import React, { Component } from 'react';
 import initPropeties from '../utils/defaultPropetiesClothes';
 import initPropetiesExtra from '../utils/defaultPropetiesClothesExtra';
 import imageError from '../utils/imageEmpty';
+import defaultDesign from '../utils/defaultDesign';
 import { connect } from 'react-redux';
 import { actDesignCustom } from '../actions';
 
 class ImageRenderComponent extends Component {
     isNotExists = false;
-    designCustom = {}
+    designCustom = {};
 
     constructor(props) {
         super(props); this.state = { prefix: true, inside: false, hide_cavat: false, jacket: false, pants: false, waistcoat: false, shirt: false, coat_2: false }
     }
 
     componentWillMount() {
+
+        var { pathname } = window.location;
+        var images;
+        if (pathname) {
+            switch (pathname.split("/")[2]) {
+                case 'v':
+                    if (this.props.design.V) images = this.props.design.V.concat(this.props.design.V_lining__contrast).concat(initPropeties.pants.value);
+                    //if (this.props.design.V) images = this.props.design.V.concat(initPropeties.pants.value);
+                    else images = initPropeties.jacket.value.concat(initPropeties.pants.value)
+                    break;
+                case 's':
+                    if (this.props.design.S) images = this.props.design.S.concat(initPropeties.pants.value);
+                    else images = initPropeties.shirt.value.concat(initPropeties.pants.value);
+                    break;
+                case 'm':
+                    if (this.props.design.M) images = this.props.design.M.concat(this.props.design.M_coat_lining__contrast).concat(initPropeties.pants.value);
+                    //if (this.props.design.M) images = this.props.design.M.concat(initPropeties.pants.value);
+                    else images = initPropeties.jacket.value.concat(initPropeties.pants.value);
+                    break;
+
+                default:
+                    var images = initPropeties.jacket.value.concat(initPropeties.pants.value);
+                    break;
+            }
+        }
         if (this.props.passRefUpward) this.props.passRefUpward(this);
-        var images = initPropeties.jacket.value.concat(initPropeties.pants.value);
+
         this.setState({ initPropeties: images })
     }
 
@@ -50,76 +76,80 @@ class ImageRenderComponent extends Component {
         if (!style) return false;
 
         var propetiesUpdate = [];
+
         var imageView = [];
 
         if (style.group_extra) this.props.hidenSubMenuProperties(style)
 
         if (style.short_key === "V") {
             let exPropetiesUpdate = [];
-            initPropetiesExtra.jacket.value.map(p => {
-                style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
-                if (style.group_to_change) {
+            /**insert extra to design */
+            if (style.group_to_change) {
+                initPropetiesExtra.jacket.value.map(p => {
+                    style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
+
                     style.group_to_change.map(g => {
                         if (p.key === g) {
                             if (fabric) p[style.index[g]] = fabric.fabric;
-                            p['inside_extra'] = true;
-                            if (p.key === "cuc_boc_vai_sau" || p.key === "cuc_boc_vai_truoc") p.inside_extra = false;
-                            if (p.key === "cuc_boc_vai_truoc") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                            if (p.key === "holes_ban_ve") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                            if (p.key === "bong_ve_ao_vest") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                            if (p.key === "holes_kieu_dang") p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
-                            this.state.inside = true;
+                            if (style.props_name === "lining__contrast") p['inside_extra'] = true;
                             exPropetiesUpdate.push(p);
                         }
-                        if (p.key === "default_lot_ao_vest_tren") {
-                            p['inside_extra'] = true;
-                            exPropetiesUpdate.push(p);
-                        }
-                        this.setState({ pants: true });
                     });
-                    this.setState({ hide_cavat: true })
-                }
-            });
 
+                    if (p.key === "default_lot_ao_vest_tren") { p['inside_extra'] = true; exPropetiesUpdate.push(p); };
+                    if (p.key === "cuc_boc_vai_sau" || p.key === "cuc_boc_vai_truoc") p.inside_extra = false;
+                    if (p.key === "cuc_boc_vai_truoc" || p.key === "holes_ban_ve" || p.key === "bong_ve_ao_vest" || p.key === "holes_kieu_dang")
+                        p.element = this.state.initPropeties.find(x => x.key === "giua_ao_vest").element;
+                    if (style.value === "Tháo lót" && (p.key === "lot_ao_vest_duoi" || p.key === "lot_ao_vest_tren")) {
+                        p.fabric = "linings/161_fabric/"; p['inside_extra'] = true; exPropetiesUpdate.push(p);
+                    }
+                    this.setState({ inside: true, prefix: true, pants: true, hide_cavat: true });
+                });
+                propetiesUpdate = this.props.design.V;
+            } else {
+                initPropeties.jacket.value.map(p => {
+                    style.group.map(g => {
+                        if (p.key === g) {
+                            style.index[g].forEach((ix, index) => {
+                                if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                                if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                            });
+                            p['index'] = style.index[g];
+                        }
+                    });
+                    propetiesUpdate.push(p)
+                });
+            }
+            /**push extra to redux */
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
                 this.props.onDesignCustom(this.designCustom);
+            } else {
+                this.designCustom[style.short_key + "_lining__contrast"] = defaultDesign.design_v.V_lining__contrast;
+                this.props.onDesignCustom(this.designCustom);
             }
+            /**inset design */
 
 
-            initPropeties.jacket.value.map(p => {
-                style.group.map(g => {
-                    if (p.key === g) {
-                        style.index[g].forEach((ix, index) => {
-                            if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
-                            if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
-                        });
-                        p['index'] = style.index[g];
-                    }
-                });
-                propetiesUpdate.push(p)
-            });
-
+            /**push design to redux */
             this.designCustom[style.short_key] = propetiesUpdate;
-
             this.props.onDesignCustom(this.designCustom);
-
+            /**review image */
             if (!this.props.design.Q) imageView = propetiesUpdate.concat(initPropeties.pants.value);
-
             else imageView = propetiesUpdate.concat(this.props.design.Q);
 
             if (exPropetiesUpdate.length > 0) imageView = imageView.concat(exPropetiesUpdate);
+            else imageView = imageView.concat(defaultDesign.design_v.V_lining__contrast);
 
-            var ex = ["V", "V_lining__contrast", "V_initials__text", "V_jacket_lapel_satin__contrast", "V_handkerchief__contrast", "V_metal_buttons__contrast", "V_button_holes_threads__contrast", "V_neck_lining__contrast"]
-
-            ex.forEach(element => {
-                if (this.props.design[element]) imageView = imageView.concat(this.props.design[element])
+            defaultDesign.key_extra_v.forEach(element => {
+                if (this.props.design[element]) if (element !== "V") imageView = imageView.concat(this.props.design[element])
             });
+
+
 
         }
 
         if (style.short_key === "Q") {
-
             initPropeties.pants.value.map(p => {
                 style.group.map(g => {
                     if (p.key === g) {
@@ -133,7 +163,6 @@ class ImageRenderComponent extends Component {
                 p['inside'] = true;
                 propetiesUpdate.push(p);
             });
-
             this.designCustom[style.short_key] = propetiesUpdate;
             this.props.onDesignCustom(this.designCustom);
             if (!this.props.design.S) imageView = propetiesUpdate.concat(initPropeties.shirt.value);
@@ -162,7 +191,6 @@ class ImageRenderComponent extends Component {
             }
 
             initPropeties.shirt.value.map(p => {
-
                 style.group.map(g => {
                     if (p.key === g) {
                         style.index[g].forEach((ix, index) => {
@@ -172,7 +200,6 @@ class ImageRenderComponent extends Component {
                         p['index'] = style.index[g];
                     }
                 });
-
                 propetiesUpdate.push(p)
             });
             this.designCustom[style.short_key] = propetiesUpdate;
@@ -184,9 +211,7 @@ class ImageRenderComponent extends Component {
 
             this.setState({ hide_cavat: true });
 
-            var ex = ["S", "S_neck_fabric__contrast", "S_initials__text", "S_cuffs_fabric__contrast", "S_button_holes_threads_shirt__contrast", "S_patches_shirt__contrast", "S_chest_pleats"]
-
-            ex.forEach(element => {
+            defaultDesign.key_extra_s.forEach(element => {
                 if (this.props.design[element]) imageView = imageView.concat(this.props.design[element])
             });
 
@@ -230,9 +255,9 @@ class ImageRenderComponent extends Component {
         if (style.short_key === "M") {
 
             let exPropetiesUpdate = [];
-            initPropetiesExtra.coat.value.map(p => {
-                style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
-                if (style.group_to_change) {
+            if (style.group_to_change) {
+                initPropetiesExtra.coat.value.map(p => {
+                    style.group.map(g => { if (p.key === g) p[style.index[g]] = style.image[g].front ? style.image[g].front : style.image[g].back; });
                     style.group_to_change.map(g => {
                         if (p.key === g) {
                             if (fabric) p.fabric = fabric.fabric;
@@ -241,41 +266,48 @@ class ImageRenderComponent extends Component {
                             if (p.key === "pha_co_ao_mangto") p["index"] = this.props.design.M.find(x => x.key === "giua_ao_mangto").index;
                             exPropetiesUpdate.push(p);
                         }
-                        if (p.key === "default_lot_ao_mangto_tren") {
-                            p['inside_extra'] = true;
-                            exPropetiesUpdate.push(p);
+                    });
+                    if (style.value === "Tháo lót" && (p.key === "lot_ao_mangto_tren" || p.key === "lot_ao_mangto_unlined_tren")) {
+                        p.fabric = "linings/161_fabric/"; p['inside_extra'] = true; exPropetiesUpdate.push(p);
+                    }
+                    if (p.key === "default_lot_ao_mangto_tren") {
+                        p['inside_extra'] = true; exPropetiesUpdate.push(p);
+                    }
+                    this.setState({ hide_cavat: true, pants: true, inside: true })
+                });
+
+                propetiesUpdate = this.props.design.M;
+
+            } else {
+                initPropeties.coat.value.map(p => {
+                    style.group.map(g => {
+                        if (p.key === g) {
+                            style.index[g].forEach((ix, index) => {
+                                if (!style.special) {
+                                    (style.image[g].front) ?
+                                        p.element[ix] = style.image[g].front[ix] ? style.image[g].front[ix] : p.element[ix] :
+                                        p.element[ix] = style.image[g].back[ix] ? style.image[g].back[ix] : p.element[ix];
+                                } else {
+                                    if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
+                                    if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
+                                    if (ix > index) p.element[ix] = style.image[g].front[ix];
+                                }
+                            });
+                            style.special ? p['index'] = style.index[g] : p['index'] = p["index"];
                         }
                     });
-
-                    this.setState({ hide_cavat: true, pants: true, inside: true })
-                }
-            });
+                    propetiesUpdate.push(p);
+                });
+            }
 
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
                 this.props.onDesignCustom(this.designCustom);
+            } else {
+                this.designCustom[style.short_key + "_coat_lining__contrast"] = defaultDesign.design_m.M_coat_lining__contrast;
+                this.props.onDesignCustom(this.designCustom);
             }
 
-            initPropeties.coat.value.map(p => {
-                style.group.map(g => {
-                    if (p.key === g) {
-                        style.index[g].forEach((ix, index) => {
-                            if (!style.special) {
-                                (style.image[g].front) ?
-                                    p.element[ix] = style.image[g].front[ix] ? style.image[g].front[ix] : p.element[ix] :
-                                    p.element[ix] = style.image[g].back[ix] ? style.image[g].back[ix] : p.element[ix];
-                            } else {
-                                if (style.image[g].front) p.element[ix] = style.image[g].front[index] ? style.image[g].front[index] : p.element[ix];
-                                if (style.image[g].back) p.element[ix] = style.image[g].back[index] ? style.image[g].back[index] : p.element[ix];
-                                if (ix > index) p.element[ix] = style.image[g].front[ix];
-                            }
-                        });
-                        style.special ? p['index'] = style.index[g] : p['index'] = p["index"];
-                    }
-                });
-                propetiesUpdate.push(p);
-            });
-            imageView = propetiesUpdate;
             this.designCustom[style.short_key] = propetiesUpdate;
 
             this.props.onDesignCustom(this.designCustom);
@@ -293,15 +325,15 @@ class ImageRenderComponent extends Component {
             imageView = _array.concat(__array).concat(___array);
 
             if (exPropetiesUpdate.length > 0) imageView = imageView.concat(exPropetiesUpdate);
+            else imageView = imageView.concat(defaultDesign.design_m.M_coat_lining__contrast);
 
-            var ex = ["M", "M_coat_lining__contrast", "M_initials__text", "M_coat_neck_lining__contrast", "M_patches_coat__contrast", "M_button_holes_threads_coat__contrast", "M_coat_neck_fabric__contrast"]
-
-            ex.forEach(element => {
-                if (this.props.design[element]) imageView = imageView.concat(this.props.design[element])
+            defaultDesign.key_extra_m.forEach(element => {
+                if (this.props.design[element]) if (element !== "M") imageView = imageView.concat(this.props.design[element])
             });
         };
 
         this.setState({ initPropeties: imageView, short_key: style.short_key });
+
     }
 
     showImageRenderReverse = () => {
@@ -325,6 +357,18 @@ class ImageRenderComponent extends Component {
         )
     }
 
+    actShowImage = type => {
+        switch (type) {
+            case "accents":
+                this.setState({ inside: !this.state.inside, prefix: true, pants: !this.state.pants })
+                break;
+            case "reverse":
+                if (this.state.inside) this.setState({ inside: !this.state.inside, prefix: false, pants: false });
+                this.setState({ prefix: !this.state.prefix, inside: false, pants: false })
+                break;
+        }
+    }
+
     render() {
         return (
             <div className="col-md-5" id="dunnio_show-result" style={{ height: '700px' }}>
@@ -337,9 +381,9 @@ class ImageRenderComponent extends Component {
                 </div>
                 <div className="btn_togger_back_front">
                     <span className="btngroup">
-                        <button className="btngroup--btn" onClick={() => this.setState({ inside: !this.state.inside, prefix: true, pants: !this.state.pants })}><i className="fas fa-paint-brush"></i></button>
+                        <button className="btngroup--btn" onClick={() => this.actShowImage("accents")}><i className="fas fa-paint-brush"></i></button>
                         <span style={{ color: "#afafaf" }}>accents</span>
-                        <button className="btngroup--btn" onClick={() => this.setState({ prefix: !this.state.prefix, inside: false })}><i className="fas fa-sync-alt"></i></button>
+                        <button className="btngroup--btn" onClick={() => this.actShowImage("reverse")}><i className="fas fa-sync-alt"></i></button>
                         <span style={{ color: "#afafaf" }}>reverse</span>
                         <button className="btngroup--btn"><i className="fas fa-tshirt"></i></button>
                         <span style={{ color: "#afafaf" }}>jacket</span>
