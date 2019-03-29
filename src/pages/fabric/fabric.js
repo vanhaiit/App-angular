@@ -96,7 +96,7 @@ class FabricPage extends Component {
                             <input id="btn_search" value={this.state.someState} onChange={this.searchFabric} type="text" className="form-control" name="keyword" placeholder="Tìm kiếm vải...." />
                         </div>
                         <br></br>
-                        <div className="row " id="scrollbar_custom">
+                        <div className="row list-unstyled " id="scrollbar_custom">
                             {this.showFabricList(fabrics)}
                         </div>
                     </div>

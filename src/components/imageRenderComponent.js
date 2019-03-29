@@ -73,6 +73,15 @@ class ImageRenderComponent extends Component {
     }
 
     setProperties = (style, fabric) => {
+        var order_design = {};
+        order_design[style.short_key] = {
+            key: style.props_name,
+            value: style.value,
+            short_key: style.short_key,
+            fabricid: fabric ? fabric.id : null,
+            fabric_name: fabric ? fabric.name : null
+        }
+
         if (!style) return false;
 
         var propetiesUpdate = [];
@@ -123,17 +132,17 @@ class ImageRenderComponent extends Component {
             /**push extra to redux */
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
-                this.props.onDesignCustom(this.designCustom);
+                this.props.onDesignCustom(this.designCustom, order_design);
             } else {
                 this.designCustom[style.short_key + "_lining__contrast"] = defaultDesign.design_v.V_lining__contrast;
-                this.props.onDesignCustom(this.designCustom);
+                this.props.onDesignCustom(this.designCustom, order_design);
             }
             /**inset design */
 
 
             /**push design to redux */
             this.designCustom[style.short_key] = propetiesUpdate;
-            this.props.onDesignCustom(this.designCustom);
+            this.props.onDesignCustom(this.designCustom, order_design);
             /**review image */
             if (!this.props.design.Q) imageView = propetiesUpdate.concat(initPropeties.pants.value);
             else imageView = propetiesUpdate.concat(this.props.design.Q);
@@ -164,7 +173,7 @@ class ImageRenderComponent extends Component {
                 propetiesUpdate.push(p);
             });
             this.designCustom[style.short_key] = propetiesUpdate;
-            this.props.onDesignCustom(this.designCustom);
+            this.props.onDesignCustom(this.designCustom, order_design);
             if (!this.props.design.S) imageView = propetiesUpdate.concat(initPropeties.shirt.value);
             else imageView = propetiesUpdate.concat(this.props.design.S)
         }
@@ -187,7 +196,7 @@ class ImageRenderComponent extends Component {
 
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
-                this.props.onDesignCustom(this.designCustom);
+                this.props.onDesignCustom(this.designCustom, order_design);
             }
 
             initPropeties.shirt.value.map(p => {
@@ -240,7 +249,7 @@ class ImageRenderComponent extends Component {
 
             this.designCustom[style.short_key] = propetiesUpdate;
 
-            this.props.onDesignCustom(this.designCustom);
+            this.props.onDesignCustom(this.designCustom, order_design);
 
             let _array, __array;
             if (!this.props.design.S) _array = propetiesUpdate.concat(initPropeties.shirt.value);
@@ -302,15 +311,15 @@ class ImageRenderComponent extends Component {
 
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
-                this.props.onDesignCustom(this.designCustom);
+                this.props.onDesignCustom(this.designCustom, order_design);
             } else {
                 this.designCustom[style.short_key + "_coat_lining__contrast"] = defaultDesign.design_m.M_coat_lining__contrast;
-                this.props.onDesignCustom(this.designCustom);
+                this.props.onDesignCustom(this.designCustom, order_design);
             }
 
             this.designCustom[style.short_key] = propetiesUpdate;
 
-            this.props.onDesignCustom(this.designCustom);
+            this.props.onDesignCustom(this.designCustom, order_design);
 
             let _array, __array, ___array;
             if (!this.props.design.S) _array = propetiesUpdate.concat(initPropeties.shirt.value);
@@ -331,7 +340,6 @@ class ImageRenderComponent extends Component {
                 if (this.props.design[element]) if (element !== "M") imageView = imageView.concat(this.props.design[element])
             });
         };
-
         this.setState({ initPropeties: imageView, short_key: style.short_key });
 
     }
@@ -385,8 +393,8 @@ class ImageRenderComponent extends Component {
                         <span style={{ color: "#afafaf" }}>accents</span>
                         <button className="btngroup--btn" onClick={() => this.actShowImage("reverse")}><i className="fas fa-sync-alt"></i></button>
                         <span style={{ color: "#afafaf" }}>reverse</span>
-                        <button className="btngroup--btn"><i className="fas fa-tshirt"></i></button>
-                        <span style={{ color: "#afafaf" }}>jacket</span>
+                        {/* <button className="btngroup--btn"><i className="fas fa-tshirt"></i></button>
+                        <span style={{ color: "#afafaf" }}>jacket</span> */}
                     </span>
                 </div>
             </div>
@@ -397,8 +405,8 @@ class ImageRenderComponent extends Component {
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        onDesignCustom: design => {
-            dispatch(actDesignCustom(design))
+        onDesignCustom: (design, order_design) => {
+            dispatch(actDesignCustom(design, order_design))
         }
     }
 }

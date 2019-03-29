@@ -10,10 +10,7 @@ class ExtraPage extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            properties: [],
-            img_properties: []
-        }
+        this.state = { properties: [], img_properties: [] }
     }
     componentDidMount() { toggleIcon(); }
 
