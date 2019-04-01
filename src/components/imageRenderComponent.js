@@ -7,11 +7,21 @@ import { connect } from 'react-redux';
 import { actDesignCustom } from '../actions';
 
 class ImageRenderComponent extends Component {
+
     isNotExists = false;
     designCustom = {};
-
     constructor(props) {
-        super(props); this.state = { prefix: true, inside: false, hide_cavat: false, jacket: false, pants: false, waistcoat: false, shirt: false, coat_2: false, sub_pants: false }
+        super(props); this.state = {
+            prefix: true,
+            inside: false,
+            hide_cavat: false,
+            jacket: false,
+            pants: false,
+            waistcoat: false,
+            shirt: false,
+            coat_2: false,
+            sub_pants: false
+        }
     }
 
     componentDidMount() {
@@ -424,7 +434,6 @@ class ImageRenderComponent extends Component {
         );
     }
 }
-
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
