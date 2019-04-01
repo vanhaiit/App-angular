@@ -99,6 +99,8 @@ export function toggleIcon() {
             $('[id="scrollbar_custom"]').attr('id', 'transfer');
             $('[id="transfer_scrollbar"]').attr('id', 'scrollbar_custom');
 
+            $('[id="scrollbar_custom_1"]').attr('id', 'scrollbar_custom_2');
+
             if ($(window).width() >= 992) {
                 $('[id="sidebar_menu-left"]').show(200);
             }
@@ -133,9 +135,19 @@ export function toggleIcon() {
 
             $('[id="scrollbar_custom"]').attr('id', 'transfer_scrollbar');
             $('[id="transfer"]').attr('id', 'scrollbar_custom');
+            $('[id="scrollbar_custom_2"]').attr('id', 'scrollbar_custom_1');
+
             check_sub_menu = true;
         }
 
     });
+    // $('#move').on('click', function () {
+    //     var div = $('[id="viewport"]');
+    //     if (div[0].offsetTop === 0) {
+    //         $('[id="viewport"]').css({ 'top': '-10%' })
+    //     } else {
+    //         $('[id="viewport"]').css({ 'top': '0' })
+    //     }
+    // });
 
 }

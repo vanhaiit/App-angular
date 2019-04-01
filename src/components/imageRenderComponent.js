@@ -415,19 +415,19 @@ class ImageRenderComponent extends Component {
             <div className="col-md-5" id="dunnio_show-result" style={{ height: '700px' }}>
                 <span className="btn_sidebar-show" ><i className="fa fa-bars icon_back" ></i></span>
                 <div id="available_window" className="image_render man_suit fabric_step">
-                    <div className="layers viewport " id="viewport" style={{ width: '250px', left: '-238px', top: '0' }}>
+                    <div className="layers viewport " id="viewport" style={{ width: '230px', left: '-238px', top: '-20px' }}>
                         {this.showImageRender(this.state.initPropeties)}
                         {this.showImageRenderReverse()}
                     </div>
                 </div>
                 <div className="btn_togger_back_front">
                     <span className="btngroup">
-                        <button className="btngroup--btn" onClick={() => this.actShowImage("accents")}><i className="fas fa-paint-brush"></i></button>
+                        <button id="accents" className="btngroup--btn" onClick={() => this.actShowImage("accents")}><i className="fas fa-paint-brush"></i></button>
                         <span style={{ color: "#afafaf" }}>accents</span>
-                        <button className="btngroup--btn" onClick={() => this.actShowImage("reverse")}><i className="fas fa-sync-alt"></i></button>
+                        <button id="reverse" className="btngroup--btn" onClick={() => this.actShowImage("reverse")}><i className="fas fa-sync-alt"></i></button>
                         <span style={{ color: "#afafaf" }}>reverse</span>
-                        {/* <button className="btngroup--btn"><i className="fas fa-tshirt"></i></button>
-                        <span style={{ color: "#afafaf" }}>jacket</span> */}
+                        {/* <button id="move" className="btngroup--btn"><i className="fas fa-arrows-alt-v"></i></button>
+                        <span style={{ color: "#afafaf" }}>move</span> */}
                     </span>
                 </div>
             </div>

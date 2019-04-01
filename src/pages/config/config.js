@@ -58,7 +58,7 @@ class ConfigPage extends Component {
             )
         return (
             <div id="sidebar_menu-left" className="col-md-12 scrollbox-content">
-                <div className="accordian sidebarNav">
+                <div className="accordian sidebarNav" id="scrollbar_custom_1" style={{ 'visibility': 'initial' }}>
                     <ul className="list-unstyled mt-2 mb-2 ">
                         {this.showPropertiesClothes(this.menu)}
                     </ul>

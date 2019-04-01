@@ -4,6 +4,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
@@ -64,6 +65,33 @@ code {
 #scrollbar_custom {
   overflow: auto;
   visibility: hidden;
+  max-height: 600px;
+  overflow-x: hidden;
+  padding-top: 5px;
+}
+
+#scrollbar_custom_2::-webkit-scrollbar, #scrollbar_custom_2::-webkit-scrollbar-thumb {
+  border-radius: 200px;
+  -webkit-box-shadow: inset 0 0 6px rgba(10, 10, 10, 0.3);
+  background-color: #ffffff;
+  width: 5px;
+  height: 5px;
+  left: 50px;
+}
+
+#scrollbar_custom_2::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.04);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+#scrollbar_custom_2::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(left, #8391A6, #536175);
+  width: 10px;
+}
+
+#scrollbar_custom_2 {
+  overflow: auto;
   max-height: 600px;
   overflow-x: hidden;
   padding-top: 5px;
@@ -599,7 +627,7 @@ button.btngroup--btn:focus {
 
 .btn_togger_back_front {
   right: 10%;
-  bottom: 10%;
+  bottom: 30%;
   position: absolute;
 }
 
