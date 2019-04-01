@@ -4,12 +4,13 @@ import initPropetiesExtra from '../utils/defaultPropetiesClothesExtra';
 import imageError from '../utils/imageEmpty';
 import defaultDesign from '../utils/defaultDesign';
 import { connect } from 'react-redux';
-import { actDesignCustom } from '../actions';
+import { actDesignCustom, actOrderDesignCustom } from '../actions';
 
 class ImageRenderComponent extends Component {
 
     isNotExists = false;
     designCustom = {};
+    orderDesign = { "V": [], "S": [], "G": [], "Q": [], "M": [] }
     constructor(props) {
         super(props); this.state = {
             prefix: true,
@@ -25,6 +26,7 @@ class ImageRenderComponent extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
         var { pathname } = window.location;
         if (pathname) {
             switch (pathname.split("/")[2]) {
@@ -39,17 +41,23 @@ class ImageRenderComponent extends Component {
                     break;
             }
         }
-
     }
 
     componentWillMount() {
         var { pathname } = window.location;
-        var images;
+        var images = [];
         if (pathname) {
             switch (pathname.split("/")[2]) {
                 case 'v':
-                    if (this.props.design.V) images = this.props.design.V.concat(this.props.design.V_lining__contrast).concat(initPropeties.pants.value);
-                    else images = defaultDesign.design_v.V.concat(defaultDesign.design_v.V_lining__contrast).concat(initPropeties.pants.value);
+                    /**vest vs pants */
+                    images = (this.props.design.V) ? this.props.design.V.concat(this.props.design.V_lining__contrast) : defaultDesign.design_v.V.concat(defaultDesign.design_v.V_lining__contrast);
+
+                    /**vest vs pants */
+                    (this.props.design.Q) ? images = images.concat(this.props.design.Q) : images = images.concat(initPropeties.pants.value);
+
+                    /**vest vs gile */
+                    (this.props.design.G) ? images = images.concat(this.props.design.G) : images = images.concat(initPropeties.gile.value);
+
                     break;
                 case 's':
                     if (this.props.design.S) images = this.props.design.S.concat(initPropeties.pants.value);
@@ -101,13 +109,26 @@ class ImageRenderComponent extends Component {
 
     setProperties = (style, fabric) => {
 
-        var order_design = {};
-        order_design[style.short_key] = {
+        var orderItem = {
             key: style.props_name,
             value: style.value,
             short_key: style.short_key,
             fabricid: fabric ? fabric.id : null,
             fabric_name: fabric ? fabric.name : null
+        }
+        var check_order;
+        if (this.orderDesign[style.short_key].length > 0) {
+            check_order = this.orderDesign[style.short_key].find(x => x.key === style.props_name);
+            if (check_order) {
+                let index = this.orderDesign[style.short_key].indexOf(check_order);
+                this.orderDesign[style.short_key].splice(index, 1);
+                this.orderDesign[style.short_key].push(orderItem);
+            } else {
+                this.orderDesign[style.short_key].push(orderItem);
+            }
+
+        } else {
+            this.orderDesign[style.short_key].push(orderItem);
         }
 
         if (!style) return false;
@@ -160,18 +181,18 @@ class ImageRenderComponent extends Component {
             /**push extra to redux */
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
-                this.props.onDesignCustom(this.designCustom, order_design);
+                this.props.onDesignCustom(this.designCustom);
                 if (!this.props.design[style.short_key + "_lining__contrast"]) this.designCustom[style.short_key + "_lining__contrast"] = defaultDesign.design_v.V_lining__contrast;
             } else {
                 this.designCustom[style.short_key + "_lining__contrast"] = defaultDesign.design_v.V_lining__contrast;
-                this.props.onDesignCustom(this.designCustom, order_design);
+                this.props.onDesignCustom(this.designCustom);
             }
             /**inset design */
 
 
             /**push design to redux */
             this.designCustom[style.short_key] = propetiesUpdate;
-            this.props.onDesignCustom(this.designCustom, order_design);
+            this.props.onDesignCustom(this.designCustom);
             /**review image */
             if (!this.props.design.Q) imageView = propetiesUpdate.concat(initPropeties.pants.value);
             else imageView = propetiesUpdate.concat(this.props.design.Q);
@@ -202,7 +223,7 @@ class ImageRenderComponent extends Component {
                 propetiesUpdate.push(p);
             });
             this.designCustom[style.short_key] = propetiesUpdate;
-            this.props.onDesignCustom(this.designCustom, order_design);
+            this.props.onDesignCustom(this.designCustom);
             if (!this.props.design.S) imageView = propetiesUpdate.concat(initPropeties.shirt.value);
             else imageView = propetiesUpdate.concat(this.props.design.S)
         }
@@ -225,7 +246,7 @@ class ImageRenderComponent extends Component {
 
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
-                this.props.onDesignCustom(this.designCustom, order_design);
+                this.props.onDesignCustom(this.designCustom);
             }
 
             initPropeties.shirt.value.map(p => {
@@ -278,7 +299,7 @@ class ImageRenderComponent extends Component {
 
             this.designCustom[style.short_key] = propetiesUpdate;
 
-            this.props.onDesignCustom(this.designCustom, order_design);
+            this.props.onDesignCustom(this.designCustom);
 
             let _array, __array;
             if (!this.props.design.S) _array = propetiesUpdate.concat(initPropeties.shirt.value);
@@ -340,16 +361,16 @@ class ImageRenderComponent extends Component {
 
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
-                this.props.onDesignCustom(this.designCustom, order_design);
+                this.props.onDesignCustom(this.designCustom);
                 if (!this.props.design[style.short_key + "_coat_lining__contrast"]) this.designCustom[style.short_key + "_coat_lining__contrast"] = defaultDesign.design_m.M_coat_lining__contrast;
             } else {
                 this.designCustom[style.short_key + "_coat_lining__contrast"] = defaultDesign.design_m.M_coat_lining__contrast;
-                this.props.onDesignCustom(this.designCustom, order_design);
+                this.props.onDesignCustom(this.designCustom);
             }
 
             this.designCustom[style.short_key] = propetiesUpdate;
 
-            this.props.onDesignCustom(this.designCustom, order_design);
+            this.props.onDesignCustom(this.designCustom);
 
             let _array, __array, ___array;
             console.log(propetiesUpdate.length, initPropeties.shirt.value);
@@ -374,6 +395,9 @@ class ImageRenderComponent extends Component {
         };
 
         this.setState({ initPropeties: imageView, short_key: style.short_key });
+        this.props.onOrderDesignCustom(this.orderDesign);
+        console.log(this.orderDesign);
+
 
     }
 
@@ -437,15 +461,18 @@ class ImageRenderComponent extends Component {
 
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        onDesignCustom: (design, order_design) => {
-            dispatch(actDesignCustom(design, order_design))
+        onDesignCustom: (design) => {
+            dispatch(actDesignCustom(design))
+        },
+        onOrderDesignCustom: (orderDesign) => {
+            dispatch(actOrderDesignCustom(orderDesign))
         }
     }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ design }) => {
     return {
-        design: state.design
+        design: design.design,
     }
 }
 

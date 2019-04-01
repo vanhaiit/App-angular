@@ -253,7 +253,7 @@ const initPropeties = {
                 ingredient: 'waistcoat',
                 opacity: 1,
                 className: 'waistcoat',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["neck_single_breasted+buttons_5", "lapel_medium", "style_lapel_no"],
             },
             {
@@ -264,7 +264,7 @@ const initPropeties = {
                 ingredient: 'waistcoat',
                 opacity: 1,
                 className: 'waistcoat',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["bottom_single_breasted", "edge_diagonal"]
             },
             {
@@ -275,7 +275,7 @@ const initPropeties = {
                 ingredient: 'waistcoat',
                 opacity: 1,
                 className: 'waistcoat',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["hip_pockets_welt"]
             },
             {
@@ -286,7 +286,7 @@ const initPropeties = {
                 ingredient: 'waistcoat',
                 opacity: 1,
                 className: 'waistcoat',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["empty", "third"]
             },
             {
@@ -297,7 +297,7 @@ const initPropeties = {
                 ingredient: 'waistcoat',
                 opacity: 1,
                 className: 'waistcoat',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["breast_pocket_classic"]
             },
             {
@@ -308,7 +308,7 @@ const initPropeties = {
                 ingredient: 'waistcoat',
                 opacity: 1,
                 className: 'waistcoat',
-                zIndex: 100,
+                zIndex: 99,
                 element: ["body_back"]
             }
         ]

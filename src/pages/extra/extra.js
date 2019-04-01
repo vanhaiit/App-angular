@@ -5,6 +5,7 @@ import ActionFabricInfoComponent from '../../components/actionFabricInfoComponen
 import data from '../../utils/propertiesExtra';
 import { extraMan } from '../../utils/extralining';
 import { toggleIcon } from '../../demo';
+import { connect } from 'react-redux';
 
 class ExtraPage extends Component {
 
@@ -12,7 +13,10 @@ class ExtraPage extends Component {
         super(props);
         this.state = { properties: [], img_properties: [] }
     }
-    componentDidMount() { toggleIcon(); }
+    componentDidMount() {
+        console.log(this.props);
+        toggleIcon();
+    }
 
     componentWillMount() {
         var { match } = this.props;
@@ -427,4 +431,13 @@ class ExtraPage extends Component {
     }
 }
 
-export default ExtraPage;
+
+
+const mapStateToProps = ({ design }) => {
+    return {
+        order_design: design.order_design
+    }
+}
+
+export default connect(mapStateToProps, null)(ExtraPage);
+
