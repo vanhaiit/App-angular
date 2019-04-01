@@ -70,13 +70,15 @@ class ConfigPage extends Component {
 
     hidenSubMenuProperties = style => {
         var data_hide = [];
+        /**VEST HIDE OPTION */
+        if (style.id === "neck_mao") data_hide = ["jacket_lapel_type", "jacket_wide_lapel"];
+        if (style.props_name === "jacket_style_combined" && style.id !== "neck_mao") data_hide = [""];
+
+        /**COAT HIDE OPTION */
         if (style.id === "funnel_neck") data_hide = ["coat_lapel_length", "coat_lapel_style", "coat_lapel_wide"];
         if (style.id === "over_coat" || style.id === "double_breasted_coat" || style.id === "pea_coat" || style.id === "duffle_coat") data_hide = [""];
 
-        if (style.id === "neck_mao") data_hide = ["jacket_lapel_type", "jacket_wide_lapel"];
-        if (style.id === "single_breasted_buttons_2" || style.id === "single_breasted_buttons_1" || style.id === "single_breasted_buttons_3"
-            || style.id === "double_breasted_buttons_2" || style.id === "double_breasted_buttons_4" || style.id === "double_breasted_buttons_6") data_hide = [""];
-        if (data_hide.length === 0) data_hide = this.state.data_hide
+        if (data_hide.length === 0) data_hide = this.state.data_hide;
         this.setState({ style, data_hide }, () => { this.showPropertiesContent(); });
     }
 
@@ -140,6 +142,8 @@ class ConfigPage extends Component {
 
                 if (item.id === "waistcoat_no_lapel" && this.state.style.id !== "waistcoat_no_lapel") {
                     this.removeItemInArray(this.items_hide, "waistcoat_lapel_width");
+                    console.log(this.items_hide);
+
                 }
 
                 /***-------------coat---------------- */

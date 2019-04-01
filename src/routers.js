@@ -5,11 +5,7 @@ import ExtraPage from './pages/extra/extra';
 import NotFoundPage from './pages/not-found/not-found';
 
 const routes = [
-    {
-        path: '/',
-        exact: true,
-        main: () => <FabricPage></FabricPage>
-    },
+
     {
         path: '/fabric/:id',
         exact: true,

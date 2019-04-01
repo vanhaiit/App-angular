@@ -43,7 +43,6 @@ class ImageRenderComponent extends Component {
     }
 
     componentWillMount() {
-
         var { pathname } = window.location;
         var images;
         if (pathname) {
@@ -117,7 +116,7 @@ class ImageRenderComponent extends Component {
 
         var imageView = [];
 
-        if (style.group_extra) this.props.hidenSubMenuProperties(style)
+        if (this.props.hidenSubMenuProperties) this.props.hidenSubMenuProperties(style)
 
         if (style.short_key === "V") {
             let exPropetiesUpdate = [];
@@ -373,6 +372,7 @@ class ImageRenderComponent extends Component {
                 if (this.props.design[element]) if (element !== "M") imageView = imageView.concat(this.props.design[element])
             });
         };
+
         this.setState({ initPropeties: imageView, short_key: style.short_key });
 
     }
