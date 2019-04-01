@@ -11,7 +11,25 @@ class ImageRenderComponent extends Component {
     designCustom = {};
 
     constructor(props) {
-        super(props); this.state = { prefix: true, inside: false, hide_cavat: false, jacket: false, pants: false, waistcoat: false, shirt: false, coat_2: false }
+        super(props); this.state = { prefix: true, inside: false, hide_cavat: false, jacket: false, pants: false, waistcoat: false, shirt: false, coat_2: false, sub_pants: false }
+    }
+
+    componentDidMount() {
+        var { pathname } = window.location;
+        if (pathname) {
+            switch (pathname.split("/")[2]) {
+                case 'v':
+                    this.props.onDesignCustom(defaultDesign.design_v);
+                    break;
+                case 's':
+                    this.props.onDesignCustom(defaultDesign.design_s);
+                    break;
+                case 'm':
+                    this.props.onDesignCustom(defaultDesign.design_m);
+                    break;
+            }
+        }
+
     }
 
     componentWillMount() {
@@ -22,17 +40,16 @@ class ImageRenderComponent extends Component {
             switch (pathname.split("/")[2]) {
                 case 'v':
                     if (this.props.design.V) images = this.props.design.V.concat(this.props.design.V_lining__contrast).concat(initPropeties.pants.value);
-                    //if (this.props.design.V) images = this.props.design.V.concat(initPropeties.pants.value);
-                    else images = initPropeties.jacket.value.concat(initPropeties.pants.value)
+                    else images = defaultDesign.design_v.V.concat(defaultDesign.design_v.V_lining__contrast).concat(initPropeties.pants.value);
                     break;
                 case 's':
                     if (this.props.design.S) images = this.props.design.S.concat(initPropeties.pants.value);
-                    else images = initPropeties.shirt.value.concat(initPropeties.pants.value);
+                    else images = defaultDesign.design_s.S.concat(initPropeties.pants.value);
                     break;
                 case 'm':
+                    this.setState({ sub_pants: true });
                     if (this.props.design.M) images = this.props.design.M.concat(this.props.design.M_coat_lining__contrast).concat(initPropeties.pants.value);
-                    //if (this.props.design.M) images = this.props.design.M.concat(initPropeties.pants.value);
-                    else images = initPropeties.jacket.value.concat(initPropeties.pants.value);
+                    else images = defaultDesign.design_m.M.concat(defaultDesign.design_m.M_coat_lining__contrast).concat(initPropeties.pants.value);
                     break;
 
                 default:
@@ -67,12 +84,14 @@ class ImageRenderComponent extends Component {
 
                 return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
             }
+
             if (element.prefix === "back/" && !this.state.prefix) return <img key={index} id={`image_render_${index}`} src={`http://cdn.csell.vn/duynguyen/3d/new_man/${element.ingredient}/STD/${element.fabric}${element.prefix}${subUrl}${element.suffix}`} className={element.className} style={{ zIndex: element.zIndex }} />
         })
         return result;
     }
 
     setProperties = (style, fabric) => {
+
         var order_design = {};
         order_design[style.short_key] = {
             key: style.props_name,
@@ -133,6 +152,7 @@ class ImageRenderComponent extends Component {
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
                 this.props.onDesignCustom(this.designCustom, order_design);
+                if (!this.props.design[style.short_key + "_lining__contrast"]) this.designCustom[style.short_key + "_lining__contrast"] = defaultDesign.design_v.V_lining__contrast;
             } else {
                 this.designCustom[style.short_key + "_lining__contrast"] = defaultDesign.design_v.V_lining__contrast;
                 this.props.onDesignCustom(this.designCustom, order_design);
@@ -312,6 +332,7 @@ class ImageRenderComponent extends Component {
             if (exPropetiesUpdate.length > 0) {
                 this.designCustom[style.short_key + "_" + style.props_name] = exPropetiesUpdate;
                 this.props.onDesignCustom(this.designCustom, order_design);
+                if (!this.props.design[style.short_key + "_coat_lining__contrast"]) this.designCustom[style.short_key + "_coat_lining__contrast"] = defaultDesign.design_m.M_coat_lining__contrast;
             } else {
                 this.designCustom[style.short_key + "_coat_lining__contrast"] = defaultDesign.design_m.M_coat_lining__contrast;
                 this.props.onDesignCustom(this.designCustom, order_design);
@@ -322,6 +343,8 @@ class ImageRenderComponent extends Component {
             this.props.onDesignCustom(this.designCustom, order_design);
 
             let _array, __array, ___array;
+            console.log(propetiesUpdate.length, initPropeties.shirt.value);
+
             if (!this.props.design.S) _array = propetiesUpdate.concat(initPropeties.shirt.value);
             else _array = propetiesUpdate.concat(this.props.design.S);
 
@@ -345,7 +368,7 @@ class ImageRenderComponent extends Component {
     }
 
     showImageRenderReverse = () => {
-        if (this.state.inside) return <img hidden={this.state.hide_pants} className="pants_folded" src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/1645_fabric/folded/length_long+cut_slim.png" style={{ zIndex: 26 }} />;
+        if (this.state.inside) return <img hidden={this.state.hide_pants} style={{ display: this.state.sub_pants ? "none" : "block" }} className="pants_folded" src="http://cdn.csell.vn/duynguyen/3d/new_man/pants/STD/1645_fabric/folded/length_long+cut_slim.png" style={{ zIndex: 26 }} />;
         if (this.state.prefix) {
             return (
                 <div>
